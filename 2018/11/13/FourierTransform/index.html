@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>spectral transfomations | Caijiangnan no Bolg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="digital image processingdigital speech processingsystemtheries 2RWTH" />
+  
+  
+  
+  
+  <meta name="description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
+<meta name="keywords" content="digital image processing,digital speech processing,systemtheries 2,RWTH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spectral Transfomations">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/FourierTransform/index.html">
+<meta property="og:site_name" content="Caijiangnan no Bolg">
+<meta property="og:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-17T15:44:41.274Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spectral Transfomations">
+<meta name="twitter:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
+  
+    <link rel="alternate" href="/atom.xml" title="Caijiangnan no Bolg" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Caijiangnan no Bolg" rel="home"> Caijiangnan no Bolg </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-FourierTransform" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Spectral Transfomations
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/11/13/FourierTransform/" class="article-date">
+	  <time datetime="2018-11-13T20:51:19.000Z" itemprop="datePublished">十一月 13, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。</p>
+<p>从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。</p>
+<p>schematic image processing system</p>
+<p>system and signal processing</p>
+<h1 id="Linear-time-invariant-system-1D"><a href="#Linear-time-invariant-system-1D" class="headerlink" title="Linear time invariant system ( 1D )"></a>Linear time invariant system ( 1D )</h1><p>1D signal<br>2D signal ( Bivariate signals ) -&gt; Bivariate cosine waves -&gt; Complex-valued sine wave</p>
+<h2 id="Transmisson-over-LSI-system"><a href="#Transmisson-over-LSI-system" class="headerlink" title="Transmisson over LSI-system"></a>Transmisson over LSI-system</h2><h1 id="Dirac-Impulse"><a href="#Dirac-Impulse" class="headerlink" title="Dirac Impulse"></a>Dirac Impulse</h1><h2 id="Spectrum-of-2D-dirac-impluse"><a href="#Spectrum-of-2D-dirac-impluse" class="headerlink" title="Spectrum of 2D dirac impluse"></a>Spectrum of 2D dirac impluse</h2><h1 id="Rect-Function"><a href="#Rect-Function" class="headerlink" title="Rect Function"></a>Rect Function</h1><h2 id="Spectrum-of-2D-rect-function"><a href="#Spectrum-of-2D-rect-function" class="headerlink" title="Spectrum of 2D rect function"></a>Spectrum of 2D rect function</h2><h1 id="Fourier-Transform"><a href="#Fourier-Transform" class="headerlink" title="Fourier Transform"></a>Fourier Transform</h1><h2 id="Fourier-Transform-of-Continuous-Signals"><a href="#Fourier-Transform-of-Continuous-Signals" class="headerlink" title="Fourier Transform of Continuous Signals"></a>Fourier Transform of Continuous Signals</h2><h3 id="1D-Fourier-Transform"><a href="#1D-Fourier-Transform" class="headerlink" title="1D Fourier Transform"></a>1D Fourier Transform</h3><h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><h3 id="2D-Fourier-Transform"><a href="#2D-Fourier-Transform" class="headerlink" title="2D Fourier Transform"></a>2D Fourier Transform</h3><h4 id="Separability-of-2D-Fourier-Transform"><a href="#Separability-of-2D-Fourier-Transform" class="headerlink" title="Separability of 2D Fourier Transform"></a>Separability of 2D Fourier Transform</h4><h4 id="Symmetry-of-2D-Fourier-Transform"><a href="#Symmetry-of-2D-Fourier-Transform" class="headerlink" title="Symmetry of 2D Fourier Transform"></a>Symmetry of 2D Fourier Transform</h4><h4 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h4><p>我们需要探究图像在经过了这系列变化之后，频谱图会发生什么改变？</p>
+<h5 id="Duality-theorem"><a href="#Duality-theorem" class="headerlink" title="Duality theorem"></a>Duality theorem</h5><h5 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h5><h5 id="Scale-change-theorem"><a href="#Scale-change-theorem" class="headerlink" title="Scale change theorem"></a>Scale change theorem</h5><h5 id="Linear-transfer"><a href="#Linear-transfer" class="headerlink" title="Linear transfer"></a>Linear transfer</h5><h5 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h5><h5 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h5><h2 id="Fourier-Transfrom-of-Discrete-Signals"><a href="#Fourier-Transfrom-of-Discrete-Signals" class="headerlink" title="Fourier Transfrom of Discrete Signals"></a>Fourier Transfrom of Discrete Signals</h2><p>the signals we need to process: sampled signals<br>Glossary:<br>complex phasor<br>normalize radian frequency</p>
+<h3 id="inverse-tranform"><a href="#inverse-tranform" class="headerlink" title="inverse tranform"></a>inverse tranform</h3><h1 id="Linear-shift-invariant-system-1D"><a href="#Linear-shift-invariant-system-1D" class="headerlink" title="Linear shift invariant system ( 1D )"></a>Linear shift invariant system ( 1D )</h1><p>System map one or more input signals onto one or more output signals. In the case of a signal input and s signal output we have.</p>
+<h1 id="Linear-shift-invariant-system-2D"><a href="#Linear-shift-invariant-system-2D" class="headerlink" title="Linear shift invariant system ( 2D )"></a>Linear shift invariant system ( 2D )</h1><p>Complex-valued sine wave -&gt; eigenfunctions of LSI system -&gt; eigenvalue ( transfer function )</p>
+<ol>
+<li>linear</li>
+<li>memoryless</li>
+<li>shift invariant<h2 id="Frequency-responese-of-LSI-systems"><a href="#Frequency-responese-of-LSI-systems" class="headerlink" title="Frequency responese of LSI systems"></a>Frequency responese of LSI systems</h2><h3 id="eigenfunction-of-LSI-system"><a href="#eigenfunction-of-LSI-system" class="headerlink" title="eigenfunction of LSI system"></a>eigenfunction of LSI system</h3></li>
+</ol>
+<h1 id="Z-transform"><a href="#Z-transform" class="headerlink" title="Z-transform"></a>Z-transform</h1><p>the reason we need z transform: the FTDS dose not converge for signals such as the unit step.</p>
+<h2 id="two-sided-z-transform-（双边Z变换）"><a href="#two-sided-z-transform-（双边Z变换）" class="headerlink" title="two-sided z-transform （双边Z变换）"></a>two-sided z-transform （双边Z变换）</h2><p>两种方式实现双边z变换</p>
+<ol>
+<li>By complex variable<br>$$Z\left { x(k) \right }=X(z)=\sum_{k=-\infty }^{\infty }x(k)z^{-k}$$</li>
+<li>By using laplace transform of a sampled signal<br>$$\int_{-\infty }^{\infty}x_s(t)e^{-st}dt=\sum_{k=-\infty }^{\infty }x_a(kT)\int_{-\infty}^{\infty}\delta <em>a(t-kT)e^{-st}dt=\sum</em>{k=-\infty }^{\infty }x(k)e^{-sTk}$$<h2 id="the-relation-between-z-and-fourier-transform"><a href="#the-relation-between-z-and-fourier-transform" class="headerlink" title="the relation between z- and fourier transform"></a>the relation between z- and fourier transform</h2></li>
+</ol>
+<h2 id="region-of-convergence-ROC"><a href="#region-of-convergence-ROC" class="headerlink" title="region of convergence ( ROC )"></a>region of convergence ( ROC )</h2><h2 id="Properties-2"><a href="#Properties-2" class="headerlink" title="Properties"></a>Properties</h2><h1 id="Magnitude-and-Phase-spectrum"><a href="#Magnitude-and-Phase-spectrum" class="headerlink" title="Magnitude and Phase spectrum"></a>Magnitude and Phase spectrum</h1><h1 id="Sampling-of-2D-signal"><a href="#Sampling-of-2D-signal" class="headerlink" title="Sampling of 2D signal"></a>Sampling of 2D signal</h1><h1 id="Discrete-space-Fourier-transform"><a href="#Discrete-space-Fourier-transform" class="headerlink" title="Discrete-space Fourier transform"></a>Discrete-space Fourier transform</h1><h2 id="2D-spectral-analysis-using-DFT"><a href="#2D-spectral-analysis-using-DFT" class="headerlink" title="2D spectral analysis using DFT"></a>2D spectral analysis using DFT</h2>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RWTH/">RWTH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/digital-image-processing/">digital image processing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/digital-speech-processing/">digital speech processing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/systemtheries-2/">systemtheries 2</a></li></ul>
+
+      
+            
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/12/lovefish/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">恋爱与鲤鱼（高木同学的狗粮）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-time-invariant-system-1D"><span class="nav-number">1.</span> <span class="nav-text">Linear time invariant system ( 1D )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Transmisson-over-LSI-system"><span class="nav-number">1.1.</span> <span class="nav-text">Transmisson over LSI-system</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dirac-Impulse"><span class="nav-number">2.</span> <span class="nav-text">Dirac Impulse</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spectrum-of-2D-dirac-impluse"><span class="nav-number">2.1.</span> <span class="nav-text">Spectrum of 2D dirac impluse</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rect-Function"><span class="nav-number">3.</span> <span class="nav-text">Rect Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spectrum-of-2D-rect-function"><span class="nav-number">3.1.</span> <span class="nav-text">Spectrum of 2D rect function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fourier-Transform"><span class="nav-number">4.</span> <span class="nav-text">Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Transform-of-Continuous-Signals"><span class="nav-number">4.1.</span> <span class="nav-text">Fourier Transform of Continuous Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1D-Fourier-Transform"><span class="nav-number">4.1.1.</span> <span class="nav-text">1D Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2D-Fourier-Transform"><span class="nav-number">4.1.2.</span> <span class="nav-text">2D Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Separability-of-2D-Fourier-Transform"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">Separability of 2D Fourier Transform</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symmetry-of-2D-Fourier-Transform"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">Symmetry of 2D Fourier Transform</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-1"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Duality-theorem"><span class="nav-number">4.1.2.3.1.</span> <span class="nav-text">Duality theorem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linearity"><span class="nav-number">4.1.2.3.2.</span> <span class="nav-text">Linearity</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scale-change-theorem"><span class="nav-number">4.1.2.3.3.</span> <span class="nav-text">Scale change theorem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linear-transfer"><span class="nav-number">4.1.2.3.4.</span> <span class="nav-text">Linear transfer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rotation"><span class="nav-number">4.1.2.3.5.</span> <span class="nav-text">Rotation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Translation"><span class="nav-number">4.1.2.3.6.</span> <span class="nav-text">Translation</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Transfrom-of-Discrete-Signals"><span class="nav-number">4.2.</span> <span class="nav-text">Fourier Transfrom of Discrete Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-tranform"><span class="nav-number">4.2.1.</span> <span class="nav-text">inverse tranform</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-shift-invariant-system-1D"><span class="nav-number">5.</span> <span class="nav-text">Linear shift invariant system ( 1D )</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-shift-invariant-system-2D"><span class="nav-number">6.</span> <span class="nav-text">Linear shift invariant system ( 2D )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Frequency-responese-of-LSI-systems"><span class="nav-number">6.1.</span> <span class="nav-text">Frequency responese of LSI systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#eigenfunction-of-LSI-system"><span class="nav-number">6.1.1.</span> <span class="nav-text">eigenfunction of LSI system</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Z-transform"><span class="nav-number">7.</span> <span class="nav-text">Z-transform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#two-sided-z-transform-（双边Z变换）"><span class="nav-number">7.1.</span> <span class="nav-text">two-sided z-transform （双边Z变换）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-relation-between-z-and-fourier-transform"><span class="nav-number">7.2.</span> <span class="nav-text">the relation between z- and fourier transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#region-of-convergence-ROC"><span class="nav-number">7.3.</span> <span class="nav-text">region of convergence ( ROC )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-2"><span class="nav-number">7.4.</span> <span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Magnitude-and-Phase-spectrum"><span class="nav-number">8.</span> <span class="nav-text">Magnitude and Phase spectrum</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sampling-of-2D-signal"><span class="nav-number">9.</span> <span class="nav-text">Sampling of 2D signal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discrete-space-Fourier-transform"><span class="nav-number">10.</span> <span class="nav-text">Discrete-space Fourier transform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-spectral-analysis-using-DFT"><span class="nav-number">10.1.</span> <span class="nav-text">2D spectral analysis using DFT</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 Caijiangnan no Bolg All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

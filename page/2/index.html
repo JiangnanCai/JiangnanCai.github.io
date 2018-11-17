@@ -161,6 +161,130 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-「KAL」马尔可夫链"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/05/01/「KAL」马尔可夫链/">「KAL」马尔可夫链</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/05/01/「KAL」马尔可夫链/" class="article-date">
+	  <time datetime="2018-05-01T18:18:55.000Z" itemprop="datePublished">五月 1, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><p>首先我们来了解一下马尔可夫链相关的基本概念。<br><strong>马尔可夫链</strong>（Markov chain / Markov Ketten）一条由<strong>状态空间</strong>（Zustandraum）组成的链子，每个状态之间可以相互转换，从一个状态向另一个状态转换的过程是一个随机过程，下一个时间点的状态的概率分布只由当前状态决定。与之前的状态都没有关系。</p>
+<p>首先我们有一个离散的时间（Diskrete Zeitpunkte）：$$n=1,2,…$$和状态空间$$S= \lbrace s_1,s_2,… \rbrace $$其中，状态空间的含义就是，举个例子，例如我作为一个人，在日常活动中有吃饭，睡觉，学习，看动画这几种状态，则这些活动都被包含在状态空间里面，例如，$s_1$对应吃饭，$s_2$对应睡觉，$s_3$对应学习，$s_4$对应看动画。</p>
+<p>则在确定的时间点$n$，系统的状态是一个离散随机变量：$$\lbrace X_{n}= s \rbrace $$其中：$$n\in \mathbb{N}_0 , s\in S$$</p>
+<p><strong>以上就是马尔可夫链比较重要的三个点，状态空间$S$，时间$n$，和时间$n$的状态$\lbrace X_n \rbrace_{n\in \mathbb{N}_0}$。</strong></p>
+<h2 id="随机漫步（Random-walk-Irrfahrt）"><a href="#随机漫步（Random-walk-Irrfahrt）" class="headerlink" title="随机漫步（Random walk / Irrfahrt）"></a>随机漫步（Random walk / Irrfahrt）</h2><p>这里我先把教材抄上来，因为我也不知道怎么用中文说比较好。</p>
+<h3 id="Irrfahrt-auf-mathbb-Z"><a href="#Irrfahrt-auf-mathbb-Z" class="headerlink" title="Irrfahrt auf $\mathbb{Z}$"></a>Irrfahrt auf $\mathbb{Z}$</h3><p>这是在整个整数域随机漫步，所以有负数也有正数。从下面的图可以看出来，状态有负数。<br>Ein Teilchen bewegt sich zu getakteten mit Wahrscheinlichkeit $l$ nach links, $r$ nach rechts, $v$ gar nicht, wobei $l+r+v=1$. Veranschaulichung:<br><img src="/images/bsp31.png" alt=""></p>
+<h3 id="Irrfahrt-auf-mathbb-N-0"><a href="#Irrfahrt-auf-mathbb-N-0" class="headerlink" title="Irrfahrt auf $\mathbb{N}_0$"></a>Irrfahrt auf $\mathbb{N}_0$</h3><p>这是在非负整数域的随机漫步。<br>Jedoch mit $S=\mathbb{N}_0$. Zusätzlich hängen die Übergangswahrscheinlichkeiten vom Zustand ab.<br><img src="/images/bsp31b.png" alt=""><br>在这里我们将这个看成是一个时间离散的等待系统，并对其进行观察，其$S=\mathbb{N}_0$，说明状态空间等于非负整数域，状态空间表示的是系统的请求数。<br>$X_n$描述的是系统在时间点$n$的请求数：</p>
+<p>$$P(X_{n+1}=j|X_n=i)=\left\{\begin{matrix}<br>r_i &amp; j=i+1 \\<br>l_i &amp; j=i-1 \\<br>v_i &amp; j=i<br>\end{matrix}\right.$$</p>
+<h3 id="Irrfahrt-auf-mathbb-N-0-2"><a href="#Irrfahrt-auf-mathbb-N-0-2" class="headerlink" title="Irrfahrt auf $\mathbb{N}_0^2$"></a>Irrfahrt auf $\mathbb{N}_0^2$</h3><p>多维（mehrdimensional）<br>每一个箭头都代表转移概率</p>
+<h2 id="马尔可夫链的定义"><a href="#马尔可夫链的定义" class="headerlink" title="马尔可夫链的定义"></a>马尔可夫链的定义</h2><p>一个随机变量的序列$\lbrace X_n \rbrace_{n\in \mathbb{N}_0}$，有相对应的的状态空间$S= \lbrace s_1,s_2,… \rbrace $，叫做马尔可夫链，当:</p>
+<p>$$P(X_n=s_n|X_{n-1}=s_{n-1},…,X_0=s_0)=P(X_n=s_n|X_{n-1}=s_{n-1})$$<center>$\forall n\in \mathbb{N},s_0,…,s_n\in S $ 有 $P(X_{n-1}=s_{n-1},…,X_0=s_0)&gt;0$</center></p>
+<p>$P(X_n=y|X_{n-1}=x)$就是<strong>转移概率</strong>（transition probabilty / Übergangswahrscheinlichkeiten），这个式子表示的是在第$n$步时（也就是在时间点$n$）从状态$x$转移到状态$y$的概率。</p>
+<h3 id="齐次性（homogeneous-homogen）"><a href="#齐次性（homogeneous-homogen）" class="headerlink" title="齐次性（homogeneous / homogen）"></a>齐次性（homogeneous / homogen）</h3><p>$$P(X_n=y|X_{n-1}=x)=P(X_m=y|X_{m-1}=x)$$<center>$\forall m,n\in \mathbb{N},x,y\in S $ 有 $P(X_{n-1}=x),P(X_{m-1}=x)&gt;0$</center></p>
+<p>从上面式子定义我们可以知道，马尔可夫链的转移概率是与时间（$n$）无关的，不随时间的变化而变化的。</p>
+<h3 id="转移概率矩阵（transition-matrix-Ubergangsmatrix）"><a href="#转移概率矩阵（transition-matrix-Ubergangsmatrix）" class="headerlink" title="转移概率矩阵（transition matrix / Übergangsmatrix）"></a>转移概率矩阵（transition matrix / Übergangsmatrix）</h3><p>如果状态空间$S$是有限的（endlich），则有 $S= \lbrace 1,…,r \rbrace$ 或者 $S= \lbrace 0,…,r \rbrace$。<br>如果状态空间$S$是无限的（unendlich），则有 $S=\mathbb{N}$ 或者 （ $\mathbb{N}_0$ 或  $\mathbb{Z}$）。</p>
+<font color="red">其实我还是有点疑惑，状态空间的有限与否对于解题时会产生什么影响</font>
+
+<p>对于所有的转移概率$P(X_n=j|X_{n-1}=i)=p_{ij}$，都有$i,j\in S$。</p>
+<p><font color="red">这表示，其前一个状态是$i$，下一个状态是$j$，$p_{ij}$的写法是从左到右，而且，矩阵里，一行代表一个时间点的各状态的概率部分，因为状态都是随机独立的，所以一行的概率总和为1，下面会说到。</font><br>则我们可以得到转移概率矩阵（这是矩阵的状态空间是无限的，只是在这里。）：</p>
+<p>$$\Pi =\begin{pmatrix}<br>p_{11} &amp; p_{12} &amp; p_{13} &amp; \cdots  \\<br>p_{21} &amp; p_{22} &amp; p_{23} &amp; \cdots  \\<br>\vdots  &amp; \vdots  &amp; \vdots  &amp; \ddots<br>\end{pmatrix}=(p_{ij})_{i,j \in S}$$</p>
+<p>转移概率矩阵都是随机矩阵，这表示，其满足：</p>
+<center>$P_{i,j}\geq 0, \sum_{j \in S}^{}p_{ij}=1$&nbsp;&nbsp;&nbsp;$\forall i,j \in S$</center>
+
+<h3 id="随机向量（stochastic-vector-stochastischer-Vektor）"><a href="#随机向量（stochastic-vector-stochastischer-Vektor）" class="headerlink" title="随机向量（stochastic vector / stochastischer Vektor）"></a>随机向量（stochastic vector / stochastischer Vektor）</h3><p>我们可以通过<strong>随机向量</strong>来表示$X_n$的各状态概率部分。$$\mathbf{p}(n)=(p_i(n))_{i \in S}=(p_1(n),p_2(n),…)=(P(X_n=s_1),P(X_n=s_2),…)$$这个公式的含义就如上面红字所说，是在时间点$n$时各状态各自的概率分布组成的一个向量。</p>
+<p>$\mathbf{p}(0)=(p_i(0))_{i \in S}=(P(X_0=i)) _{i \in S}$叫做马尔可夫链的<strong>初始分布</strong>（initial distribution / Anfangsverteilung）</p>
+<h3 id="随机向量和随机矩阵的乘法"><a href="#随机向量和随机矩阵的乘法" class="headerlink" title="随机向量和随机矩阵的乘法"></a>随机向量和随机矩阵的乘法</h3><p>有随机矩阵$\mathbf{\Pi} =(p_{ij})_{i,j \in S}$ 和 $\mathbf{\Phi } =( q _{ij}) _{i,j \in S}$。<br>有随机向量$\mathbf{p}=(p _{ij}) _{i \in S}$<br>则有：</p>
+<center>$(\mathbf{p \Pi }) _j=\sum _{l \in S}^{ }p_l p _{lj}$&nbsp;&nbsp;&nbsp;$j \in S$</center><br><center>$(\mathbf{p \Phi }) _{ij}=\sum _{l \in S}^{ }p _{il} p _{lj}$&nbsp;&nbsp;&nbsp;$i,j \in S$</center>
+
+<p>需要注意的是：<br>1.如果$\left | S \right |&lt;\infty $，也就是说状态空间是有限的，则存在随机向量和随机矩阵的乘法法则，也就是说上面的两条公式成立。<br>2.如果$\left | S \right |=\infty $也就是说状态空间是无限的，<font color="red">（so konvergieren obige Reihen）这句话的意思不太理解，以上的公式收敛？</font><br>3.$\mathbf{p \Pi }$是一个随机向量，而$\mathbf{p \Phi }$是一个随机矩阵。</p>
+<blockquote>
+<p>如果是出题的话，题目中是一个齐次的马尔可夫链有着初始分布$\mathbf{p}(0)$和转移概率矩阵$\mathbf{\Pi}$的话，可能会问：</p>
+<ol>
+<li>在时间点$n$的状态分布$X_n$（Verteilung von $X_n$, dem Zustand zum Zeitpunkt $n$）</li>
+<li>$(X_k,…,X_n)$的整体的分布，其中$k \leq n$（gemeinsame Verteilung von $(X_k,…,X_n), k \leq n$）</li>
+<li>高阶的转移概率$P(X_n=j|X_0=i)$（Übergangswahrscheinlichkeiten höherer Stufe $P(X_n=j|X_0=i)$）</li>
+</ol>
+</blockquote>
+<h3 id="齐次的马尔可夫链的分布（Verteilungen-bei-homogenen-Markov-Ketten）"><a href="#齐次的马尔可夫链的分布（Verteilungen-bei-homogenen-Markov-Ketten）" class="headerlink" title="齐次的马尔可夫链的分布（Verteilungen bei homogenen Markov-Ketten）"></a>齐次的马尔可夫链的分布（Verteilungen bei homogenen Markov-Ketten）</h3><p>$p_{ij}^{(n)}=P(X_n=j|X_0=i)$,&nbsp;$i,j\in S$, &nbsp;$n\in \mathbb{N}$ 表示第$n$步的转移概率。<br>则我们可以有以下公式<br>（1）告诉大家怎么计算时间点$n$时状态的概率分布。<br>$$\mathbf{p}(n)=\mathbf{p}(n-1)\mathbf{\Pi}=\mathbf{p}(n-2)\mathbf{\Pi}^2=\cdots =\mathbf{p}(0)\mathbf{\Pi}^n$$</p>
+<p>（2）告诉大家怎么求这条路径（$i_k,…,i_n$）的概率，也就是$(X_k,…,X_n)$的整体的分布（上面提到的）。从状态$i_k$经过多次的转移之后，到达状态$i_n$的这条路径，其整体分布的概率是初始状态的概率（也就是在$k$步的状态$i_k$的概率分布）乘以每次转移的概率。最后连乘得到最终的结果。<br><img src="/images/pro33b.png" alt=""></p>
+<center>$P(X_k=i_k,…,X_n=i_n)=p_{i_k}^{(n)}\prod_{j=k+1}^{n}p_{i_{(j-1)}i_j}$&nbsp;&nbsp;&nbsp;$\forall i_k,…,i_n \in S$</center>
+
+<blockquote>
+<p>一般来说，写在第$n$步的状态$i _k$的概率部分时，我们有2种表示方法，一种就是像上面一样，$p _{i_k}^{(n)}$，而另一种是$p _{i _k}(k)$ 。</p>
+</blockquote>
+<p>（3）从状态$i$到状态$j$的$n$步转移概率可以通过求$n$阶的转移矩阵得到，其中$n$步转移矩阵中的$(i,j)$项（$(i,j)$-te Eintrag）即为所求。</p>
+<center>$p_{ij}^{(n)}=(\mathbf{\Pi}^n)_{ij}$ &nbsp;&nbsp;&nbsp;$\forall i,j \in S, n \in \mathbb{N}$</center>
+
+<p>（4）查普曼-科尔莫戈罗夫等式（Chapman-Kolmogorov-Gleichung）<br>这个公式主要说明，一次大的状态转移可以分成两次状态转移的合成。<br>$$p_{ij}^{(n+m)}=\sum _{l \in S} p _{il}^{(n)}p _{lj}^{(m)}$$</p>
+<h3 id="稳定不变（收敛性？）"><a href="#稳定不变（收敛性？）" class="headerlink" title="稳定不变（收敛性？）"></a>稳定不变（收敛性？）</h3><p>一个随机向量$\mathbf{p}$想要稳定（stationary / stationär），必须要满足：<br>$$\mathbf{p \Pi=p}$$值得注意的是：如果$\left | S \right |&lt;\infty $，也就是状态空间是有限的，$\mathbf{p \Pi=p}$相当于：$$\mathbf{(I-\Pi’)p’=0}$$这说明这是一个齐次线性方程组（ein homogenes lineares Gleichungssystem）,</p>
+<p>我得在这里解释一下Grenzverteilung。</p>
+<p>这里有一个问题：</p>
+<blockquote>
+<p>Existiert stets eine stationäre Verteilung und Grenzverteilung, insbesondere unabhängig von der Anfangsverteilung?</p>
+</blockquote>
+<p>为了解答这个问题，我们将马尔可夫链分成三类，但是首先需要引入一个概念：</p>
+<h4 id="第一次状态回归的期望值（expected-return-time-der-Erwartungswert-der-ersten-Ruckkehrzeit）"><a href="#第一次状态回归的期望值（expected-return-time-der-Erwartungswert-der-ersten-Ruckkehrzeit）" class="headerlink" title="第一次状态回归的期望值（expected return time / der Erwartungswert der ersten Rückkehrzeit）"></a>第一次状态回归的期望值（expected return time / der Erwartungswert der ersten Rückkehrzeit）</h4><p>首先$i \in S, m \in \mathbb{N}_0$ 有 $ P(X_m=i)&gt;0$：<br>$$f _{ii}^{(n)}=P(X _{m+n}=i,X _{m+n-1}\neq i,…,X _{m+1}\neq i|X_m=i),n \in \mathbb{N}$$<br>$f _{ii}^{(n)}$是一个概率，指的是，从状态$i$开始，在经历$n$步转移之后，第一次重新回到这个状态$i$的概率。由于齐次性，所以$f _{ii}^{(n)}$与$m$没有关系。<br>$$\mu _i=\sum _{n=1}^{\infty }nf _{ii}^{(n)}$$<br>上面式子的$\mu _i$就是这次第一次状态回归的<strong>期望值</strong>。下面的马尔可夫链的分类就是通过这个期望值进行的。<br>（1）当$\sum _{n=1}^{\infty }f _{ii}^{(n)}=1$时，这个状态$i$具有重现性（recurrent, persistent / rekurrent）。<font color="red">不要讲这个式子和期望值那个式子看错了，那个求和中有$n$。</font><br>（2）其他情况，$\sum _{n=1}^{\infty }f _{ii}^{(n)}&lt;1$时，状态$i$具有瞬时性。<br>在判定为情况（1）之后，还要可以继续细分：<br>（a）当这个具有重现性的状态$i$满足$\mu _i&lt; \infty $，则称之为（positive recurrent, non-null-recurrent / positiv-rekurrent）。<br>（b）当这个状态$i$的期望值$\mu _i= \infty $时，则称之为（null-recurrent / null rekurrent）。<br>对于一个irreduzibel的马尔可夫链来说，所有状态都可以分成recurrent和transient两种特点。</p>
+<blockquote>
+<p>irreduzibel bedeutet: dass man von jedem Zustand aus jeden anderen Zustand mit positiver Wahrscheinlichkeit in endlich vielen Schritten erreichen kann.<br>我也不知道该怎么用中文描述这个性质，人们可以从任意一个状态，经过有限多步转移<font color="red">（有着正转移概率的）</font>之后到达任意一个其他的状态。</p>
+</blockquote>
+<p><strong>总结：也就是说一个马尔可夫链的状态可以分成三种类型，transient, positive recurrent和null recurrent。</strong></p>
+<p>对于irreduzible的马尔可夫链，我们有以下定理：<br>（1）所有状态$i \in S$是transient，有：</p>
+<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}&lt;\infty $ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>（2）所有状态$i \in S$是null recurrent，有：</p>
+<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}=\infty, \lim_{n\rightarrow \infty }p_{ij}^{(n)}=0$ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>（3）所有状态$i \in S$是positive recurrent，有：</p>
+<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}=\infty, \limsup_{n\rightarrow \infty }p_{ij}^{(n)}&gt;0$ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>循环的马尔可夫链会干扰收敛性（Konvergenz），可以看书Bsp3.5a。</p>
+<p><strong>也就是说上面这里到稳定那里为止，都是关于马尔可夫链收敛性的问题吗？</strong></p>
+<h3 id="非周期性"><a href="#非周期性" class="headerlink" title="非周期性"></a>非周期性</h3><p>状态$i$的周期（period / Period）定义为：<br>$$d(i)=ggT \lbrace n \in \mathbb{N} | p_{ii}^{(n)}&gt;0 \rbrace$$<br>其中，$ p_{ii}^{(n)}=P(X _n=i|X _0=i)$。<br>如果 $\mathbf{\Pi}$是不可约（irreduzibel）的，所有的状态在同一个周期内有：<br>$$d(i)=d$$如果$d=1$的话，我们可以说 $\mathbf{\Pi}$是非周期的（aperiodic / aperiodisch）,直观来说，所有步长可能的<strong>最大公约数</strong>为1的时候，说明这个不可约的转移概率是非周期的。</p>
+<p><strong>周期性与否，都是在不可约这个前提下进行的，如果转移概率矩阵并不是不可约的，那就没必要判断是否周期。而非周期性是构成遍历的马尔可夫链的必要条件。</strong></p>
+<h3 id="定理（关于什么的？）"><a href="#定理（关于什么的？）" class="headerlink" title="定理（关于什么的？）"></a>定理（关于什么的？）</h3><p>$\lbrace X_n \rbrace _n \in \mathbb{N}_0$是一个有不可约转移概率矩阵$\mathbf{\Pi}$的齐次的马尔可夫链。</p>
+<p>（1）存在一个稳定不变的分布$\mathbf{p^{\ast}}$，当所有$i \in S$是positive recurrent时，$\mathbf{p^{\ast}}$是唯一确定的，而且对于所有满足$i \in S$的状态有：<br>$$p_i^{\ast}=\frac{1}{\mu_i}$$</p>
+<p>（2）$\mathbf{\Pi}$满足不可约和非周期这两个条件，则存在$\lim_{n\rightarrow \infty } p_{ij}^{(n)}$对于所有$i,j \in S$。<br>&nbsp;&nbsp;&nbsp;&nbsp;（a）马尔可夫链transient或者null recurrent，对于所有$i,j \in S$有：<br>$$\lim_{n\rightarrow \infty } p_{ij}^{(n)}=0$$&nbsp;&nbsp;&nbsp;&nbsp;（b）马尔可夫链positive recurrent，对于所有$i,j \in S$有：<br>$$\lim_{n\rightarrow \infty } p_{ij}^{(n)}=\frac{1}{\mu_i}&gt;0$$  $\mathbf{p^{\ast}}=\left ( \frac{1}{\mu_i} \right )_ {i \in S}$是唯一确定的稳定不变的分布，而且：<br>$$\lim_{n\rightarrow \infty }\mathbf{p}(n)=\lim_{n\rightarrow \infty }\mathbf{p}(0)\mathbf{\Pi}^n=\mathbf{p^{\ast}}$$与初始分布$\mathbf{p}(0)$（Anfangsverteilung）无关。</p>
+<h3 id="global-balance-equations（globale-Gleichgewichtsgleichungen）"><a href="#global-balance-equations（globale-Gleichgewichtsgleichungen）" class="headerlink" title="global balance equations（globale Gleichgewichtsgleichungen）"></a>global balance equations（globale Gleichgewichtsgleichungen）</h3><p>为了确定一个稳定的分布，我们需要在随机向量的集合（die Menge der stochastische Vektoren）中解决$\mathbf{p=p \Pi}$这个式子。<br>$$p_j=\sum _{i \in S}p_i p _{ij}, j \in S$$<br>这个式子叫全局平衡等式，如果这个式子存在解的话，就会得出上面的定理3.12的结论。平稳分布描述在稳定状态（steady state, equilibrium / Gleichgewicht）的系统，这意味着状态的分布随着时间的推进并不会发生改变。</p>
+<blockquote>
+<p>完全看不懂这个式子：莫非这个式子指的是，左边的$p_j$是指从其他所有状态所有流入状态$j$的概率，右边的式子就是求和，求出左边，如果是平稳分布的话，这个式子应该是有一个不变的值的。</p>
+</blockquote>
+<p><img src="/images/def312b.jpg" alt=""></p>
+<blockquote>
+<p>摘自维基百科<br>Steady-state analysis and limiting distributions<br>如果马尔可夫链满足齐次性，这个过程将会被一个单独的，与时间无关的转移概率矩阵$\mathbf{\Pi}$来表示。<br>如果向量$\mathbf{p}$满足：<br>（1） $0\leq p_j\leq 1$<br>（2）$\sum _{j \in S}p_j=1$<br>（3）$p_j=\sum _{i \in S}p_i p _{ij}$<br>则我们称这个向量$\mathbf{p}$为平稳分布（stationary distribution, or invariant measure）。<br>一个不可约的马尔可夫链有正平稳分布（也就是说向量中的概率都大于0），而且其中所有的状态都是positive recurrent。在这种情况下，$\mathbf{p}$是唯一的，且与期望值（expected return time）相关：$$p_j=\frac{C}{\mu _i}$$<br>其中$C$是一个标准化的常数，进一步，如果这个马尔可夫链是不可约和非周期的，则它有一个极限分布（limiting distribution），对于所有的状态$i$和$j$。<br>$$\lim _{n\rightarrow \infty } p _{ij}^{(n)}=\frac{C}{\mu _i}$$<br><strong>我们注意到这里没有对初始分布进行假设，马尔可夫链收敛到平稳分布与初始分布没有关系。</strong>这样我们可以把$p _j$叫做马尔可夫链的均衡分布（equilibrium distribution）<br>接下来的好像是书本没有的：如果这条链有多于1的closed communicating class，那么他的平稳分布就不是唯一的，每个closed communicating class会有其自己独立的唯一的平稳分布$p _i$，</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-「词源」南"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -949,6 +1073,18 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
           <li class="clearfix">
 
             
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/11/13/FourierTransform/">Spectral Transfomations</a></h6>
+              <span>十一月 13, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
               <div class="widget-entry-thumbnail">
                 <a href="/2018/11/12/lovefish/" title=""><img width="50" height="50" src="../images/gaomu.jpg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
@@ -1012,21 +1148,6 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2018/11/09/圣地巡礼/" title=""><img width="50" height="50" src="images/12334.jpeg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/11/09/圣地巡礼/">带你进入点兔的小镇</a></h6>
-              <span>十一月 9, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1036,7 +1157,7 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACG/">ACG</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACG/">ACG</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -1046,7 +1167,7 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACG/">ACG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PokemonGo/">PokemonGo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RWTH/">RWTH</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-image-processing/">digital image processing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interpolation/">interpolation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中文/">中文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同音词/">同音词</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/圣地巡礼/">圣地巡礼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字母/">字母</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/德语/">德语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行/">旅行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汉语/">汉语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/词源/">词源</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿拉伯语/">阿拉伯语</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACG/">ACG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PokemonGo/">PokemonGo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RWTH/">RWTH</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-image-processing/">digital image processing</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-speech-processing/">digital speech processing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interpolation/">interpolation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/systemtheries-2/">systemtheries 2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中文/">中文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同音词/">同音词</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/圣地巡礼/">圣地巡礼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字母/">字母</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/德语/">德语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行/">旅行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汉语/">汉语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/词源/">词源</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿拉伯语/">阿拉伯语</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1056,7 +1177,7 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/PokemonGo/" style="font-size: 10px;">PokemonGo</a> <a href="/tags/RWTH/" style="font-size: 10px;">RWTH</a> <a href="/tags/digital-image-processing/" style="font-size: 10px;">digital image processing</a> <a href="/tags/interpolation/" style="font-size: 10px;">interpolation</a> <a href="/tags/中文/" style="font-size: 10px;">中文</a> <a href="/tags/同音词/" style="font-size: 10px;">同音词</a> <a href="/tags/圣地巡礼/" style="font-size: 10px;">圣地巡礼</a> <a href="/tags/字母/" style="font-size: 10px;">字母</a> <a href="/tags/德语/" style="font-size: 10px;">德语</a> <a href="/tags/旅行/" style="font-size: 10px;">旅行</a> <a href="/tags/日语/" style="font-size: 20px;">日语</a> <a href="/tags/汉语/" style="font-size: 10px;">汉语</a> <a href="/tags/英语/" style="font-size: 15px;">英语</a> <a href="/tags/词源/" style="font-size: 20px;">词源</a> <a href="/tags/阿拉伯语/" style="font-size: 10px;">阿拉伯语</a>
+      <a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/PokemonGo/" style="font-size: 10px;">PokemonGo</a> <a href="/tags/RWTH/" style="font-size: 15px;">RWTH</a> <a href="/tags/digital-image-processing/" style="font-size: 15px;">digital image processing</a> <a href="/tags/digital-speech-processing/" style="font-size: 10px;">digital speech processing</a> <a href="/tags/interpolation/" style="font-size: 10px;">interpolation</a> <a href="/tags/systemtheries-2/" style="font-size: 10px;">systemtheries 2</a> <a href="/tags/中文/" style="font-size: 10px;">中文</a> <a href="/tags/同音词/" style="font-size: 10px;">同音词</a> <a href="/tags/圣地巡礼/" style="font-size: 10px;">圣地巡礼</a> <a href="/tags/字母/" style="font-size: 10px;">字母</a> <a href="/tags/德语/" style="font-size: 10px;">德语</a> <a href="/tags/旅行/" style="font-size: 10px;">旅行</a> <a href="/tags/日语/" style="font-size: 20px;">日语</a> <a href="/tags/汉语/" style="font-size: 10px;">汉语</a> <a href="/tags/英语/" style="font-size: 15px;">英语</a> <a href="/tags/词源/" style="font-size: 20px;">词源</a> <a href="/tags/阿拉伯语/" style="font-size: 10px;">阿拉伯语</a>
     </div>
   </div>
 
@@ -1066,7 +1187,7 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
