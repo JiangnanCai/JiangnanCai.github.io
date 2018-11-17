@@ -16,23 +16,23 @@
   <title>spectral transfomations | Caijiangnan no Bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="digital image processingdigital speech processingsystemtheries 2RWTH" />
+  <meta name="keywords" content="digital image processingRWTHdigital speech processingsystemtheries 2" />
   
   
   
   
-  <meta name="description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
-<meta name="keywords" content="digital image processing,digital speech processing,systemtheries 2,RWTH">
+  <meta name="description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 schematic image processing system system and signal processing">
+<meta name="keywords" content="digital image processing,RWTH,digital speech processing,systemtheries 2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spectral Transfomations">
 <meta property="og:url" content="http://yoursite.com/2018/11/13/FourierTransform/index.html">
 <meta property="og:site_name" content="Caijiangnan no Bolg">
-<meta property="og:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
+<meta property="og:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 schematic image processing system system and signal processing">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-17T15:44:41.274Z">
+<meta property="og:updated_time" content="2018-11-17T18:42:56.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spectral Transfomations">
-<meta name="twitter:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。 schematic image processing system system and signal processing Linear time invariant system ( 1D )1D signal2D signal ( Bivariate">
+<meta name="twitter:description" content="不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。 schematic image processing system system and signal processing">
   
     <link rel="alternate" href="/atom.xml" title="Caijiangnan no Bolg" type="application/atom+xml">
   
@@ -195,9 +195,9 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <p>不管是在图像处理还是在语音处理中，傅立叶变换，z变换这种基础知识都是必不可缺的。</p>
-<p>从系统的角度入手倒是不错，将系统的部分进行细分，然后分章节。</p>
 <p>schematic image processing system</p>
 <p>system and signal processing</p>
+<a id="more"></a>
 <h1 id="Linear-time-invariant-system-1D"><a href="#Linear-time-invariant-system-1D" class="headerlink" title="Linear time invariant system ( 1D )"></a>Linear time invariant system ( 1D )</h1><p>1D signal<br>2D signal ( Bivariate signals ) -&gt; Bivariate cosine waves -&gt; Complex-valued sine wave</p>
 <h2 id="Transmisson-over-LSI-system"><a href="#Transmisson-over-LSI-system" class="headerlink" title="Transmisson over LSI-system"></a>Transmisson over LSI-system</h2><h1 id="Dirac-Impulse"><a href="#Dirac-Impulse" class="headerlink" title="Dirac Impulse"></a>Dirac Impulse</h1><h2 id="Spectrum-of-2D-dirac-impluse"><a href="#Spectrum-of-2D-dirac-impluse" class="headerlink" title="Spectrum of 2D dirac impluse"></a>Spectrum of 2D dirac impluse</h2><h1 id="Rect-Function"><a href="#Rect-Function" class="headerlink" title="Rect Function"></a>Rect Function</h1><h2 id="Spectrum-of-2D-rect-function"><a href="#Spectrum-of-2D-rect-function" class="headerlink" title="Spectrum of 2D rect function"></a>Spectrum of 2D rect function</h2><h1 id="Fourier-Transform"><a href="#Fourier-Transform" class="headerlink" title="Fourier Transform"></a>Fourier Transform</h1><h2 id="Fourier-Transform-of-Continuous-Signals"><a href="#Fourier-Transform-of-Continuous-Signals" class="headerlink" title="Fourier Transform of Continuous Signals"></a>Fourier Transform of Continuous Signals</h2><h3 id="1D-Fourier-Transform"><a href="#1D-Fourier-Transform" class="headerlink" title="1D Fourier Transform"></a>1D Fourier Transform</h3><h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><h3 id="2D-Fourier-Transform"><a href="#2D-Fourier-Transform" class="headerlink" title="2D Fourier Transform"></a>2D Fourier Transform</h3><h4 id="Separability-of-2D-Fourier-Transform"><a href="#Separability-of-2D-Fourier-Transform" class="headerlink" title="Separability of 2D Fourier Transform"></a>Separability of 2D Fourier Transform</h4><h4 id="Symmetry-of-2D-Fourier-Transform"><a href="#Symmetry-of-2D-Fourier-Transform" class="headerlink" title="Symmetry of 2D Fourier Transform"></a>Symmetry of 2D Fourier Transform</h4><h4 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h4><p>我们需要探究图像在经过了这系列变化之后，频谱图会发生什么改变？</p>
 <h5 id="Duality-theorem"><a href="#Duality-theorem" class="headerlink" title="Duality theorem"></a>Duality theorem</h5><h5 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h5><h5 id="Scale-change-theorem"><a href="#Scale-change-theorem" class="headerlink" title="Scale change theorem"></a>Scale change theorem</h5><h5 id="Linear-transfer"><a href="#Linear-transfer" class="headerlink" title="Linear transfer"></a>Linear transfer</h5><h5 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h5><h5 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h5><h2 id="Fourier-Transfrom-of-Discrete-Signals"><a href="#Fourier-Transfrom-of-Discrete-Signals" class="headerlink" title="Fourier Transfrom of Discrete Signals"></a>Fourier Transfrom of Discrete Signals</h2><p>the signals we need to process: sampled signals<br>Glossary:<br>complex phasor<br>normalize radian frequency</p>
@@ -212,7 +212,7 @@ var themeMenus = {};
 <h2 id="two-sided-z-transform-（双边Z变换）"><a href="#two-sided-z-transform-（双边Z变换）" class="headerlink" title="two-sided z-transform （双边Z变换）"></a>two-sided z-transform （双边Z变换）</h2><p>两种方式实现双边z变换</p>
 <ol>
 <li>By complex variable<br>$$Z\left { x(k) \right }=X(z)=\sum_{k=-\infty }^{\infty }x(k)z^{-k}$$</li>
-<li>By using laplace transform of a sampled signal<br>$$\int_{-\infty }^{\infty}x_s(t)e^{-st}dt=\sum_{k=-\infty }^{\infty }x_a(kT)\int_{-\infty}^{\infty}\delta <em>a(t-kT)e^{-st}dt=\sum</em>{k=-\infty }^{\infty }x(k)e^{-sTk}$$<h2 id="the-relation-between-z-and-fourier-transform"><a href="#the-relation-between-z-and-fourier-transform" class="headerlink" title="the relation between z- and fourier transform"></a>the relation between z- and fourier transform</h2></li>
+<li>By using laplace transform of a sampled signal<br>$$\int_{-\infty }^{\infty}x_s(t)e^{-st}dt=\sum_{k=-\infty }^{\infty }x_a(kT)\int_{-\infty}^{\infty}\delta _ a(t-kT)e^{-st}dt=\sum_{k=-\infty }^{\infty }x(k)e^{-sTk}$$<h2 id="the-relation-between-z-and-fourier-transform"><a href="#the-relation-between-z-and-fourier-transform" class="headerlink" title="the relation between z- and fourier transform"></a>the relation between z- and fourier transform</h2></li>
 </ol>
 <h2 id="region-of-convergence-ROC"><a href="#region-of-convergence-ROC" class="headerlink" title="region of convergence ( ROC )"></a>region of convergence ( ROC )</h2><h2 id="Properties-2"><a href="#Properties-2" class="headerlink" title="Properties"></a>Properties</h2><h1 id="Magnitude-and-Phase-spectrum"><a href="#Magnitude-and-Phase-spectrum" class="headerlink" title="Magnitude and Phase spectrum"></a>Magnitude and Phase spectrum</h1><h1 id="Sampling-of-2D-signal"><a href="#Sampling-of-2D-signal" class="headerlink" title="Sampling of 2D signal"></a>Sampling of 2D signal</h1><h1 id="Discrete-space-Fourier-transform"><a href="#Discrete-space-Fourier-transform" class="headerlink" title="Discrete-space Fourier transform"></a>Discrete-space Fourier transform</h1><h2 id="2D-spectral-analysis-using-DFT"><a href="#2D-spectral-analysis-using-DFT" class="headerlink" title="2D spectral analysis using DFT"></a>2D spectral analysis using DFT</h2>
       
