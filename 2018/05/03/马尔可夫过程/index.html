@@ -26,10 +26,12 @@
 <meta property="og:site_name" content="Caijiangnan no Bolg">
 <meta property="og:description" content="markov process">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-13T18:56:10.394Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/03/images/timg-4.jpeg">
+<meta property="og:updated_time" content="2018-11-18T11:52:36.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「KAL」马尔可夫过程">
 <meta name="twitter:description" content="markov process">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/03/images/timg-4.jpeg">
   
     <link rel="alternate" href="/atom.xml" title="Caijiangnan no Bolg" type="application/atom+xml">
   
@@ -166,6 +168,16 @@ var themeMenus = {};
           <section id="main" style="float:none;"><article id="post-马尔可夫过程" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="/../images/timg-4.jpeg" rel="gallery_cjomtovjh000za2b54ldf0735">
+        <img src="/../images/timg-4.jpeg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
     
       <header class="article-header">
         
@@ -193,6 +205,7 @@ var themeMenus = {};
       
         <h1 id="马尔可夫过程（markov-process-Markov-Prozesse）"><a href="#马尔可夫过程（markov-process-Markov-Prozesse）" class="headerlink" title="马尔可夫过程（markov process / Markov-Prozesse）"></a>马尔可夫过程（markov process / Markov-Prozesse）</h1><p>马尔可夫过程相当于连续时间下的马尔可夫链。</p>
 <h2 id="马尔可夫过程定义"><a href="#马尔可夫过程定义" class="headerlink" title="马尔可夫过程定义"></a>马尔可夫过程定义</h2><p>一个随机变量的集合$\lbrace X_t \rbrace _{t \geq 0}$，有着状态空间$S$，状态空间是<strong>至多可数</strong>的（at most countable / höchstens abzählbar），当对于所有的$0 \leq t_0 \leq t_1\leq t_2\leq …$，都有$\lbrace X _{t_n} \rbrace _{n \in \mathbb{N}_0}$是马尔可夫链，则说明这个随机变量的集合是<strong>马尔可夫过程</strong>。<br>马尔可夫链是齐次的，马尔可夫过程也就是齐次的。</p>
+<a id="more"></a>
 <p>对于马尔可夫过程来说比较重要的变量：<br>$$T_0=0, T _{n+1}=\textrm{inf} \lbrace t&gt;T_n|X_t\neq X _{T_n} \rbrace, n \in \mathbb{N}_0$$<br>叫做跳跃时间（transition, jump times / Sprungzeiten）。<br>$$S_0=0, S_n=T_n-T _{n-1},n\in \mathbb{N}$$<br>叫做停留时间（sojourn, dwell times / Verweilzeiten）。</p>
 <p>接下来我们主要讨论齐次的马尔可夫过程。<br>转移概率（transition probabilities / Übergangswahrscheinlichkeiten）:</p>
 <p><center>$p_{ij}(t)=P(X_{s+t}=j|X_s=i),t\geq 0,$ &nbsp; &nbsp; &nbsp; $i,j\in S$</center><br>转移概率矩阵（transition matrices / Übergangsmatrizen）:<br>$$\mathbf{\Pi}(t)=(p_{ij}(t))_{i,j\in S}$$<br>$\mathbf{\Pi}(0)$是一个单位矩阵（Einheitsmatrix）<br>$$\mathbf{\Pi}(0)=\mathbf{I}=(\delta _{ij}) _{i,j \in S}$$ $$\delta _{ij}=\left\{\begin{matrix}<br>1 &amp; i=j \\<br>0 &amp; i\neq j<br>\end{matrix}\right.$$</p>

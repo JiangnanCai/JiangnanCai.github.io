@@ -185,61 +185,19 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="马尔可夫过程（markov-process-Markov-Prozesse）"><a href="#马尔可夫过程（markov-process-Markov-Prozesse）" class="headerlink" title="马尔可夫过程（markov process / Markov-Prozesse）"></a>马尔可夫过程（markov process / Markov-Prozesse）</h1><p>马尔可夫过程相当于连续时间下的马尔可夫链。</p>
-<h2 id="马尔可夫过程定义"><a href="#马尔可夫过程定义" class="headerlink" title="马尔可夫过程定义"></a>马尔可夫过程定义</h2><p>一个随机变量的集合$\lbrace X_t \rbrace _{t \geq 0}$，有着状态空间$S$，状态空间是<strong>至多可数</strong>的（at most countable / höchstens abzählbar），当对于所有的$0 \leq t_0 \leq t_1\leq t_2\leq …$，都有$\lbrace X _{t_n} \rbrace _{n \in \mathbb{N}_0}$是马尔可夫链，则说明这个随机变量的集合是<strong>马尔可夫过程</strong>。<br>马尔可夫链是齐次的，马尔可夫过程也就是齐次的。</p>
-<p>对于马尔可夫过程来说比较重要的变量：<br>$$T_0=0, T _{n+1}=\textrm{inf} \lbrace t&gt;T_n|X_t\neq X _{T_n} \rbrace, n \in \mathbb{N}_0$$<br>叫做跳跃时间（transition, jump times / Sprungzeiten）。<br>$$S_0=0, S_n=T_n-T _{n-1},n\in \mathbb{N}$$<br>叫做停留时间（sojourn, dwell times / Verweilzeiten）。</p>
-<p>接下来我们主要讨论齐次的马尔可夫过程。<br>转移概率（transition probabilities / Übergangswahrscheinlichkeiten）:</p>
-<p><center>$p_{ij}(t)=P(X_{s+t}=j|X_s=i),t\geq 0,$ &nbsp; &nbsp; &nbsp; $i,j\in S$</center><br>转移概率矩阵（transition matrices / Übergangsmatrizen）:<br>$$\mathbf{\Pi}(t)=(p_{ij}(t))_{i,j\in S}$$<br>$\mathbf{\Pi}(0)$是一个单位矩阵（Einheitsmatrix）<br>$$\mathbf{\Pi}(0)=\mathbf{I}=(\delta _{ij}) _{i,j \in S}$$ $$\delta _{ij}=\left\{\begin{matrix}<br>1 &amp; i=j \\<br>0 &amp; i\neq j<br>\end{matrix}\right.$$</p>
-<p>$X_t$的分布：</p>
-<p>$$\mathbf{p}(t)=(p_i(t))_{i \in S}=(P(X_t=s_1),P(X_t=s_2),…)$$<br>就和马尔可夫链一样，对于所有的$t \geq 0$，都有：<br>$$\mathbf{p}(t)=\mathbf{p}(0)\mathbf{\Pi}(t)$$<br>将Chapman-Kolmogorov公式带入，我们还可以得到：<br>$$\mathbf{\Pi}(s+t)=\mathbf{\Pi}(s)\cdot \mathbf{\Pi}(t)$$</p>
-<p>虽然上面的转移概率矩阵能够将系统的转移过程完整的展示出来，但是这也需要消耗很大的空间，我们可以通过一种更简单的方式。</p>
-<h2 id="Ubergangsraten"><a href="#Ubergangsraten" class="headerlink" title="Übergangsraten"></a>Übergangsraten</h2><p>我们假设，对于所有的$i,j \in S$有$\lim_{t\rightarrow 0+}p_{i,j}(t)=\delta _{ij}$成立，换成矩阵的形式，我们就有：<br>$$\lim _{t\rightarrow 0+}\mathbf{\Pi }(t)=\mathbf{I}$$这意味着，$\mathbf{\Pi }$构成了一个（<strong>continuous transition semigroup / Übergangshalbgruppe</strong>）。</p>
-<p>命题<br>对于所有$i,j \in S$存在：</p>
-<p>$q_{ij}=\lim_{t\rightarrow 0+}\frac{p_{ij}(t)}{t},i\neq j$ &nbsp;和&nbsp; $q_{ii}=\lim_{t\rightarrow 0+}\frac{p_{ii}(t)-1}{t}$<br>矩阵：<br>$$\mathbf{Q}=(q_{ij}) _{i,j\in S}=\lim _{t\rightarrow 0+}\frac{1}{t}(\mathbf{\Pi}(t)-\mathbf{I})=\frac{d}{dt}\mathbf{\Pi}(t)| _{t=0+}$$<br>这叫做（infinitesimal generator, transition rate matrix / Intensitätsmatrix(IM)）</p>
-<p>$$q_ij\geq 0, i=j, q_ii\leq 0,\sum _{j \in S}q _{ij}=0, \forall i \in S$$</p>
-<p>$q_{ij},i\neq j$ ist die Rate, mit der das System Zustand $i$ verlässt und nach Zustand $j$ springt.<br>$-q_{ii}$ ist die Gesamtrate, mit der Zustand $i$ verlassen wird.</p>
-<p>在chapman-Kolmogorov公式的帮助下，对所有的$t,s \geq 0$有：<br>$$\mathbf{\Pi }(t+s)-\mathbf{\Pi }=\mathbf{\Pi }(t)\left [ \mathbf{\Pi}(s)-\mathbf{\Pi}(0) \right ]$$</p>
-<p>$$\lim_{s\rightarrow 0}\frac{1}{s}\left [ \mathbf{\Pi}(t+s)-\mathbf{\Pi}(t) \right ]=\mathbf{\Pi}(t)\lim_{s\rightarrow 0+}\frac{1}{s}\left [ \mathbf{\Pi}(s)-\mathbf{I} \right ]$$从上面我们知道：<br>$$\mathbf{Q}=\lim_{s\rightarrow 0+}\frac{1}{s}\left [ \mathbf{\Pi}(s)-\mathbf{I} \right ]$$所以，我们可以得到（Kolmogorov forward differential equation / Kolmogorov-Vorwärts-Differentialgleichung）：<br>$$\frac{d}{dt}\mathbf{\Pi}(t)=\mathbf{\Pi}(t)\mathbf{Q},t\geq  0$$同样，我们也可推导出（Kolmogorov backward differential equation / Kolmogorov-Ruckwärts-Differentialgleichung）：<br>$$\frac{d}{dt}\mathbf{\Pi}(t)=\mathbf{Q}\mathbf{\Pi}(t),t\geq  0$$<br><strong>我们可以通过Intensitätsmatrix$\mathbf{Q}$来确定转移概率矩阵$\mathbf{\Pi}(t)$。</strong></p>
-<p>定义3.15<br>一个有转移概率矩阵$\mathbf{\Pi}(t)$的马尔可夫过程是不可约的（irreducible / irreduzibel），当对于所有的$i,j \in S,i \neq j$，存在$t&gt;0$有$p_{ij}(t)&gt;0$。<br>说明：状态$j$可以从任意状态$i$抵达。</p>
-<p>定义3.16<br>当</p>
-<p><center>$\mathbf{p \Pi }(t)=\mathbf{p}   $ &nbsp; &nbsp; &nbsp;$\forall t\geq 0$</center><br>这个随机向量$\mathbf{p}$叫做这个带有转移概率矩阵$\mathbf{\Pi}(t)$的马尔可夫过程的平稳分布。</p>
-<h3 id="平稳分布的计算"><a href="#平稳分布的计算" class="headerlink" title="平稳分布的计算"></a>平稳分布的计算</h3><p>对于所有的$t\geq 0$有$\mathbf{p}(t)=\mathbf{p}(0)\mathbf{\Pi}(t)$，通过komponentenweise Differentiation，写成向量形式：<br>$$\frac{d}{dt}\mathbf{p}(t)=\mathbf{p}(0)\frac{d}{dt}\mathbf{\Pi}(t)=\mathbf{p}(0)\mathbf{\Pi}(t)\mathbf{Q}=\mathbf{p}(t)\mathbf{Q}$$<br>$\mathbf{p}(0)=\mathbf{p}^\ast $平稳，与$t$无关，我们可以得到$\frac{d}{dt}\mathbf{p}(t)=0$，也就是说，$\mathbf{p}(t)$成为了一个不变的参数，所以微分为0，所以是$\mathbf{p}^\ast $平稳分布。<br>$$\mathbf{0=p^\ast Q}$$所以为了求出和确定平稳分布，我们需要解这个齐次线性的方程$\mathbf{0=p^\ast Q}$：</p>
-<p><center>$\sum _{i \in S}p_i^\ast q _{ij}=0$ &nbsp;&nbsp;&nbsp;$\forall j \in S$</center><br>从\mathbf{Q}的定义中，我们知道$-q _{jj}=\sum _{i\neq j}q _{ji}$：</p>
-<p><center>$\sum _{i\neq j}p_i^\ast q _{ij}=p_j^\ast \sum _{l\neq j}q _{jl}$&nbsp;&nbsp;&nbsp;$\forall j \in S$</center><br>等式的左边表示的是gesamt Fluss（W’keit mal Rate），表示的是从其他状态流入状态$j$。<br>等式的右边表示的是gesamt Fluss（W’keit mal Rate），表示的是状态$j$流出到其他别的状态。</p>
-<p>定理3.17<br>对于不可约（irreducible）齐次（homogenous）有转移概率矩阵$\mathbf{\Pi}(t)$的马尔可夫过程。<br>a ）存在一个平稳分布$\mathbf{p}^\ast $</p>
-<ol>
-<li>$\mathbf{p}^\ast $是唯一的</li>
-<li>$\lim_{t\rightarrow \infty }p_{ij}(t)=p_j^\ast ,\forall i,j \in S$</li>
-<li>$\lim_{t\rightarrow \infty }\mathbf{p}(t)=\mathbf{p}(0)\lim_{t\rightarrow \infty }\mathbf{\Pi}(t)=\mathbf{p^\ast }$与初始分布没有关系。</li>
-<li>$\mathbf{p^\ast }$是$\mathbf{0=p^\ast Q}$在随机向量的集合里的唯一解。</li>
-</ol>
-<p>b ）不存在平稳分布，对于所有$i,j \in S$有$\lim_{t\rightarrow \infty }p_{ij}(t)=0$。<br><strong>这里老师给的例子完全看不懂啥意思</strong></p>
-<h2 id="马尔可夫过程的结构特征"><a href="#马尔可夫过程的结构特征" class="headerlink" title="马尔可夫过程的结构特征"></a>马尔可夫过程的结构特征</h2><p>在这个小章节里，主要回答了2个问题：</p>
-<ol>
-<li>每个状态停留时间（Verweilszeit）是什么分布？</li>
-<li>马尔可夫过程是怎么转换状态的？</li>
-</ol>
-<p>我们观察一个马尔可夫过程$X_t,t\geq 0$，有Intensitätsmatrix$\mathbf{Q}=(q_{ij})_{i,j\in S}$：</p>
-<p>$p _{ij}=\left\{\begin{matrix}<br>\frac{q _{ij}}{-q _{ii}} &amp; i\neq j\\<br>0 &amp; i=j<br>\end{matrix}\right.$, falls $-q _{ii}&gt;0$</p>
-<p>$p _{ij}=\left\{\begin{matrix}<br>0 &amp; i\neq j\\<br>1 &amp; i=j<br>\end{matrix}\right.$, falls $-q _{ii}=0$</p>
-<p>让$Y_n=X_{T_n}$（这是在变化之后紧接着的状态），$S_n, n \in \mathbb{N}$是停留时间（Verweilzeit）。</p>
-<p>定理3.18<br>$\lbrace X_n \rbrace _{t \geq 0}$是一个带有Intensitätsmatrix$\mathbf{Q}$的齐次马尔可夫过程</p>
-<ol>
-<li>$\lbrace Y_n \rbrace _n \in \mathbb{N} _0$是一个带有转移概率矩阵$\mathbf{\Pi}=(p _{ij}) _{i,j \in S}$的齐次的马尔可夫链。</li>
-<li>$\lbrace S_n \rbrace _n \in \mathbb{N}$在$\lbrace Y _n=i _n \rbrace$条件下随机独立：<br>$$P^{S _{n+1}|Y_n=i}=\mathrm{Exp}(-q _{ii})$$</li>
-</ol>
-<p>$\lbrace Y_n \rbrace _n \in \mathbb{N} _0$叫（embedded Markov chain / eingebettete Markov-Kette）。</p>
-<p>跳跃时间（Sprungzeiten）的状态的次序构成了一条马尔可夫链，状态的停留时间（Verweilzeiten）符合指数分布。当我们知道了状态，停留时间随机独立。相反，我们也可以根据这个特点对马尔可夫过程进行生成和模拟：<br><strong>随机独立意味着什么？和为一？</strong></p>
-<ol>
-<li>通过分布$\mathbf{p}_0$产生初始状态$i_0$。</li>
-</ol>
-<p>迭代：</p>
-<ol>
-<li>产生一个$\mathrm{Exp}(-q _{ii})$分布的随机时间（die Verweilzeit im Zustand $i_n$）</li>
-<li>根据分布$(p _{i_nj}) _{j\in S}$产生一个新的状态$i _{n+1}$，然后接着回到第一步</li>
-</ol>
-<p>马尔可夫过程的随机行为能够通过Intensitätsmatrix$\mathbf{Q}$来描述。</p>
+        
+          <div class="entry-thumbnail">
+            <a href="/2018/05/03/马尔可夫过程/"><img width="250" height="175" src="../images/timg-4.jpeg" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
+          </div>
+          <div class="entry-summary">
+          马尔可夫过程（markov process / Markov-Prozesse）马尔可夫过程相当于连续时间下的马尔可夫链。
+马尔可夫过程定义一个随机变量的集合$\lbrace X_t \rbrace _{t \geq 0}$，有着状态空间$S$，状态空间是至多可数的（at most countable / höchstens abzählbar），当对于所有的$0 \leq t_0 \leq...
 
+        
+          <p class="article-more-link">
+            <a href="/2018/05/03/马尔可夫过程/#more">阅读全文</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -355,85 +313,18 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><p>首先我们来了解一下马尔可夫链相关的基本概念。<br><strong>马尔可夫链</strong>（Markov chain / Markov Ketten）一条由<strong>状态空间</strong>（Zustandraum）组成的链子，每个状态之间可以相互转换，从一个状态向另一个状态转换的过程是一个随机过程，下一个时间点的状态的概率分布只由当前状态决定。与之前的状态都没有关系。</p>
-<p>首先我们有一个离散的时间（Diskrete Zeitpunkte）：$$n=1,2,…$$和状态空间$$S= \lbrace s_1,s_2,… \rbrace $$其中，状态空间的含义就是，举个例子，例如我作为一个人，在日常活动中有吃饭，睡觉，学习，看动画这几种状态，则这些活动都被包含在状态空间里面，例如，$s_1$对应吃饭，$s_2$对应睡觉，$s_3$对应学习，$s_4$对应看动画。</p>
-<p>则在确定的时间点$n$，系统的状态是一个离散随机变量：$$\lbrace X_{n}= s \rbrace $$其中：$$n\in \mathbb{N}_0 , s\in S$$</p>
-<p><strong>以上就是马尔可夫链比较重要的三个点，状态空间$S$，时间$n$，和时间$n$的状态$\lbrace X_n \rbrace_{n\in \mathbb{N}_0}$。</strong></p>
-<h2 id="随机漫步（Random-walk-Irrfahrt）"><a href="#随机漫步（Random-walk-Irrfahrt）" class="headerlink" title="随机漫步（Random walk / Irrfahrt）"></a>随机漫步（Random walk / Irrfahrt）</h2><p>这里我先把教材抄上来，因为我也不知道怎么用中文说比较好。</p>
-<h3 id="Irrfahrt-auf-mathbb-Z"><a href="#Irrfahrt-auf-mathbb-Z" class="headerlink" title="Irrfahrt auf $\mathbb{Z}$"></a>Irrfahrt auf $\mathbb{Z}$</h3><p>这是在整个整数域随机漫步，所以有负数也有正数。从下面的图可以看出来，状态有负数。<br>Ein Teilchen bewegt sich zu getakteten mit Wahrscheinlichkeit $l$ nach links, $r$ nach rechts, $v$ gar nicht, wobei $l+r+v=1$. Veranschaulichung:<br><img src="/images/bsp31.png" alt=""></p>
-<h3 id="Irrfahrt-auf-mathbb-N-0"><a href="#Irrfahrt-auf-mathbb-N-0" class="headerlink" title="Irrfahrt auf $\mathbb{N}_0$"></a>Irrfahrt auf $\mathbb{N}_0$</h3><p>这是在非负整数域的随机漫步。<br>Jedoch mit $S=\mathbb{N}_0$. Zusätzlich hängen die Übergangswahrscheinlichkeiten vom Zustand ab.<br><img src="/images/bsp31b.png" alt=""><br>在这里我们将这个看成是一个时间离散的等待系统，并对其进行观察，其$S=\mathbb{N}_0$，说明状态空间等于非负整数域，状态空间表示的是系统的请求数。<br>$X_n$描述的是系统在时间点$n$的请求数：</p>
-<p>$$P(X_{n+1}=j|X_n=i)=\left\{\begin{matrix}<br>r_i &amp; j=i+1 \\<br>l_i &amp; j=i-1 \\<br>v_i &amp; j=i<br>\end{matrix}\right.$$</p>
-<h3 id="Irrfahrt-auf-mathbb-N-0-2"><a href="#Irrfahrt-auf-mathbb-N-0-2" class="headerlink" title="Irrfahrt auf $\mathbb{N}_0^2$"></a>Irrfahrt auf $\mathbb{N}_0^2$</h3><p>多维（mehrdimensional）<br>每一个箭头都代表转移概率</p>
-<h2 id="马尔可夫链的定义"><a href="#马尔可夫链的定义" class="headerlink" title="马尔可夫链的定义"></a>马尔可夫链的定义</h2><p>一个随机变量的序列$\lbrace X_n \rbrace_{n\in \mathbb{N}_0}$，有相对应的的状态空间$S= \lbrace s_1,s_2,… \rbrace $，叫做马尔可夫链，当:</p>
-<p>$$P(X_n=s_n|X_{n-1}=s_{n-1},…,X_0=s_0)=P(X_n=s_n|X_{n-1}=s_{n-1})$$<center>$\forall n\in \mathbb{N},s_0,…,s_n\in S $ 有 $P(X_{n-1}=s_{n-1},…,X_0=s_0)&gt;0$</center></p>
-<p>$P(X_n=y|X_{n-1}=x)$就是<strong>转移概率</strong>（transition probabilty / Übergangswahrscheinlichkeiten），这个式子表示的是在第$n$步时（也就是在时间点$n$）从状态$x$转移到状态$y$的概率。</p>
-<h3 id="齐次性（homogeneous-homogen）"><a href="#齐次性（homogeneous-homogen）" class="headerlink" title="齐次性（homogeneous / homogen）"></a>齐次性（homogeneous / homogen）</h3><p>$$P(X_n=y|X_{n-1}=x)=P(X_m=y|X_{m-1}=x)$$<center>$\forall m,n\in \mathbb{N},x,y\in S $ 有 $P(X_{n-1}=x),P(X_{m-1}=x)&gt;0$</center></p>
-<p>从上面式子定义我们可以知道，马尔可夫链的转移概率是与时间（$n$）无关的，不随时间的变化而变化的。</p>
-<h3 id="转移概率矩阵（transition-matrix-Ubergangsmatrix）"><a href="#转移概率矩阵（transition-matrix-Ubergangsmatrix）" class="headerlink" title="转移概率矩阵（transition matrix / Übergangsmatrix）"></a>转移概率矩阵（transition matrix / Übergangsmatrix）</h3><p>如果状态空间$S$是有限的（endlich），则有 $S= \lbrace 1,…,r \rbrace$ 或者 $S= \lbrace 0,…,r \rbrace$。<br>如果状态空间$S$是无限的（unendlich），则有 $S=\mathbb{N}$ 或者 （ $\mathbb{N}_0$ 或  $\mathbb{Z}$）。</p>
-<font color="red">其实我还是有点疑惑，状态空间的有限与否对于解题时会产生什么影响</font>
+        
+          <div class="entry-thumbnail">
+            <a href="/2018/05/01/「KAL」马尔可夫链/"><img width="250" height="175" src="../images/timg-4.jpeg" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
+          </div>
+          <div class="entry-summary">
+          马尔可夫链首先我们来了解一下马尔可夫链相关的基本概念。马尔可夫链（Markov chain / Markov Ketten）一条由状态空间（Zustandraum）组成的链子，每个状态之间可以相互转换，从一个状态向另一个状态转换的过程是一个随机过程，下一个时间点的状态的概率分布只由当前状态决定。与之前的状态都没有关系。首先我们有一个离散的时间（Diskrete Zeitpunkte）：$$n...
 
-<p>对于所有的转移概率$P(X_n=j|X_{n-1}=i)=p_{ij}$，都有$i,j\in S$。</p>
-<p><font color="red">这表示，其前一个状态是$i$，下一个状态是$j$，$p_{ij}$的写法是从左到右，而且，矩阵里，一行代表一个时间点的各状态的概率部分，因为状态都是随机独立的，所以一行的概率总和为1，下面会说到。</font><br>则我们可以得到转移概率矩阵（这是矩阵的状态空间是无限的，只是在这里。）：</p>
-<p>$$\Pi =\begin{pmatrix}<br>p_{11} &amp; p_{12} &amp; p_{13} &amp; \cdots  \\<br>p_{21} &amp; p_{22} &amp; p_{23} &amp; \cdots  \\<br>\vdots  &amp; \vdots  &amp; \vdots  &amp; \ddots<br>\end{pmatrix}=(p_{ij})_{i,j \in S}$$</p>
-<p>转移概率矩阵都是随机矩阵，这表示，其满足：</p>
-<center>$P_{i,j}\geq 0, \sum_{j \in S}^{}p_{ij}=1$&nbsp;&nbsp;&nbsp;$\forall i,j \in S$</center>
-
-<h3 id="随机向量（stochastic-vector-stochastischer-Vektor）"><a href="#随机向量（stochastic-vector-stochastischer-Vektor）" class="headerlink" title="随机向量（stochastic vector / stochastischer Vektor）"></a>随机向量（stochastic vector / stochastischer Vektor）</h3><p>我们可以通过<strong>随机向量</strong>来表示$X_n$的各状态概率部分。$$\mathbf{p}(n)=(p_i(n))_{i \in S}=(p_1(n),p_2(n),…)=(P(X_n=s_1),P(X_n=s_2),…)$$这个公式的含义就如上面红字所说，是在时间点$n$时各状态各自的概率分布组成的一个向量。</p>
-<p>$\mathbf{p}(0)=(p_i(0))_{i \in S}=(P(X_0=i)) _{i \in S}$叫做马尔可夫链的<strong>初始分布</strong>（initial distribution / Anfangsverteilung）</p>
-<h3 id="随机向量和随机矩阵的乘法"><a href="#随机向量和随机矩阵的乘法" class="headerlink" title="随机向量和随机矩阵的乘法"></a>随机向量和随机矩阵的乘法</h3><p>有随机矩阵$\mathbf{\Pi} =(p_{ij})_{i,j \in S}$ 和 $\mathbf{\Phi } =( q _{ij}) _{i,j \in S}$。<br>有随机向量$\mathbf{p}=(p _{ij}) _{i \in S}$<br>则有：</p>
-<center>$(\mathbf{p \Pi }) _j=\sum _{l \in S}^{ }p_l p _{lj}$&nbsp;&nbsp;&nbsp;$j \in S$</center><br><center>$(\mathbf{p \Phi }) _{ij}=\sum _{l \in S}^{ }p _{il} p _{lj}$&nbsp;&nbsp;&nbsp;$i,j \in S$</center>
-
-<p>需要注意的是：<br>1.如果$\left | S \right |&lt;\infty $，也就是说状态空间是有限的，则存在随机向量和随机矩阵的乘法法则，也就是说上面的两条公式成立。<br>2.如果$\left | S \right |=\infty $也就是说状态空间是无限的，<font color="red">（so konvergieren obige Reihen）这句话的意思不太理解，以上的公式收敛？</font><br>3.$\mathbf{p \Pi }$是一个随机向量，而$\mathbf{p \Phi }$是一个随机矩阵。</p>
-<blockquote>
-<p>如果是出题的话，题目中是一个齐次的马尔可夫链有着初始分布$\mathbf{p}(0)$和转移概率矩阵$\mathbf{\Pi}$的话，可能会问：</p>
-<ol>
-<li>在时间点$n$的状态分布$X_n$（Verteilung von $X_n$, dem Zustand zum Zeitpunkt $n$）</li>
-<li>$(X_k,…,X_n)$的整体的分布，其中$k \leq n$（gemeinsame Verteilung von $(X_k,…,X_n), k \leq n$）</li>
-<li>高阶的转移概率$P(X_n=j|X_0=i)$（Übergangswahrscheinlichkeiten höherer Stufe $P(X_n=j|X_0=i)$）</li>
-</ol>
-</blockquote>
-<h3 id="齐次的马尔可夫链的分布（Verteilungen-bei-homogenen-Markov-Ketten）"><a href="#齐次的马尔可夫链的分布（Verteilungen-bei-homogenen-Markov-Ketten）" class="headerlink" title="齐次的马尔可夫链的分布（Verteilungen bei homogenen Markov-Ketten）"></a>齐次的马尔可夫链的分布（Verteilungen bei homogenen Markov-Ketten）</h3><p>$p_{ij}^{(n)}=P(X_n=j|X_0=i)$,&nbsp;$i,j\in S$, &nbsp;$n\in \mathbb{N}$ 表示第$n$步的转移概率。<br>则我们可以有以下公式<br>（1）告诉大家怎么计算时间点$n$时状态的概率分布。<br>$$\mathbf{p}(n)=\mathbf{p}(n-1)\mathbf{\Pi}=\mathbf{p}(n-2)\mathbf{\Pi}^2=\cdots =\mathbf{p}(0)\mathbf{\Pi}^n$$</p>
-<p>（2）告诉大家怎么求这条路径（$i_k,…,i_n$）的概率，也就是$(X_k,…,X_n)$的整体的分布（上面提到的）。从状态$i_k$经过多次的转移之后，到达状态$i_n$的这条路径，其整体分布的概率是初始状态的概率（也就是在$k$步的状态$i_k$的概率分布）乘以每次转移的概率。最后连乘得到最终的结果。<br><img src="/images/pro33b.png" alt=""></p>
-<center>$P(X_k=i_k,…,X_n=i_n)=p_{i_k}^{(n)}\prod_{j=k+1}^{n}p_{i_{(j-1)}i_j}$&nbsp;&nbsp;&nbsp;$\forall i_k,…,i_n \in S$</center>
-
-<blockquote>
-<p>一般来说，写在第$n$步的状态$i _k$的概率部分时，我们有2种表示方法，一种就是像上面一样，$p _{i_k}^{(n)}$，而另一种是$p _{i _k}(k)$ 。</p>
-</blockquote>
-<p>（3）从状态$i$到状态$j$的$n$步转移概率可以通过求$n$阶的转移矩阵得到，其中$n$步转移矩阵中的$(i,j)$项（$(i,j)$-te Eintrag）即为所求。</p>
-<center>$p_{ij}^{(n)}=(\mathbf{\Pi}^n)_{ij}$ &nbsp;&nbsp;&nbsp;$\forall i,j \in S, n \in \mathbb{N}$</center>
-
-<p>（4）查普曼-科尔莫戈罗夫等式（Chapman-Kolmogorov-Gleichung）<br>这个公式主要说明，一次大的状态转移可以分成两次状态转移的合成。<br>$$p_{ij}^{(n+m)}=\sum _{l \in S} p _{il}^{(n)}p _{lj}^{(m)}$$</p>
-<h3 id="稳定不变（收敛性？）"><a href="#稳定不变（收敛性？）" class="headerlink" title="稳定不变（收敛性？）"></a>稳定不变（收敛性？）</h3><p>一个随机向量$\mathbf{p}$想要稳定（stationary / stationär），必须要满足：<br>$$\mathbf{p \Pi=p}$$值得注意的是：如果$\left | S \right |&lt;\infty $，也就是状态空间是有限的，$\mathbf{p \Pi=p}$相当于：$$\mathbf{(I-\Pi’)p’=0}$$这说明这是一个齐次线性方程组（ein homogenes lineares Gleichungssystem）,</p>
-<p>我得在这里解释一下Grenzverteilung。</p>
-<p>这里有一个问题：</p>
-<blockquote>
-<p>Existiert stets eine stationäre Verteilung und Grenzverteilung, insbesondere unabhängig von der Anfangsverteilung?</p>
-</blockquote>
-<p>为了解答这个问题，我们将马尔可夫链分成三类，但是首先需要引入一个概念：</p>
-<h4 id="第一次状态回归的期望值（expected-return-time-der-Erwartungswert-der-ersten-Ruckkehrzeit）"><a href="#第一次状态回归的期望值（expected-return-time-der-Erwartungswert-der-ersten-Ruckkehrzeit）" class="headerlink" title="第一次状态回归的期望值（expected return time / der Erwartungswert der ersten Rückkehrzeit）"></a>第一次状态回归的期望值（expected return time / der Erwartungswert der ersten Rückkehrzeit）</h4><p>首先$i \in S, m \in \mathbb{N}_0$ 有 $ P(X_m=i)&gt;0$：<br>$$f _{ii}^{(n)}=P(X _{m+n}=i,X _{m+n-1}\neq i,…,X _{m+1}\neq i|X_m=i),n \in \mathbb{N}$$<br>$f _{ii}^{(n)}$是一个概率，指的是，从状态$i$开始，在经历$n$步转移之后，第一次重新回到这个状态$i$的概率。由于齐次性，所以$f _{ii}^{(n)}$与$m$没有关系。<br>$$\mu _i=\sum _{n=1}^{\infty }nf _{ii}^{(n)}$$<br>上面式子的$\mu _i$就是这次第一次状态回归的<strong>期望值</strong>。下面的马尔可夫链的分类就是通过这个期望值进行的。<br>（1）当$\sum _{n=1}^{\infty }f _{ii}^{(n)}=1$时，这个状态$i$具有重现性（recurrent, persistent / rekurrent）。<font color="red">不要讲这个式子和期望值那个式子看错了，那个求和中有$n$。</font><br>（2）其他情况，$\sum _{n=1}^{\infty }f _{ii}^{(n)}&lt;1$时，状态$i$具有瞬时性。<br>在判定为情况（1）之后，还要可以继续细分：<br>（a）当这个具有重现性的状态$i$满足$\mu _i&lt; \infty $，则称之为（positive recurrent, non-null-recurrent / positiv-rekurrent）。<br>（b）当这个状态$i$的期望值$\mu _i= \infty $时，则称之为（null-recurrent / null rekurrent）。<br>对于一个irreduzibel的马尔可夫链来说，所有状态都可以分成recurrent和transient两种特点。</p>
-<blockquote>
-<p>irreduzibel bedeutet: dass man von jedem Zustand aus jeden anderen Zustand mit positiver Wahrscheinlichkeit in endlich vielen Schritten erreichen kann.<br>我也不知道该怎么用中文描述这个性质，人们可以从任意一个状态，经过有限多步转移<font color="red">（有着正转移概率的）</font>之后到达任意一个其他的状态。</p>
-</blockquote>
-<p><strong>总结：也就是说一个马尔可夫链的状态可以分成三种类型，transient, positive recurrent和null recurrent。</strong></p>
-<p>对于irreduzible的马尔可夫链，我们有以下定理：<br>（1）所有状态$i \in S$是transient，有：</p>
-<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}&lt;\infty $ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>（2）所有状态$i \in S$是null recurrent，有：</p>
-<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}=\infty, \lim_{n\rightarrow \infty }p_{ij}^{(n)}=0$ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>（3）所有状态$i \in S$是positive recurrent，有：</p>
-<p><center>$\sum_{n=1}^{\infty }p_{ij}^{(n)}=\infty, \limsup_{n\rightarrow \infty }p_{ij}^{(n)}&gt;0$ &nbsp;&nbsp;&nbsp; $\forall i,j \in S$</center><br>循环的马尔可夫链会干扰收敛性（Konvergenz），可以看书Bsp3.5a。</p>
-<p><strong>也就是说上面这里到稳定那里为止，都是关于马尔可夫链收敛性的问题吗？</strong></p>
-<h3 id="非周期性"><a href="#非周期性" class="headerlink" title="非周期性"></a>非周期性</h3><p>状态$i$的周期（period / Period）定义为：<br>$$d(i)=ggT \lbrace n \in \mathbb{N} | p_{ii}^{(n)}&gt;0 \rbrace$$<br>其中，$ p_{ii}^{(n)}=P(X _n=i|X _0=i)$。<br>如果 $\mathbf{\Pi}$是不可约（irreduzibel）的，所有的状态在同一个周期内有：<br>$$d(i)=d$$如果$d=1$的话，我们可以说 $\mathbf{\Pi}$是非周期的（aperiodic / aperiodisch）,直观来说，所有步长可能的<strong>最大公约数</strong>为1的时候，说明这个不可约的转移概率是非周期的。</p>
-<p><strong>周期性与否，都是在不可约这个前提下进行的，如果转移概率矩阵并不是不可约的，那就没必要判断是否周期。而非周期性是构成遍历的马尔可夫链的必要条件。</strong></p>
-<h3 id="定理（关于什么的？）"><a href="#定理（关于什么的？）" class="headerlink" title="定理（关于什么的？）"></a>定理（关于什么的？）</h3><p>$\lbrace X_n \rbrace _n \in \mathbb{N}_0$是一个有不可约转移概率矩阵$\mathbf{\Pi}$的齐次的马尔可夫链。</p>
-<p>（1）存在一个稳定不变的分布$\mathbf{p^{\ast}}$，当所有$i \in S$是positive recurrent时，$\mathbf{p^{\ast}}$是唯一确定的，而且对于所有满足$i \in S$的状态有：<br>$$p_i^{\ast}=\frac{1}{\mu_i}$$</p>
-<p>（2）$\mathbf{\Pi}$满足不可约和非周期这两个条件，则存在$\lim_{n\rightarrow \infty } p_{ij}^{(n)}$对于所有$i,j \in S$。<br>&nbsp;&nbsp;&nbsp;&nbsp;（a）马尔可夫链transient或者null recurrent，对于所有$i,j \in S$有：<br>$$\lim_{n\rightarrow \infty } p_{ij}^{(n)}=0$$&nbsp;&nbsp;&nbsp;&nbsp;（b）马尔可夫链positive recurrent，对于所有$i,j \in S$有：<br>$$\lim_{n\rightarrow \infty } p_{ij}^{(n)}=\frac{1}{\mu_i}&gt;0$$  $\mathbf{p^{\ast}}=\left ( \frac{1}{\mu_i} \right )_ {i \in S}$是唯一确定的稳定不变的分布，而且：<br>$$\lim_{n\rightarrow \infty }\mathbf{p}(n)=\lim_{n\rightarrow \infty }\mathbf{p}(0)\mathbf{\Pi}^n=\mathbf{p^{\ast}}$$与初始分布$\mathbf{p}(0)$（Anfangsverteilung）无关。</p>
-<h3 id="global-balance-equations（globale-Gleichgewichtsgleichungen）"><a href="#global-balance-equations（globale-Gleichgewichtsgleichungen）" class="headerlink" title="global balance equations（globale Gleichgewichtsgleichungen）"></a>global balance equations（globale Gleichgewichtsgleichungen）</h3><p>为了确定一个稳定的分布，我们需要在随机向量的集合（die Menge der stochastische Vektoren）中解决$\mathbf{p=p \Pi}$这个式子。<br>$$p_j=\sum _{i \in S}p_i p _{ij}, j \in S$$<br>这个式子叫全局平衡等式，如果这个式子存在解的话，就会得出上面的定理3.12的结论。平稳分布描述在稳定状态（steady state, equilibrium / Gleichgewicht）的系统，这意味着状态的分布随着时间的推进并不会发生改变。</p>
-<blockquote>
-<p>完全看不懂这个式子：莫非这个式子指的是，左边的$p_j$是指从其他所有状态所有流入状态$j$的概率，右边的式子就是求和，求出左边，如果是平稳分布的话，这个式子应该是有一个不变的值的。</p>
-</blockquote>
-<p><img src="/images/def312b.jpg" alt=""></p>
-<blockquote>
-<p>摘自维基百科<br>Steady-state analysis and limiting distributions<br>如果马尔可夫链满足齐次性，这个过程将会被一个单独的，与时间无关的转移概率矩阵$\mathbf{\Pi}$来表示。<br>如果向量$\mathbf{p}$满足：<br>（1） $0\leq p_j\leq 1$<br>（2）$\sum _{j \in S}p_j=1$<br>（3）$p_j=\sum _{i \in S}p_i p _{ij}$<br>则我们称这个向量$\mathbf{p}$为平稳分布（stationary distribution, or invariant measure）。<br>一个不可约的马尔可夫链有正平稳分布（也就是说向量中的概率都大于0），而且其中所有的状态都是positive recurrent。在这种情况下，$\mathbf{p}$是唯一的，且与期望值（expected return time）相关：$$p_j=\frac{C}{\mu _i}$$<br>其中$C$是一个标准化的常数，进一步，如果这个马尔可夫链是不可约和非周期的，则它有一个极限分布（limiting distribution），对于所有的状态$i$和$j$。<br>$$\lim _{n\rightarrow \infty } p _{ij}^{(n)}=\frac{C}{\mu _i}$$<br><strong>我们注意到这里没有对初始分布进行假设，马尔可夫链收敛到平稳分布与初始分布没有关系。</strong>这样我们可以把$p _j$叫做马尔可夫链的均衡分布（equilibrium distribution）<br>接下来的好像是书本没有的：如果这条链有多于1的closed communicating class，那么他的平稳分布就不是唯一的，每个closed communicating class会有其自己独立的唯一的平稳分布$p _i$，</p>
-</blockquote>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/05/01/「KAL」马尔可夫链/#more">阅读全文</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -534,502 +425,67 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="4月17日"><a href="#4月17日" class="headerlink" title="4月17日"></a>4月17日</h1><p>学了三个阿拉伯语字母。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ب</td>
-<td style="text-align:center">ـب</td>
-<td style="text-align:center">ـبـ</td>
-<td style="text-align:center">بـ</td>
-<td style="text-align:center">b</td>
-<td style="text-align:center">bā’</td>
-<td style="text-align:center">/b/,/p/</td>
-</tr>
-<tr>
-<td style="text-align:center">ت</td>
-<td style="text-align:center">ـت</td>
-<td style="text-align:center">ـتـ</td>
-<td style="text-align:center">تـ</td>
-<td style="text-align:center">t</td>
-<td style="text-align:center">tā’</td>
-<td style="text-align:center">/t/</td>
-</tr>
-<tr>
-<td style="text-align:center">ث</td>
-<td style="text-align:center">ـث</td>
-<td style="text-align:center">ـثـ</td>
-<td style="text-align:center">ثـ</td>
-<td style="text-align:center">ṯ</td>
-<td style="text-align:center">ṯā’</td>
-<td style="text-align:center">/$\theta$/</td>
-</tr>
-</tbody>
-</table>
-<p>ps. DMG bedeutet Transliteration(转写)</p>
-<h1 id="4月19日"><a href="#4月19日" class="headerlink" title="4月19日"></a>4月19日</h1><p>学了元音和三个新字母和三个单词。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元音</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">转写</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">َ</td>
-<td style="text-align:center">开口符</td>
-<td style="text-align:center">a</td>
-<td style="text-align:center">/a/</td>
-</tr>
-<tr>
-<td style="text-align:center">ِ</td>
-<td style="text-align:center">齐齿符</td>
-<td style="text-align:center">i</td>
-<td style="text-align:center">/i/</td>
-</tr>
-<tr>
-<td style="text-align:center">ُ</td>
-<td style="text-align:center">合口符</td>
-<td style="text-align:center">u</td>
-<td style="text-align:center">/u/</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">a</th>
-<th style="text-align:center">u</th>
-<th style="text-align:center">i</th>
-<th style="text-align:center">null vokal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">بَـ (ba)</td>
-<td style="text-align:center">بُـ (bu)</td>
-<td style="text-align:center">بِـ (bi)</td>
-<td style="text-align:center">ـبْـ</td>
-</tr>
-<tr>
-<td style="text-align:center">ـتَـ (ta)</td>
-<td style="text-align:center">ـتِـ (ti)</td>
-<td style="text-align:center">تُـ (tu)</td>
-<td style="text-align:center">ـتْـ</td>
-</tr>
-<tr>
-<td style="text-align:center">ثَـ (ṯa)</td>
-<td style="text-align:center">ثِـ (ṯi)</td>
-<td style="text-align:center">ـثُ (ṯu)</td>
-<td style="text-align:center">ـثْـ</td>
-</tr>
-</tbody>
-</table>
-<p>有点不确定ṯi是不是这样写的</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ي</td>
-<td style="text-align:center">ـي</td>
-<td style="text-align:center">ـيـ</td>
-<td style="text-align:center">يـ</td>
-<td style="text-align:center">y/ī</td>
-<td style="text-align:center">yā’</td>
-<td style="text-align:center">/j/,/i:/</td>
-</tr>
-<tr>
-<td style="text-align:center">ن</td>
-<td style="text-align:center">ـن</td>
-<td style="text-align:center">ـنـ</td>
-<td style="text-align:center">نـ</td>
-<td style="text-align:center">n</td>
-<td style="text-align:center">nūn</td>
-<td style="text-align:center">/n/</td>
-</tr>
-<tr>
-<td style="text-align:center">و</td>
-<td style="text-align:center">ـو</td>
-<td style="text-align:center">ـو</td>
-<td style="text-align:center">و</td>
-<td style="text-align:center">w/ū</td>
-<td style="text-align:center">wāw</td>
-<td style="text-align:center">/w/,/u:/</td>
-</tr>
-</tbody>
-</table>
-<p>Haus「بَيْت」bayt<br>Mädchen, Tochter「بِنْت」bint<br>Kleid「ثَوْب」ṯawb</p>
-<h1 id="4月24日"><a href="#4月24日" class="headerlink" title="4月24日"></a>4月24日</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ك</td>
-<td style="text-align:center">ـك</td>
-<td style="text-align:center">ـكـ</td>
-<td style="text-align:center">كـ</td>
-<td style="text-align:center">k</td>
-<td style="text-align:center">kāf</td>
-<td style="text-align:center">/k/</td>
-</tr>
-</tbody>
-</table>
-<p>Becher「كُوب」kuwb<br>其中「و」是音节「u」的长音</p>
-<p>Kleid「ثَوْب」ṯawb<br>像上面这个单词，也有「و」,但是是短音，只有跟在「u」后面才会发长音</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ل</td>
-<td style="text-align:center">ـل</td>
-<td style="text-align:center">ـلـ</td>
-<td style="text-align:center">لـ</td>
-<td style="text-align:center">l</td>
-<td style="text-align:center">lām</td>
-<td style="text-align:center">/l/</td>
-</tr>
-</tbody>
-</table>
-<p>Kilogramm「كِيلُو」 kiylu<br>Haus「بَيْت」bayt<br>「ي」是「i」的长音，只有跟在「i」才会发长音</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ا</td>
-<td style="text-align:center">ـا</td>
-<td style="text-align:center">ـا</td>
-<td style="text-align:center">ا</td>
-<td style="text-align:center">ʾ/ā</td>
-<td style="text-align:center">ʾalif</td>
-<td style="text-align:center">/a:/</td>
-</tr>
-</tbody>
-</table>
-<p>Tür「بَاب」baāb<br>「ثَوْب」ṯawb的复数「ثِيَاب」ṯiyaāb<br>「ا」shi是「a」的长音，只有跟在「a」后才会发长音 </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ر</td>
-<td style="text-align:center">ـر</td>
-<td style="text-align:center">ـر</td>
-<td style="text-align:center">ر</td>
-<td style="text-align:center">r</td>
-<td style="text-align:center">rāʾ</td>
-<td style="text-align:center">/r/</td>
-</tr>
-</tbody>
-</table>
-<p>Licht「نُور」nur</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ز</td>
-<td style="text-align:center">ـز</td>
-<td style="text-align:center">ـز</td>
-<td style="text-align:center">ز</td>
-<td style="text-align:center">z</td>
-<td style="text-align:center">zāy</td>
-<td style="text-align:center">/z/</td>
-</tr>
-</tbody>
-</table>
-<p>Öl「زَيْت」zayt</p>
-<h1 id="4月26日"><a href="#4月26日" class="headerlink" title="4月26日"></a>4月26日</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">س</td>
-<td style="text-align:center">ـس</td>
-<td style="text-align:center">ـسـ</td>
-<td style="text-align:center">سـ</td>
-<td style="text-align:center">s</td>
-<td style="text-align:center">sīn</td>
-<td style="text-align:center">/s/</td>
-</tr>
-<tr>
-<td style="text-align:center">ش</td>
-<td style="text-align:center">ـش</td>
-<td style="text-align:center">ـشـ</td>
-<td style="text-align:center">شـ</td>
-<td style="text-align:center">š</td>
-<td style="text-align:center">šīn</td>
-<td style="text-align:center">/ʃ/</td>
-</tr>
-<tr>
-<td style="text-align:center">م</td>
-<td style="text-align:center">ـم</td>
-<td style="text-align:center">ـمـ</td>
-<td style="text-align:center">مـ</td>
-<td style="text-align:center">m</td>
-<td style="text-align:center">mīm</td>
-<td style="text-align:center">/m/</td>
-</tr>
-</tbody>
-</table>
-<h3 id="合字「لا」"><a href="#合字「لا」" class="headerlink" title="合字「لا」"></a>合字「لا」</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ل + ا = لا</td>
-<td style="text-align:center">ـلا</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">lā</td>
-<td style="text-align:center">lām’alif</td>
-<td style="text-align:center">/la:/</td>
-</tr>
-</tbody>
-</table>
-<p>(hallo) salaām سَلَام</p>
-<h3 id="双元音"><a href="#双元音" class="headerlink" title="双元音"></a>双元音</h3><p>(danke) šukran شُكْرًا<br>当「ـً」出现的时候，结尾自动出现「ا」</p>
-<p>只在单词结尾出现的双元音，是一种有着语法含义的结尾。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Akkusativ</th>
-<th style="text-align:center">Genitiv</th>
-<th style="text-align:center">Nominativ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">doppelter Vokal</td>
-<td style="text-align:center">ـًا</td>
-<td style="text-align:center">ـٍ</td>
-<td style="text-align:center">ـُـُ</td>
-</tr>
-</tbody>
-</table>
-<h3 id="「’Alif」和「Hamzah」进行组合"><a href="#「’Alif」和「Hamzah」进行组合" class="headerlink" title="「’Alif」和「Hamzah」进行组合"></a>「’Alif」和「Hamzah」进行组合</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">ا + ء</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">u</th>
-<th style="text-align:center">i</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">أ</td>
-<td style="text-align:center">أَ (‘a)</td>
-<td style="text-align:center">أُ (‘u)</td>
-<td style="text-align:center">إِ (‘i)</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Alphabet</th>
-<th style="text-align:center">Wörter</th>
-<th style="text-align:center">Bedeutungl</th>
-<th style="text-align:center">DMG</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">أَ +نَ + ا</td>
-<td style="text-align:center">أَنَا</td>
-<td style="text-align:center">ich</td>
-<td style="text-align:center">‘anā</td>
-</tr>
-<tr>
-<td style="text-align:center">أَ + نْ + تَ</td>
-<td style="text-align:center">أَنْتَ</td>
-<td style="text-align:center">du (m.)</td>
-<td style="text-align:center">‘anta</td>
-</tr>
-<tr>
-<td style="text-align:center">أَ + نْ + تِ</td>
-<td style="text-align:center">أَنْتِ</td>
-<td style="text-align:center">du (f.)</td>
-<td style="text-align:center">‘anti</td>
-</tr>
-</tbody>
-</table>
-<h1 id="5月3日"><a href="#5月3日" class="headerlink" title="5月3日"></a>5月3日</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">allein</th>
-<th style="text-align:center">Ende</th>
-<th style="text-align:center">Mittel</th>
-<th style="text-align:center">Anfang</th>
-<th style="text-align:center">DMG</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">IPA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ه</td>
-<td style="text-align:center">ـه</td>
-<td style="text-align:center">ـهـ</td>
-<td style="text-align:center">هـ</td>
-<td style="text-align:center">h</td>
-<td style="text-align:center">hā’</td>
-<td style="text-align:center">/h/</td>
-</tr>
-<tr>
-<td style="text-align:center">د</td>
-<td style="text-align:center">ـد</td>
-<td style="text-align:center">ـد</td>
-<td style="text-align:center">د</td>
-<td style="text-align:center">d</td>
-<td style="text-align:center">dāl</td>
-<td style="text-align:center">/d/</td>
-</tr>
-<tr>
-<td style="text-align:center">ذ</td>
-<td style="text-align:center">ـذ</td>
-<td style="text-align:center">ـذ</td>
-<td style="text-align:center">ذ</td>
-<td style="text-align:center">ḏ</td>
-<td style="text-align:center">ḏal</td>
-<td style="text-align:center">/ð/</td>
-</tr>
-<tr>
-<td style="text-align:center">غ</td>
-<td style="text-align:center">ـغ</td>
-<td style="text-align:center">ـغـ</td>
-<td style="text-align:center">غـ</td>
-<td style="text-align:center">ġ</td>
-<td style="text-align:center">ġayn</td>
-<td style="text-align:center">/ɣ/,/g/</td>
-</tr>
-<tr>
-<td style="text-align:center">ع</td>
-<td style="text-align:center">ـع</td>
-<td style="text-align:center">ـعـ</td>
-<td style="text-align:center">عـ</td>
-<td style="text-align:center">‘</td>
-<td style="text-align:center">ʿayn</td>
-<td style="text-align:center">/ʕ/</td>
-</tr>
-<tr>
-<td style="text-align:center">ف</td>
-<td style="text-align:center">ـف</td>
-<td style="text-align:center">ـفـ</td>
-<td style="text-align:center">فـ</td>
-<td style="text-align:center">f</td>
-<td style="text-align:center">fā’</td>
-<td style="text-align:center">/f/,/v/</td>
-</tr>
-<tr>
-<td style="text-align:center">ق</td>
-<td style="text-align:center">ـق</td>
-<td style="text-align:center">ـقـ</td>
-<td style="text-align:center">قـ</td>
-<td style="text-align:center">q</td>
-<td style="text-align:center">qāf</td>
-<td style="text-align:center">/q/</td>
-</tr>
-</tbody>
-</table>
-<p>هُوَ<br>er(huwa)</p>
-<p>هِيَ<br>sie(hiya)/hi.ja/</p>
-<p>دَرَسَ<br>gelernt(darasa)/da.ra.sa/</p>
-<p>ذَهَبَ<br>gehen(ḏahaba)/ða.ha.ba/</p>
-<p>عَيْن<br>Augen(ʿayn)/ʕajn/</p>
-<p>غُرَاب<br>乌鸦(ḡurāb)</p>
-<p>فُنْدُق<br>hotel(funduq)/fun.duq/</p>
+        
 
+          
+            <div class="entry-summary" style="margin-left:0;">
+            4月17日学了三个阿拉伯语字母。|allein|Ende|Mittel|Anfang|DMG|Name|IPA||:-:|:-:|:-:|:-:|:-:|:-:|:-:||ب|ـب|ـبـ|بـ|b|bā’|/b/,/p/||ت|ـت|ـتـ|تـ|t|tā’|/t/||ث|ـث|ـثـ|ثـ|ṯ|ṯā’|/$\theta$/|ps. DMG bedeutet Transliteration(转写)
+4月19日学了元音和三个新字母和三个单词。
+
+
+
+元音
+名字
+转写
+IPA
+
+
+
+
+َ
+开口符
+a
+/a/
+
+
+ِ
+齐齿符
+i
+/i/
+
+
+ُ
+合口符
+u
+/u/
+
+
+
+
+
+
+a
+u
+i
+null vokal
+
+
+
+
+بَـ (ba)
+بُـ (bu)
+بِـ (bi)
+ـبْـ
+
+
+ـت...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2018/04/22/阿拉伯语单词/#more">阅读全文</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -1270,7 +726,10 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
           <li class="clearfix">
 
             
-              <div class="widget-entry-summary" style="margin: 0;">
+              <div class="widget-entry-thumbnail">
+                <a href="/2018/11/13/FourierTransform/" title=""><img width="50" height="50" src="../images/timg-4.jpeg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
+              </div>
+              <div class="widget-entry-summary">
             
 
               <h6 style="margin: 0;"><a href="/2018/11/13/FourierTransform/">Spectral Transfomations</a></h6>
@@ -1297,7 +756,10 @@ From Middle High German Ache, from Old High German Ahha, from Latin aquae (“wa
           <li class="clearfix">
 
             
-              <div class="widget-entry-summary" style="margin: 0;">
+              <div class="widget-entry-thumbnail">
+                <a href="/2018/11/12/Catmull-Rom Interpolation/" title=""><img width="50" height="50" src="../images/timg-4.jpeg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
+              </div>
+              <div class="widget-entry-summary">
             
 
               <h6 style="margin: 0;"><a href="/2018/11/12/Catmull-Rom Interpolation/">Catmull-Rom interpolation</a></h6>
