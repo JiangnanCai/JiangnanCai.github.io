@@ -161,6 +161,74 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-opencvgaussianblur"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/05/18/opencvgaussianblur/">【OpenCV】学习笔记一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/05/18/opencvgaussianblur/" class="article-date">
+	  <time datetime="2019-05-18T11:06:13.000Z" itemprop="datePublished">五月 18, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+
+          
+            <div class="entry-summary" style="margin-left:0;">
+            高斯模糊#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace cv;
+
+void example4(const cv::Mat &amp; image ){
+
+    namedWindow(&quot;Example4-in&quot;,WINDOW_AUTOSIZE);
+    namedWindow(&quot;Example4-out&quot;,WINDOW_AUTOSIZE);
+
+    imshow(&quot;Example5-in&quot;, image);
+
+    Mat out;
+
+    GaussianBlur(image, out, Size(21,21), 3, 3);
+    GaussianBlu...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2019/05/18/opencvgaussianblur/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-newlife"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -731,73 +799,6 @@ Old Deus and Ex...
     
 
   
-    <article id="post-lovefish"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/11/12/lovefish/">【说文解字】高木同学的狗粮</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2018/11/12/lovefish/" class="article-date">
-	  <time datetime="2018-11-12T22:00:11.000Z" itemprop="datePublished">十一月 12, 2018</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2018/11/12/lovefish/"><img width="250" height="175" src="../images/gaomu.jpg" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-           最新这一话，高木同学又给我塞了满满的狗粮🐶
-西片和高木比赛钓鱼，西片喜闻乐见的被吊打了。
-回家的路上，高木有发挥花式撩西片的能力。
-用同音字就撩爆了西片。
-「鯉」与「恋」在日语里面都发「koi」的音。
-唉～青春真好啊！
- 
-
-
-        
-          <p class="article-more-link">
-            <a href="/2018/11/12/lovefish/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/语言/">语言</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACG/">ACG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAP/">JAP</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
 
 
   <nav id="page-nav">
@@ -923,6 +924,18 @@ Old Deus and Ex...
           <li class="clearfix">
 
             
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/05/18/opencvgaussianblur/">【OpenCV】学习笔记一</a></h6>
+              <span>五月 18, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
               <div class="widget-entry-thumbnail">
                 <a href="/2019/05/15/newlife/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psb?/V11h6eOD0owyyr/sb9isAwununNBoegr8gtqIBiw9VlYf1s6pOKRY0J*YU!/r/dAcBAAAAAAAA" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
@@ -986,21 +999,6 @@ Old Deus and Ex...
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2019/04/11/bayern/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psb?/V11h6eOD1eYtbG/Fuc*fQ9lWevoX*a5S8YNrrvmaHWuvKlFtxTpA1eVf0A!/r/dLkAAAAAAAAA" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/04/11/bayern/">【旅行】巴伐利亚游记</a></h6>
-              <span>四月 11, 2019</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1040,7 +1038,7 @@ Old Deus and Ex...
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">一月 2010</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">一月 2010</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
