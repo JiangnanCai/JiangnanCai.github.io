@@ -13,19 +13,34 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Caijiangnan no Bolg</title>
+  <title>【笔记】 | Caijiangnan no Bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Caijiangnan no Bolg">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Introducation语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？ 首先想到的是Joint Probability这个模型，我们可以通过joint probabilities来描述序列数据之间的独立性。  但是上面的公式的复杂度，会随着时间的增加而增加。所以我们需要对此进行简化，所以我们想">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】">
+<meta property="og:url" content="http://yoursite.com/2019/05/28/MLforSP/index.html">
 <meta property="og:site_name" content="Caijiangnan no Bolg">
+<meta property="og:description" content="Introducation语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？ 首先想到的是Joint Probability这个模型，我们可以通过joint probabilities来描述序列数据之间的独立性。  但是上面的公式的复杂度，会随着时间的增加而增加。所以我们需要对此进行简化，所以我们想">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;p&space;\left(\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;\boldsymbol{x}&space;_&space;{&space;N&space;}&space;\right)&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;4&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}_&space;{&space;2&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;\right)&space;\cdot\cdots&space;\\&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol{x}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\end{aligned}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;\boldsymbol{x}&space;_&space;{&space;N&space;}&space;\right)&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol{x}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\\&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\\&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;4&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;\right)&space;\cdot&space;\ldots&space;\end{aligned}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;=&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;N&space;}&space;,&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;N&space;}&space;\right)&space;=&space;p&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;1&space;}&space;\right)&space;\left[&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\right]&space;\prod&space;_&space;{&space;n&space;=&space;1&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?A&space;_&space;{&space;j&space;k&space;}&space;\equiv&space;P&space;\left(&space;z&space;_&space;{&space;n&space;k&space;}&space;=&space;1&space;|&space;z&space;_&space;{&space;n&space;-&space;1&space;,&space;j&space;}&space;=&space;1&space;\right)&space;\text&space;{&space;and&space;}&space;0&space;\leq&space;A&space;_&space;{&space;j&space;k&space;}&space;\leq&space;1&space;;&space;\sum&space;_&space;{&space;k&space;=&space;1&space;}&space;^&space;{&space;K&space;}&space;A&space;_&space;{&space;j&space;k&space;}&space;\stackrel&space;{&space;A&space;}&space;{&space;=&space;}&space;1">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?P&space;\left(&space;\boldsymbol{z}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{z}&space;_&space;{&space;n&space;-&space;1&space;}&space;;&space;\boldsymbol{A}&space;\right)&space;=&space;\prod&space;_&space;{&space;k&space;=&space;1&space;}&space;^&space;{&space;K&space;}&space;\prod&space;_&space;{&space;j&space;=&space;1&space;}&space;^&space;{&space;K&space;}&space;A&space;_&space;{&space;j&space;k&space;}&space;^&space;{&space;\boldsymbol{z}&space;_&space;{&space;n&space;-&space;1&space;,&space;j&space;}&space;\boldsymbol{z}&space;_&space;{&space;n&space;k&space;}&space;}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?\pi&space;_&space;{&space;k&space;}&space;\equiv&space;P&space;\left(&space;z&space;_&space;{&space;1&space;k&space;}&space;=&space;1&space;\right)&space;;&space;P&space;\left(&space;\boldsymbol{z}&space;_&space;{&space;1&space;}&space;|&space;\boldsymbol{\pi}&space;\right)&space;=&space;\prod&space;_&space;{&space;k&space;=&space;1&space;}&space;^&space;{&space;K&space;}&space;\pi&space;_&space;{&space;k&space;}&space;^&space;{&space;z&space;_&space;{&space;1&space;k&space;}&space;}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;;&space;\boldsymbol&space;{&space;\phi&space;}&space;\right)&space;=&space;\prod&space;_&space;{&space;k&space;=&space;1&space;}&space;^&space;{&space;K&space;}&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;;&space;\phi&space;_&space;{&space;k&space;}&space;\right)&space;^&space;{&space;z&space;_&space;{&space;n&space;k&space;}&space;}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?p&space;(&space;\boldsymbol{X},&space;\boldsymbol{Z}&space;;&space;\boldsymbol{\theta}&space;)&space;=&space;\underbrace&space;{&space;\underbrace&space;{&space;P&space;\left(&space;\boldsymbol{z}&space;_&space;{&space;1&space;}&space;;&space;\boldsymbol{\pi}&space;\right)&space;}&space;_&space;{&space;\text&space;{&space;state&space;}&space;n=1}&space;\left[&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;P&space;\left(&space;\boldsymbol{z}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{z}&space;_&space;{&space;n&space;-&space;1&space;}&space;;&space;\boldsymbol{A}&space;\right)&space;\right]}_&space;{&space;\text&space;{&space;prob.&space;sequence&space;of&space;states&space;}&space;}&space;\underbrace&space;{&space;\prod&space;_&space;{&space;m&space;=&space;1&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;m&space;}&space;|&space;\boldsymbol{z}&space;_&space;{&space;m&space;}&space;;&space;\boldsymbol{\phi}&space;\right)&space;}&space;_&space;{&space;\text&space;{&space;observation&space;}&space;}">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?p&space;(&space;\boldsymbol{X}&space;,&space;\boldsymbol{Z}&space;,&space;\boldsymbol{\theta}&space;)&space;\stackrel&space;{&space;\sum&space;_&space;{&space;\boldsymbol{z}&space;}&space;}&space;{&space;\longrightarrow&space;}&space;p&space;(&space;\boldsymbol{X}&space;;&space;\boldsymbol{\theta}&space;)&space;\stackrel&space;{&space;\arg&space;\max&space;}&space;{&space;\longrightarrow&space;}&space;\boldsymbol{\theta}&space;^&space;{&space;o&space;p&space;t&space;}">
+<meta property="og:updated_time" content="2019-05-28T14:01:19.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Caijiangnan no Bolg">
+<meta name="twitter:title" content="【笔记】">
+<meta name="twitter:description" content="Introducation语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？ 首先想到的是Joint Probability这个模型，我们可以通过joint probabilities来描述序列数据之间的独立性。  但是上面的公式的复杂度，会随着时间的增加而增加。所以我们需要对此进行简化，所以我们想">
+<meta name="twitter:image" content="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;p&space;\left(\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;\boldsymbol{x}&space;_&space;{&space;N&space;}&space;\right)&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;4&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}_&space;{&space;2&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;\right)&space;\cdot\cdots&space;\\&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol{x}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\end{aligned}">
   
     <link rel="alternate" href="/atom.xml" title="Caijiangnan no Bolg" type="application/atom+xml">
   
@@ -83,7 +98,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -159,17 +174,15 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main">
-  
-    <article id="post-MLforSP"  class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-MLforSP" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/28/MLforSP/">【笔记】</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【笔记】
     </h1>
   
 
@@ -182,6 +195,10 @@ var themeMenus = {};
 	</a>
 
       
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
     </div>
     <div class="article-entry" itemprop="articleBody">
       
@@ -246,835 +263,58 @@ var themeMenus = {};
       
             
       
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/27/19japantag/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">杜塞日本节</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 <!-- Table of Contents -->
 
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
     
-
-  
-    <article id="post-19japantag"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introducation"><span class="nav-number">1.</span> <span class="nav-text">Introducation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hidden-Markov-Model-HMM"><span class="nav-number">2.</span> <span class="nav-text">Hidden Markov Model, HMM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-model"><span class="nav-number">2.1.</span> <span class="nav-text">Markov model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HMM"><span class="nav-number">2.2.</span> <span class="nav-text">HMM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ML-Training-for-HMM-Parameters"><span class="nav-number">2.3.</span> <span class="nav-text">ML Training for HMM Parameters</span></a></li></ol></li></ol>
     
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/27/19japantag/">杜塞日本节</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/05/27/19japantag/" class="article-date">
-	  <time datetime="2019-05-27T19:18:21.000Z" itemprop="datePublished">五月 27, 2019</time>
-	</a>
-
-      
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/05/27/19japantag/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD0BB4gG/iqTGYNiEYicro492L46xzgL.yEwv2.Viklbl.fzQDmY!/r/dLgAAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          25日去了日本节，说实话，这次真的没有什么意思，和不是宅的朋友去，没有什么共同语言，反倒不如去年自己一个人去得痛快，匆匆的走了一遍，他们便吆喝着回家了，最后去星巴克打了3小时的三国杀。
-
-
-不过这次日本节的coser质量也不大高，近来的新番几乎没有，出场率最高的竟然还是火影的人物，火影里属卡卡西最多，看来是遮脸率高不看颜容易出cos，其次就是康纳和雷姆，然后就是狂三了，空白也有些，小英雄也没...
-
-        
-          <p class="article-more-link">
-            <a href="/2019/05/27/19japantag/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/旅行/">旅行</a>, <a class="article-category-link" href="/categories/旅行/欧洲/">欧洲</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACG/">ACG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-opencvgaussianblur"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/18/opencvgaussianblur/">【OpenCV】学习笔记一</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/05/18/opencvgaussianblur/" class="article-date">
-	  <time datetime="2019-05-18T11:06:13.000Z" itemprop="datePublished">五月 18, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            高斯模糊#include &lt;opencv2/opencv.hpp&gt;
-
-using namespace cv;
-
-void example4(const cv::Mat &amp; image ){
-
-    namedWindow(&quot;Example4-in&quot;,WINDOW_AUTOSIZE);
-    namedWindow(&quot;Example4-out&quot;,WINDOW_AUTOSIZE);
-
-    imshow(&quot;Example5-in&quot;, image);
-
-    Mat out;
-
-    GaussianBlur(image, out, Size(21,21), 3, 3);
-    GaussianBlu...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/05/18/opencvgaussianblur/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-newlife"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/15/newlife/">新的作息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/05/15/newlife/" class="article-date">
-	  <time datetime="2019-05-15T18:47:40.000Z" itemprop="datePublished">五月 15, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/05/15/newlife/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD0owyyr/sb9isAwununNBoegr8gtqIBiw9VlYf1s6pOKRY0J*YU!/r/dAcBAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          因为前段时间过得实在是太颓废和随性了。
-晚上熬到3点4点是家常便饭，有时直接通宵，早上有时起得早，有时就要中午才能下床，早餐也没怎么吃过，学习也是，想学就学一会，不想学了就坐不定，每天能学个3小时已经要谢天谢地了，有的时候甚至刷漫画刷一天，一分钟都学不下来。导致学习进度一直不上不下的，整个人也没什么精神。  这样下去肯定是不行的，不管是从身体健康方面来说，还是精神状态来说，还是学习上来说。
-...
-
-        
-          <p class="article-more-link">
-            <a href="/2019/05/15/newlife/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-naples"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/06/naples/">【圣地巡礼】JOJO黄金之风</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/05/06/naples/" class="article-date">
-	  <time datetime="2019-05-06T21:37:05.000Z" itemprop="datePublished">五月 6, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            前言
-
-为什么会来意大利呢？因为在复活节的时候，蹲在家里哪里都没去，上网查看机票，无意中发现在Exkursion假期的时候，飞那不勒斯的机票特别便宜，于是赶紧下单先买了。
-这是第三次来意大利了，第一次的时候还是大学时陪家人过来玩，但是比较走马观花，匆匆的走了罗马和威尼斯，第二次就是前年圣诞的时候我去找我姐姐玩了，那次去的地方比较多，刷了5个世界文化遗产，去了米兰，维罗纳，锡耶纳，圣吉米尼亚诺，比萨和佛罗伦萨，在佛罗伦萨呆了将近一周的时间，真的非常满足。
-这趟旅程本来的重点是刷南意的世界文化遗产的，但是后来被我搞得变成了JOJO5黄金之风的圣地巡礼之行了。 
-06-06 那不勒斯那不勒斯机场
-
-乔鲁诺一开场就给我们来了一句Buon Giorno，这是意大利语早上好的意思，同时Giorno...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/05/06/naples/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/旅行/">旅行</a>, <a class="article-category-link" href="/categories/旅行/欧洲/">欧洲</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACG/">ACG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/圣地/">圣地</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-190506"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/05/06/190506/">【19年5月6日记】</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/05/06/190506/" class="article-date">
-	  <time datetime="2019-05-06T01:20:54.000Z" itemprop="datePublished">五月 6, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            今晚和王丽如同往常那样聊了一下我们的近况，现在的状态。
-今天突然意识到自己其实处于一种穷人的心态，其实我自己一直都清楚的，只是今晚被王丽点醒了。
-一直被生活推着走，完全没有考虑过怎么去改变，或者是为了自己想要的生活去努力什么。就打个比方，这个学期我是一定要把全部课程都修完的，但是为了学习学校的课程，我已经感觉有点力不从心了，至于新年定下的目标，什么学好语言，练习编程能力之类的，完全无从谈起。其实自己是知道的，沿着这样的生活轨迹下去，考试应该是可以考完的，但是到了找工作的时候，面试的时候，可能英语就不好，工作需要的编程能力也没有。光是应付现在的困境已经让我精疲力竭了，我是知道的，这样下去是没办法改变的。 处于现在这种比较舒适的生活情况下，或者说心里环境下，是很难做出改变的。其实仔细想一下...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/05/06/190506/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-april2019"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/22/april2019/">【图片日记】四月</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/22/april2019/" class="article-date">
-	  <time datetime="2019-04-22T19:57:29.000Z" itemprop="datePublished">四月 22, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            4月14日波恩赏樱
-
-去波恩赏樱，每年春季保留节目。
-4月20日亚琛街头
-
-骑马游街，摄于Bushof。
-4月21日蒙绍春游
-
-第二次去蒙绍，上次还是两年前的冬季，我觉得冬天要美得多。
-
-
-当然放一张我自己的照片啊（PS过度的）
-4月22日马城初见
-
-来亚琛两年了，第一次来马城，还是因为这个学期的学期票能够到马城了，怎么说感觉很普通的一座城市，去了趟教堂里的书店，其实也就是很普通的样子，教堂和别的大城市比起来也不是很有特色。总而言之，有种打卡了的感觉，本来是带了单反过去的，但是全程我都没有拿出来过。
-回来的途中反而是对途经的一个小镇Volkenburg有点感兴趣。有机会去探探路。
-
-
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/22/april2019/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-camino"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/13/camino/">【旅行】圣雅各之路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/13/camino/" class="article-date">
-	  <time datetime="2019-04-13T14:54:41.000Z" itemprop="datePublished">四月 13, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/04/13/camino/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD2C2KLt/kZMJBZSKvN02VtHdpD*0*SAblTIFX2PKLTCuQ16YO.A!/r/dLYAAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          Day00 起始的地方  （799.0 km）20-08-18Paris——Bayonne——Saint-Jean-Pied-de-Port
-
-
-从巴黎坐大巴到法国西南部的巴约纳（Bayonne），再从巴约纳（Bayonne）坐火车，去圣桑，这是大部分朝圣者的行程安排，我也不例外。
-经历了痛苦的通宵大巴，终于在早上到达巴约纳，这里去圣让的火车班次不是非常频繁，得知要等2个小时的车，我便顺道去...
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/13/camino/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/旅行/">旅行</a>, <a class="article-category-link" href="/categories/旅行/欧洲/">欧洲</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-bayern"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/11/bayern/">【旅行】巴伐利亚游记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/11/bayern/" class="article-date">
-	  <time datetime="2019-04-11T19:47:47.000Z" itemprop="datePublished">四月 11, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/04/11/bayern/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD1eYtbG/Fuc*fQ9lWevoX*a5S8YNrrvmaHWuvKlFtxTpA1eVf0A!/r/dLkAAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          因为老陈在拜仁州的实习结束了，所以，我们几个小伙伴就去拜仁州找老陈玩了一趟，顺便帮老陈把行李搬回来。第一天去的时候就遇到了DB的延误，眼看着要赶不上接下来的换乘了，突然告诉我们可以坐车到斯图加特，然后在那里DB可以给我们找的士，将我们直接送到老陈的那个小镇Freising。最后看着的士的码表在不停的跳了2个小时之后，终于我们到了老陈家楼下，而的士费也停留在585欧，幸好是DB报销的，不然真是...
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/11/bayern/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/旅行/">旅行</a>, <a class="article-category-link" href="/categories/旅行/欧洲/">欧洲</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-190411"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/11/190411/">【19年04月11日记】开学碎念</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/11/190411/" class="article-date">
-	  <time datetime="2019-04-11T13:33:27.000Z" itemprop="datePublished">四月 11, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            新学期开始了，颓废了几天之后，终于大概把课程选了下来。这个学期不管怎么样都应该把课修完，按照原定的步骤，下学期就应该写毕业论文了，但是比较伤的是，这学期的语言课又是没有选上，导致，开启毕设所需要的60学分要求有点难达到。
-因为一共需要修68学分，zusatz差了5分，非常尴尬的一个分数，只能够通过语言课的6分来填补，而我的C模块里也还差12分。而这学期6分的课又比较少，出去嵌入式，实在是不知道选什么课好，看了看VR2还挺感兴趣的，可是考试却是口试，这让我有点退却。陷入了两难的境地。估计语言课只能够放到毕设的那个学期来上了。
-其实一共算起来，这学期要考的考试还是挺多，C模块2门考试，嵌入式和VR2（暂定），两门Wahl，雷达系统（？）和Acps还有机器学习语音出来三选2，但是上课还是跟着...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/11/190411/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-  </nav>
-
+  </aside>
 </section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 75%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="搜索">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">联系我们</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://github.com/iTimeTraveler" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="http://www.yoursite.com" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-            <li><a href="mailto:?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>最新文章</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/28/MLforSP/">【笔记】</a></h6>
-              <span>五月 28, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2019/05/27/19japantag/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psb?/V11h6eOD0BB4gG/iqTGYNiEYicro492L46xzgL.yEwv2.Viklbl.fzQDmY!/r/dLgAAAAAAAAA" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/27/19japantag/">杜塞日本节</a></h6>
-              <span>五月 27, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/18/opencvgaussianblur/">【OpenCV】学习笔记一</a></h6>
-              <span>五月 18, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2019/05/15/newlife/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psb?/V11h6eOD0owyyr/sb9isAwununNBoegr8gtqIBiw9VlYf1s6pOKRY0J*YU!/r/dAcBAAAAAAAA" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/15/newlife/">新的作息</a></h6>
-              <span>五月 15, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/06/naples/">【圣地巡礼】JOJO黄金之风</a></h6>
-              <span>五月 6, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/06/190506/">【19年5月6日记】</a></h6>
-              <span>五月 6, 2019</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/中国/">中国</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/欧洲/">欧洲</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/活动/">活动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/语言/">语言</a><span class="category-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACG/">ACG</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CHN/">CHN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DEU/">DEU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ENG/">ENG</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAP/">JAP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/初中/">初中</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/圣地/">圣地</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大学/">大学</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行/">旅行</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高中/">高中</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ACG/" style="font-size: 18px;">ACG</a> <a href="/tags/CHN/" style="font-size: 12px;">CHN</a> <a href="/tags/DEU/" style="font-size: 10px;">DEU</a> <a href="/tags/ENG/" style="font-size: 14px;">ENG</a> <a href="/tags/JAP/" style="font-size: 14px;">JAP</a> <a href="/tags/初中/" style="font-size: 10px;">初中</a> <a href="/tags/圣地/" style="font-size: 16px;">圣地</a> <a href="/tags/大学/" style="font-size: 16px;">大学</a> <a href="/tags/旅行/" style="font-size: 18px;">旅行</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/高中/" style="font-size: 10px;">高中</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">一月 2010</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
         
       </div>
       <footer id="footer" class="site-footer">
