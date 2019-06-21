@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>【笔记】机器学习 | Caijiangnan no Bolg</title>
+  <title>【机器学习】机器学习 | Caijiangnan no Bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="机器学习RWTH" />
@@ -24,7 +24,7 @@
   <meta name="description" content="$\text{Introducation}$语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？">
 <meta name="keywords" content="机器学习,RWTH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【笔记】机器学习">
+<meta property="og:title" content="【机器学习】机器学习">
 <meta property="og:url" content="http://yoursite.com/2019/05/28/MLforSP/index.html">
 <meta property="og:site_name" content="Caijiangnan no Bolg">
 <meta property="og:description" content="$\text{Introducation}$语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？">
@@ -51,9 +51,9 @@
 <meta property="og:image" content="https://latex.codecogs.com/svg.latex?\gamma&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;=&space;P&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;X&space;}&space;;&space;\boldsymbol&space;{&space;\theta&space;}&space;\right)&space;=&space;P&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;N&space;}&space;;&space;\boldsymbol&space;{&space;\theta&space;}&space;\right)">
 <meta property="og:image" content="https://latex.codecogs.com/svg.latex?\begin{aligned}&space;\gamma&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;&&space;=&space;P&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;X&space;}&space;\right)&space;=&space;\frac&space;{&space;p&space;\left(&space;\boldsymbol&space;{&space;X&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;P&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;}&space;{&space;p&space;(&space;\boldsymbol&space;{&space;X&space;}&space;)&space;}&space;=&space;\frac&space;{&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;+&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;N&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;P&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;}&space;{&space;p&space;(&space;\boldsymbol&space;{&space;X&space;}&space;)&space;}&space;\\&space;&&space;=&space;\frac&space;{&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;,&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;+&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;N&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;}&space;{&space;p&space;(&space;\boldsymbol&space;{&space;X&space;}&space;)&space;}&space;=\boxed{&space;\frac&space;{&space;\alpha&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;\beta&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;}&space;{&space;p&space;(&space;\boldsymbol&space;{&space;X&space;})}}&space;\end{aligned}">
 <meta property="og:image" content="https://latex.codecogs.com/svg.latex?\begin{aligned}&space;\alpha&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;&=&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n&space;}&space;,&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;\\&space;\beta&space;\left(&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&&space;=&space;p&space;\left(&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;n+1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol&space;{&space;x&space;}&space;_&space;{&space;N&space;}&space;|&space;\boldsymbol&space;{&space;z&space;}&space;_&space;{&space;n&space;}&space;\right)&space;\end{aligned}">
-<meta property="og:updated_time" content="2019-05-29T19:35:47.491Z">
+<meta property="og:updated_time" content="2019-06-21T13:31:50.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【笔记】机器学习">
+<meta name="twitter:title" content="【机器学习】机器学习">
 <meta name="twitter:description" content="$\text{Introducation}$语音的特点: 大部分语音信号虽然是short‐term stationary，但是随时间频繁变化。 我们应该怎么用什么模型去描述这些语音的序列数据呢？">
 <meta name="twitter:image" content="https://latex.codecogs.com/gif.latex?\begin{aligned}&space;p&space;\left(\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;\boldsymbol{x}&space;_&space;{&space;N&space;}&space;\right)&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;2&space;}&space;\right)&space;\cdot&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;4&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\boldsymbol{x}_&space;{&space;2&space;}&space;,&space;\boldsymbol{x}&space;_&space;{&space;3&space;}&space;\right)&space;\cdot\cdots&space;\\&space;&&space;=&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;\right)&space;\cdot&space;\prod&space;_&space;{&space;n&space;=&space;2&space;}&space;^&space;{&space;N&space;}&space;p&space;\left(&space;\boldsymbol{x}&space;_&space;{&space;n&space;}&space;|&space;\boldsymbol{x}&space;_&space;{&space;1&space;}&space;,&space;\ldots&space;,&space;\boldsymbol{x}&space;_&space;{&space;n&space;-&space;1&space;}&space;\right)&space;\end{aligned}">
   
@@ -197,7 +197,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      【笔记】机器学习
+      【机器学习】机器学习
     </h1>
   
 
@@ -294,6 +294,9 @@ var themeMenus = {};
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/所学/">所学</a>
+
       
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RWTH/">RWTH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
@@ -334,7 +337,7 @@ var themeMenus = {};
   
     <a href="/2019/05/27/19japantag/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">杜塞日本节</div>
+      <div class="article-nav-title">【活动】杜塞日本节</div>
     </a>
   
 </nav>
