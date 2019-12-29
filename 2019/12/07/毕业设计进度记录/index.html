@@ -19,17 +19,17 @@
   
   
   
-  <meta name="description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img=cv.GaussianBlur(im,(9,9),0)gray_img=cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)xg">
+  <meta name="description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img = cv.GaussianBlur(im,(9,9),0)gray_img = cv.cvtColor(blurred_img,cv.COLOR_RGB2GRA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="毕业设计进度记录">
 <meta property="og:url" content="http://yoursite.com/2019/12/07/毕业设计进度记录/index.html">
 <meta property="og:site_name" content="Cai no Blog">
-<meta property="og:description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img=cv.GaussianBlur(im,(9,9),0)gray_img=cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)xg">
+<meta property="og:description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img = cv.GaussianBlur(im,(9,9),0)gray_img = cv.cvtColor(blurred_img,cv.COLOR_RGB2GRA">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-07T15:56:21.561Z">
+<meta property="og:updated_time" content="2019-12-07T20:44:58.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="毕业设计进度记录">
-<meta name="twitter:description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img=cv.GaussianBlur(im,(9,9),0)gray_img=cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)xg">
+<meta name="twitter:description" content="07-12-1912345678910111213141516171819202122import cv2 as cvim = cv.imread(&amp;quot;images/Blech C-38.jpg&amp;quot;)blurred_img = cv.GaussianBlur(im,(9,9),0)gray_img = cv.cvtColor(blurred_img,cv.COLOR_RGB2GRA">
   
     <link rel="alternate" href="/atom.xml" title="Cai no Blog" type="application/atom+xml">
   
@@ -191,7 +191,8 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="07-12-19"><a href="#07-12-19" class="headerlink" title="07-12-19"></a>07-12-19</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">im = cv.imread(&quot;images/Blech C-38.jpg&quot;)</span><br><span class="line"></span><br><span class="line">blurred_img=cv.GaussianBlur(im,(9,9),0)</span><br><span class="line">gray_img=cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)</span><br><span class="line"></span><br><span class="line">xgred=cv.Sobel(gray_img,cv.CV_16SC1,1,0, ksize=3)</span><br><span class="line">ygred=cv.Sobel(gray_img,cv.CV_16SC1,0,1, ksize=3)</span><br><span class="line">image=cv.Canny(xgred,ygred,100,150)</span><br><span class="line"></span><br><span class="line">color_img=cv.bitwise_and(im,im,mask=image)</span><br><span class="line">result=cv.bitwise_not(image)</span><br><span class="line"></span><br><span class="line">cv.namedWindow(&apos;origin&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;canny_result&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;color_img&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(&apos;origin&apos;,im)</span><br><span class="line">cv.imshow(&apos;canny_result&apos;,result)</span><br><span class="line">cv.imshow(&apos;color_img&apos;,color_img)</span><br><span class="line"></span><br><span class="line">cv.waitKey(0)</span><br></pre></td></tr></table></figure>
+        <h1 id="07-12-19"><a href="#07-12-19" class="headerlink" title="07-12-19"></a>07-12-19</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">im = cv.imread(&quot;images/Blech C-38.jpg&quot;)</span><br><span class="line"></span><br><span class="line">blurred_img = cv.GaussianBlur(im,(9,9),0)</span><br><span class="line">gray_img = cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)</span><br><span class="line"></span><br><span class="line">xgred = cv.Sobel(gray_img,cv.CV_16SC1,1,0, ksize=3)</span><br><span class="line">ygred = cv.Sobel(gray_img,cv.CV_16SC1,0,1, ksize=3)</span><br><span class="line">image = cv.Canny(xgred,ygred,100,150)</span><br><span class="line"></span><br><span class="line">color_img = cv.bitwise_and(im,im,mask=image)</span><br><span class="line">result = cv.bitwise_not(image)</span><br><span class="line"></span><br><span class="line">cv.namedWindow(&apos;origin&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;canny_result&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;color_img&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(&apos;origin&apos;,im)</span><br><span class="line">cv.imshow(&apos;canny_result&apos;,result)</span><br><span class="line">cv.imshow(&apos;color_img&apos;,color_img)</span><br><span class="line"></span><br><span class="line">cv.waitKey(0)</span><br></pre></td></tr></table></figure>
+<p>the edge I get is not close, so we need to adjust the parameter properly to make it close. but how? that is a problem</p>
 
       
     </div>
@@ -230,6 +231,15 @@ var themeMenus = {};
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/12/29/2019/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          2019年终总结
+        
+      </div>
+    </a>
   
   
     <a href="/2019/10/14/新学期展望/" id="article-nav-older" class="article-nav-link-wrap">
