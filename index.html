@@ -161,6 +161,104 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-deeplab"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/01/23/deeplab/">deeplab</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2020/01/23/deeplab/" class="article-date">
+	  <time datetime="2020-01-23T20:22:38.000Z" itemprop="datePublished">一月 23, 2020</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>「2020最新」在voc2012语义分割数据集运行DeepLab</p>
+<p>因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个<a href="https://github.com/tensorflow/models/tree/master/research/deeplab" target="_blank" rel="noopener">DeepLab项目</a>复现出来，所以这算是一个记录帖子。</p>
+<p>前期安装tensorflow之类的，和环境配置之类的，我就不详细说了，因为我也不是很懂，我记得tensorflow 2.x的版本有些函数名变了，所以一开始运行的时候也报错了，推荐大家安装tensorflow 1.x的版本。</p>
+<h2 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h2><p>将库添加到PYTHONPATH<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在目录models-master/research/下运行</span></span><br><span class="line">export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim</span><br></pre></td></tr></table></figure></p>
+<p>接着运行测试文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在目录models-master/research/下运行</span></span><br><span class="line">python deeplab/model_test.py</span><br></pre></td></tr></table></figure>
+<p>如果出现了以下结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ran <span class="number">5</span> tests <span class="keyword">in</span> <span class="number">22.449</span>s</span><br></pre></td></tr></table></figure>
+<p>则说明你的环境配置成功了。</p>
+<h2 id="数据集准备"><a href="#数据集准备" class="headerlink" title="数据集准备"></a>数据集准备</h2><p>因为是运行的voc2012数据集，所以也不需要自己进行标注和转换成tfrecord格式。项目里已经给你准备好了，在<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">models-master/research/deeplab/datasets/download_and_convert_voc2012.sh</span><br></pre></td></tr></table></figure></p>
+<p>这个目录下有一个shell文件。只要在上述目录下运行以下语句：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#from models-master/research/deeplab/datasets</span></span><br><span class="line">sh download_and_convert_voc2012.sh</span><br></pre></td></tr></table></figure></p>
+<p>它就会自动给你下载好voc2012数据集，去除colormap，并转换成tfrecord格式。但是注意的是必须得在datasets目录下运行。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-2020"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/01/05/2020/">2020</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2020/01/05/2020/" class="article-date">
+	  <time datetime="2020-01-05T21:34:10.000Z" itemprop="datePublished">一月 5, 2020</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-每日一图"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -632,133 +730,11 @@ var themeMenus = {};
     
 
   
-    <article id="post-bayern"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/11/bayern/">【巴伐利亚】巴伐利亚游记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/11/bayern/" class="article-date">
-	  <time datetime="2019-04-11T19:47:47.000Z" itemprop="datePublished">四月 11, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/04/11/bayern/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD1eYtbG/Fuc*fQ9lWevoX*a5S8YNrrvmaHWuvKlFtxTpA1eVf0A!/r/dLkAAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          因为老陈在拜仁州的实习结束了，所以，我们几个小伙伴就去拜仁州找老陈玩了一趟，顺便帮老陈把行李搬回来。第一天去的时候就遇到了DB的延误，眼看着要赶不上接下来的换乘了，突然告诉我们可以坐车到斯图加特，然后在那里DB可以给我们找的士，将我们直接送到老陈的那个小镇Freising。最后看着的士的码表在不停的跳了2个小时之后，终于我们到了老陈家楼下，而的士费也停留在585欧，幸好是DB报销的，不然真是...
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/11/bayern/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/所行/">所行</a>, <a class="article-category-link" href="/categories/所行/欧罗巴/">欧罗巴</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/友達/">友達</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-190411"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/11/190411/">【19年04月11日记】开学碎念</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/04/11/190411/" class="article-date">
-	  <time datetime="2019-04-11T13:33:27.000Z" itemprop="datePublished">四月 11, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-          
-            <div class="entry-summary" style="margin-left:0;">
-            新学期开始了，颓废了几天之后，终于大概把课程选了下来。这个学期不管怎么样都应该把课修完，按照原定的步骤，下学期就应该写毕业论文了，但是比较伤的是，这学期的语言课又是没有选上，导致，开启毕设所需要的60学分要求有点难达到。
-因为一共需要修68学分，zusatz差了5分，非常尴尬的一个分数，只能够通过语言课的6分来填补，而我的C模块里也还差12分。而这学期6分的课又比较少，出去嵌入式，实在是不知道选什么课好，看了看VR2还挺感兴趣的，可是考试却是口试，这让我有点退却。陷入了两难的境地。估计语言课只能够放到毕设的那个学期来上了。
-其实一共算起来，这学期要考的考试还是挺多，C模块2门考试，嵌入式和VR2（暂定），两门Wahl，雷达系统（？）和Acps还有机器学习语音出来三选2，但是上课还是跟着...
-          
-
-        
-          <p class="article-more-link">
-            <a href="/2019/04/11/190411/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/研究生/">研究生</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
   </nav>
 
 </section>
@@ -818,6 +794,30 @@ var themeMenus = {};
           <li class="clearfix">
 
             
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2020/01/23/deeplab/">deeplab</a></h6>
+              <span>一月 23, 2020</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2020/01/05/2020/">2020</a></h6>
+              <span>一月 5, 2020</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
               <div class="widget-entry-thumbnail">
                 <a href="/2020/01/01/每日一图/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psc?/V11h6eOD0jBtPQ/S8ACDDjQaRqj9S24Z8034drqmRUvPrXe.KSIiC8SbTKXP3LOpQ5900fBmnDWo41*X6Lyj2VW4YXYem7TOEvz8Q!!/r&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=BgaAAkwTAggRGfk!&amp;tl=1&amp;vuin=544318767&amp;tm=1578247200&amp;sce=60-0-0&amp;rf=viewer_4" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
@@ -869,36 +869,6 @@ var themeMenus = {};
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2019/09/23/维也纳之行/" title=""><img width="50" height="50" src="http://m.qpic.cn/psb?/V11h6eOD0cMYtN/UEWnwRGvOmEe9carrahUGjTSb3rfr7Ajx74RAfZ60co!/b/dJABAAAAAAAA&amp;bo=XQlABoAXsA8RCQQ!&amp;rf=viewer_4" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/09/23/维也纳之行/">【🇦🇹】维也纳之行</a></h6>
-              <span>九月 23, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2019/05/27/19japantag/" title=""><img width="50" height="50" src="http://r.photo.store.qq.com/psb?/V11h6eOD0BB4gG/iqTGYNiEYicro492L46xzgL.yEwv2.Viklbl.fzQDmY!/r/dLgAAAAAAAAA" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/05/27/19japantag/">【北威州】杜塞日本节</a></h6>
-              <span>五月 27, 2019</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -928,7 +898,7 @@ var themeMenus = {};
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
