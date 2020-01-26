@@ -185,19 +185,22 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>「2020最新」在voc2012语义分割数据集运行DeepLab</p>
-<p>因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个<a href="https://github.com/tensorflow/models/tree/master/research/deeplab" target="_blank" rel="noopener">DeepLab项目</a>复现出来，所以这算是一个记录帖子。</p>
-<p>前期安装tensorflow之类的，和环境配置之类的，我就不详细说了，因为我也不是很懂，我记得tensorflow 2.x的版本有些函数名变了，所以一开始运行的时候也报错了，推荐大家安装tensorflow 1.x的版本。</p>
-<h2 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h2><p>将库添加到PYTHONPATH<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在目录models-master/research/下运行</span></span><br><span class="line">export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim</span><br></pre></td></tr></table></figure></p>
-<p>接着运行测试文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在目录models-master/research/下运行</span></span><br><span class="line">python deeplab/model_test.py</span><br></pre></td></tr></table></figure>
-<p>如果出现了以下结果</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ran <span class="number">5</span> tests <span class="keyword">in</span> <span class="number">22.449</span>s</span><br></pre></td></tr></table></figure>
-<p>则说明你的环境配置成功了。</p>
-<h2 id="数据集准备"><a href="#数据集准备" class="headerlink" title="数据集准备"></a>数据集准备</h2><p>因为是运行的voc2012数据集，所以也不需要自己进行标注和转换成tfrecord格式。项目里已经给你准备好了，在<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">models-master/research/deeplab/datasets/download_and_convert_voc2012.sh</span><br></pre></td></tr></table></figure></p>
-<p>这个目录下有一个shell文件。只要在上述目录下运行以下语句：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#from models-master/research/deeplab/datasets</span></span><br><span class="line">sh download_and_convert_voc2012.sh</span><br></pre></td></tr></table></figure></p>
-<p>它就会自动给你下载好voc2012数据集，去除colormap，并转换成tfrecord格式。但是注意的是必须得在datasets目录下运行。</p>
+        
 
+          
+            <div class="entry-summary" style="margin-left:0;">
+            因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个DeepLab项目复现出来，所以这算是一个记录帖子。
+前期安装tensorflow之类的，和环境配置之类的，我就不详细说了，因为我也不是很懂，我记得tensorflow 2.x的版本有些函数名变了，所以一开始运行的时候也报错了，推荐大家安装tensorflow 1.x的版本。
+环境测试首先将上面的项目下载到本地，然后进行环境测试。将库添加到PYTHONPATH，这句话是每次启动命令行窗口都要运行的。12# 在目录models-master/research/下运行export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+接着运行测试文件
+12# 在目录mo...
+          
+
+        
+          <p class="article-more-link">
+            <a href="/2020/01/23/deeplab/#more">阅读全文</a>
+          </p>
+        </div>
       
     </div>
     <footer class="entry-meta entry-footer">
