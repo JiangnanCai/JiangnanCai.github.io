@@ -394,51 +394,6 @@ var themeMenus = {};
     
 
   
-    <article id="post-毕业设计进度记录"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/12/07/毕业设计进度记录/">毕业设计进度记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/12/07/毕业设计进度记录/" class="article-date">
-	  <time datetime="2019-12-07T13:09:36.000Z" itemprop="datePublished">十二月 7, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="07-12-19"><a href="#07-12-19" class="headerlink" title="07-12-19"></a>07-12-19</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">im = cv.imread(&quot;images/Blech C-38.jpg&quot;)</span><br><span class="line"></span><br><span class="line">blurred_img = cv.GaussianBlur(im,(9,9),0)</span><br><span class="line">gray_img = cv.cvtColor(blurred_img,cv.COLOR_RGB2GRAY)</span><br><span class="line"></span><br><span class="line">xgred = cv.Sobel(gray_img,cv.CV_16SC1,1,0, ksize=3)</span><br><span class="line">ygred = cv.Sobel(gray_img,cv.CV_16SC1,0,1, ksize=3)</span><br><span class="line">image = cv.Canny(xgred,ygred,100,150)</span><br><span class="line"></span><br><span class="line">color_img = cv.bitwise_and(im,im,mask=image)</span><br><span class="line">result = cv.bitwise_not(image)</span><br><span class="line"></span><br><span class="line">cv.namedWindow(&apos;origin&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;canny_result&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.namedWindow(&apos;color_img&apos;,cv.WINDOW_NORMAL)</span><br><span class="line">cv.imshow(&apos;origin&apos;,im)</span><br><span class="line">cv.imshow(&apos;canny_result&apos;,result)</span><br><span class="line">cv.imshow(&apos;color_img&apos;,color_img)</span><br><span class="line"></span><br><span class="line">cv.waitKey(0)</span><br></pre></td></tr></table></figure>
-<p>the edge I get is not close, so we need to adjust the parameter properly to make it close. but how? that is a problem</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
     <article id="post-新学期展望"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -749,11 +704,71 @@ var themeMenus = {};
     
 
   
+    <article id="post-bayern"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/11/bayern/">【巴伐利亚】巴伐利亚游记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/11/bayern/" class="article-date">
+	  <time datetime="2019-04-11T19:47:47.000Z" itemprop="datePublished">四月 11, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+          <div class="entry-thumbnail">
+            <a href="/2019/04/11/bayern/"><img width="250" height="175" src="http://r.photo.store.qq.com/psb?/V11h6eOD1eYtbG/Fuc*fQ9lWevoX*a5S8YNrrvmaHWuvKlFtxTpA1eVf0A!/r/dLkAAAAAAAAA" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
+          </div>
+          <div class="entry-summary">
+          因为老陈在拜仁州的实习结束了，所以，我们几个小伙伴就去拜仁州找老陈玩了一趟，顺便帮老陈把行李搬回来。第一天去的时候就遇到了DB的延误，眼看着要赶不上接下来的换乘了，突然告诉我们可以坐车到斯图加特，然后在那里DB可以给我们找的士，将我们直接送到老陈的那个小镇Freising。最后看着的士的码表在不停的跳了2个小时之后，终于我们到了老陈家楼下，而的士费也停留在585欧，幸好是DB报销的，不然真是...
+
+        
+          <p class="article-more-link">
+            <a href="/2019/04/11/bayern/#more">阅读全文</a>
+          </p>
+        </div>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/所行/">所行</a>, <a class="article-category-link" href="/categories/所行/欧罗巴/">欧罗巴</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/友達/">友達</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
   </nav>
 
 </section>
@@ -870,18 +885,6 @@ var themeMenus = {};
           <li class="clearfix">
 
             
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/12/07/毕业设计进度记录/">毕业设计进度记录</a></h6>
-              <span>十二月 7, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
               <div class="widget-entry-thumbnail">
                 <a href="/2019/10/14/新学期展望/" title=""><img width="50" height="50" src="http://m.qpic.cn/psb?/V11h6eOD2r9vsZ/y10lTwJyxwTbsxNgC8VhxDQHGJe84JB5IxkhorCo1is!/b/dIoBAAAAAAAA&amp;bo=VQhABsAP0AsRCTE!&amp;rf=viewer_4" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
@@ -890,6 +893,21 @@ var themeMenus = {};
 
               <h6 style="margin: 0;"><a href="/2019/10/14/新学期展望/">【19年10月14日记】毕设学期展望</a></h6>
               <span>十月 14, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-thumbnail">
+                <a href="/2019/09/23/维也纳之行/" title=""><img width="50" height="50" src="http://m.qpic.cn/psb?/V11h6eOD0cMYtN/UEWnwRGvOmEe9carrahUGjTSb3rfr7Ajx74RAfZ60co!/b/dJABAAAAAAAA&amp;bo=XQlABoAXsA8RCQQ!&amp;rf=viewer_4" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
+              </div>
+              <div class="widget-entry-summary">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/09/23/维也纳之行/">【🇦🇹】维也纳之行</a></h6>
+              <span>九月 23, 2019</span>
             </div>
 
           </li>
@@ -923,7 +941,7 @@ var themeMenus = {};
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
