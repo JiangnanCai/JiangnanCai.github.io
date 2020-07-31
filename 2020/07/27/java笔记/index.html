@@ -21,18 +21,18 @@
   
   
   
-  <meta name="description" content="do while循环先执行循环体，再进行判断 continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环  12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话，这">
+  <meta name="description" content="do while循环先执行循环体，再进行判断  continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环   12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记">
 <meta property="og:url" content="http://yoursite.com/2020/07/27/java笔记/index.html">
 <meta property="og:site_name" content="Cai no Blog">
-<meta property="og:description" content="do while循环先执行循环体，再进行判断 continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环  12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话，这">
+<meta property="og:description" content="do while循环先执行循环体，再进行判断  continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环   12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-30T04:15:12.931Z">
+<meta property="og:updated_time" content="2020-07-31T12:10:57.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记">
-<meta name="twitter:description" content="do while循环先执行循环体，再进行判断 continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环  12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话，这">
+<meta name="twitter:description" content="do while循环先执行循环体，再进行判断  continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环   12int[] arr = new int[3]int[] arr2 = arr  数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话">
   
     <link rel="alternate" href="/atom.xml" title="Cai no Blog" type="application/atom+xml">
   
@@ -195,19 +195,49 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>do while循环先执行循环体，再进行判断</li>
-<li>continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环</li>
+<li><p>do while循环先执行循环体，再进行判断</p>
+</li>
+<li><p>continue之后直接停止当前，执行下一个循环，而break是直接直接结束整个循环</p>
+</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int[] arr = new int[3]</span><br><span class="line">int[] arr2 = arr</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话，这样子，arr2指向的内存地址和arr相同，实际上这两成为了公用内存的数组</li>
-<li>源码(.java文件)-—JDK——&gt;字节码（.class文件）——JVM——&gt;机器码</li>
-<li>java和c++，还有c的对比应该是要区分的</li>
-<li><p>java的泛型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String aa = &quot;ab&quot;; // 放在常量池中</span><br><span class="line">String bb = &quot;ab&quot;; // 从常量池中查找</span><br></pre></td></tr></table></figure>
+<li><p>数组的变量名arr相当于一个指向堆内存地址的指针，直接输出数组变量名的话就会输出地址，new是为该数组分配内存，第二行的arr2作为一个地址，将arr的内存地址赋予arr2的话，这样子，arr2指向的内存地址和arr相同，实际上这两成为了公用内存的数组</p>
 </li>
+<li><p>源码(.java文件)-—JDK——&gt;字节码（.class文件）——JVM——&gt;机器码</p>
+</li>
+<li><p>java和c++，还有c的对比应该是要区分的</p>
+</li>
+<li><p>java的泛型</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String aa = &quot;ab&quot;; // 放在常量池中</span><br><span class="line">String bb = &quot;ab&quot;; // 从常量池中查找</span><br></pre></td></tr></table></figure>
+<ol start="7">
 <li><p>当创建 String 类型的对象时，虚拟机会在常量池中查找有没有已经存在的值和要创建的值相同的对象，如果有就把它赋给当前引用。如果没有就在常量池中重新创建一个 String 对象。</p>
 </li>
+<li><p>java中只有值传递，向方法中传递的参数只是变量值的复制值，而不是地址，所以java的方法是没办法修改参数变量的值。就是只在方法内部发生了改变。上面这种情况是针对参数是基本数据类型时成立，如果参数是对象引用，是可以修改的，但是实际上还是值传递</p>
+</li>
+<li><p>构造器</p>
+</li>
+</ol>
+<ul>
+<li>就是类里和类同名的特殊方法</li>
+<li>这个方法是不能有返回值的</li>
+<li>一个类里面，可以有多个名字相同的构造器，但是其形参是不一样的，这种情况叫做重载。</li>
+<li>如果你没有在类里声明构造器的话，系统会自动默认给你声明一个。</li>
+<li>主要作用是对类对象进行初始化</li>
+</ul>
+<ol start="10">
+<li><p>接口和抽象类区别？</p>
+</li>
+<li><p>final</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args)  &#123;</span><br><span class="line">        String a = &quot;hello2&quot;; </span><br><span class="line">        final String b = &quot;hello&quot;;</span><br><span class="line">        String d = &quot;hello&quot;;</span><br><span class="line">        String c = b + 2; </span><br><span class="line">        String e = d + 2;</span><br><span class="line">        System.out.println((a == c));</span><br><span class="line">        System.out.println((a == e));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">true</span><br><span class="line">false</span><br></pre></td></tr></table></figure></p>
+<p>这里面就是final变量和普通变量的区别了，当final变量是基本数据类型以及String类型时，如果在编译期间能知道它的确切值，则编译器会把它当做编译期常量使用。也就是说在用到该final变量的地方，相当于直接访问的这个常量，不需要在运行时确定。这种和C语言中的宏替换有点像。因此在上面的一段代码中，由于变量b被final修饰，因此会被当做编译器常量，所以在使用到b的地方会直接将变量b 替换为它的  值。而对于变量d的访问却需要在运行时通过链接来进行。想必其中的区别大家应该明白了，不过要注意，只有在编译期间能确切知道final变量值的情况下，编译器才会进行这样的优化。</p>
+<ol start="12">
+<li>hashcode equals ==</li>
 </ol>
 
       
@@ -251,11 +281,11 @@ var themeMenus = {};
     
 <nav id="article-nav">
   
-    <a href="/2020/07/29/未来职业规划想法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/31/leetcode笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          未来职业规划想法
+          leetcode笔记（一）
         
       </div>
     </a>
