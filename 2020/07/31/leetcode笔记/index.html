@@ -16,17 +16,20 @@
   <title>leetcode笔记（一） | Cai no Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="leetcodehash_table算法" />
+  
   
   
   
   <meta name="description" content="Two SumGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the">
+<meta name="keywords" content="leetcode,hash_table,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode笔记（一）">
 <meta property="og:url" content="http://yoursite.com/2020/07/31/leetcode笔记/index.html">
 <meta property="og:site_name" content="Cai no Blog">
 <meta property="og:description" content="Two SumGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-31T13:09:16.175Z">
+<meta property="og:updated_time" content="2020-07-31T17:52:24.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode笔记（一）">
 <meta name="twitter:description" content="Two SumGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the">
@@ -84,6 +87,8 @@ var themeMenus = {};
 
   themeMenus["/about"] = "关于"; 
 
+  themeMenus["/weibo"] = "weibo"; 
+
 </script>
 
 
@@ -118,6 +123,8 @@ var themeMenus = {};
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/weibo">weibo</a> </li>
                     
               </ul>
             </div>
@@ -191,16 +198,29 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+        <h1 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>个人思路：现在我的想法是暴力解法，进行遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution&#123;</span><br><span class="line">	public int[] twoSum(int[] nums, int target)&#123;</span><br><span class="line">		for(int i = 0; i &lt; nums.length; i++)&#123;</span><br><span class="line">			for(int j = i + 1; j &lt; nums.length; j++)&#123;</span><br><span class="line">				int a = nums[i];</span><br><span class="line">				int b = nums[j];</span><br><span class="line">				if (a + b == target)&#123;</span><br><span class="line">					return (i,j); // return new int[] &#123;i,j&#125;</span><br><span class="line">					//返回的是内存地址</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>反思：没有考虑异常状况，返回值</p>
-<h3 id="brust-force"><a href="#brust-force" class="headerlink" title="brust force"></a>brust force</h3><h3 id="two-pass-hash-tabel"><a href="#two-pass-hash-tabel" class="headerlink" title="two pass hash tabel"></a>two pass hash tabel</h3>
+<p>个人思路：现在我的想法是暴力解法，直接进行遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution&#123;</span><br><span class="line">	public int[] twoSum(int[] nums, int target)&#123;</span><br><span class="line">		for(int i = 0; i &lt; nums.length; i++)&#123;</span><br><span class="line">			for(int j = i + 1; j &lt; nums.length; j++)&#123;</span><br><span class="line">				int a = nums[i];</span><br><span class="line">				int b = nums[j];</span><br><span class="line">				if (a + b == target)&#123;</span><br><span class="line">					return (i,j); // return new int[] &#123;i,j&#125;</span><br><span class="line">					//返回的是内存地址</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>反思：没有考虑异常状况，返回值返回的是内存地址吗？</p>
+<h2 id="brust-force"><a href="#brust-force" class="headerlink" title="brust force"></a>brust force</h2><p>同上</p>
+<h2 id="two-pass-hash-tabel"><a href="#two-pass-hash-tabel" class="headerlink" title="two pass hash tabel"></a>two pass hash tabel</h2><p>为了提升时间复杂度，应该用更高效的方式确定数组里是否有满足条件的数，如果这个数存在，我们要得到他的index。<br>hash表就能够很好的将index和数据连接在一起，相当于减少了一个嵌套循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution&#123;</span><br><span class="line">	public int[] twoSum(int[] nums, int target)&#123;</span><br><span class="line">		hashmap&lt;integer,integer&gt; map = new hashmap();</span><br><span class="line">		for(int i = 0; i &lt;  nums.length; i++)&#123;</span><br><span class="line">			map.put(nums[i],i);</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i = 0; i &lt; nums.length; i++)&#123;</span><br><span class="line">			int temp = target - nums[i];</span><br><span class="line">			if (map.containKey(temp) &amp;&amp; temp != nums[i])&#123;</span><br><span class="line">				return int new[] &#123;i, map.get(temp)&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对了一下答案，要改的太多了…<br>第三行：hashmap的对象创建，其中Integer是大写，关键字HashMap也要注意写法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
+<p>第九行：map.containsKey，求value的key，contain后面是有s的，<br>map.containsKey(key)是在整个hashmap寻找是否存在这个key。<br>还是漏写了异常抛出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution&#123;</span><br><span class="line">	public int[] twoSum(int[] nums, int target)&#123;</span><br><span class="line">		HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">		for(int i = 0;  i&lt; nums.length; i++)&#123;</span><br><span class="line">			map.put(nums[i],i);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		for(int i = 0; i&lt; nums.length;i++)&#123;</span><br><span class="line">			int temp = target - nums[i];</span><br><span class="line">			if (map.containsKey(temp) &amp;&amp; map.get(temp)!= i)&#123;</span><br><span class="line">				return new int[] &#123;i,map.get(temp)&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		throw new IllegalArgumentException(&quot;no two sum solution&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="one-pass-hash-table"><a href="#one-pass-hash-table" class="headerlink" title="one pass hash table"></a>one pass hash table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution&#123;</span><br><span class="line">	public int[] twoSum(int[] nums, int target)&#123;</span><br><span class="line">		HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">		for(int i = 0; i &lt; nums.length; i++)&#123;</span><br><span class="line">			int temp = target - nums[i];</span><br><span class="line">			if( map.containsKey(temp) &amp;&amp; map.get(temp) != i)&#123;</span><br><span class="line">				return new int[] &#123;i, map.get(temp)&#125;;</span><br><span class="line">			&#125;</span><br><span class="line">			map.put(nums[i],i);</span><br><span class="line">		&#125;</span><br><span class="line">		throw new IllegalArgumentException(&quot;no two sum solution&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第六行：不需要后面那部分，只要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if( map.containsKey(temp))</span><br></pre></td></tr></table></figure></p>
+<p>不需要判断重复部分吗？</p>
+<p># </p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash-table/">hash_table</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
       
             
       
@@ -251,7 +271,7 @@ var themeMenus = {};
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Sum"><span class="nav-number">1.</span> <span class="nav-text">Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#brust-force"><span class="nav-number">1.1.</span> <span class="nav-text">brust force</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#two-pass-hash-tabel"><span class="nav-number">1.2.</span> <span class="nav-text">two pass hash tabel</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-Sum"><span class="nav-number">1.</span> <span class="nav-text">Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#brust-force"><span class="nav-number">1.1.</span> <span class="nav-text">brust force</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#two-pass-hash-tabel"><span class="nav-number">1.2.</span> <span class="nav-text">two pass hash tabel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#one-pass-hash-table"><span class="nav-number">1.3.</span> <span class="nav-text">one pass hash table</span></a></li></ol></li></ol>
     
     </div>
   </aside>
@@ -300,6 +320,8 @@ var themeMenus = {};
     <a href="/tags" class="mobile-nav-link">Tags</a>
   
     <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="/weibo" class="mobile-nav-link">Weibo</a>
   
 </nav> -->
     
