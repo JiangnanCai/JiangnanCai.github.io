@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>Cai no Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="title:「翻译」hexo主题制作date:2020-08-09 15:12:50  这是一篇技术博文的翻译 在接下来的几章节的教程中，你将会学习怎么从零制作了一个Hexo的主题。我非常喜欢Hexo，而且每天都在用它，但是Hexo官方关于主题制作的文档实在是太简略了，我尝试在这篇文章里对此进行补充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cai no Blog">
+<meta property="og:url" content="http://yoursite.com/2020/08/09/hexo主题制作/index.html">
+<meta property="og:site_name" content="Cai no Blog">
+<meta property="og:description" content="title:「翻译」hexo主题制作date:2020-08-09 15:12:50  这是一篇技术博文的翻译 在接下来的几章节的教程中，你将会学习怎么从零制作了一个Hexo的主题。我非常喜欢Hexo，而且每天都在用它，但是Hexo官方关于主题制作的文档实在是太简略了，我尝试在这篇文章里对此进行补充。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-08-10T18:20:39.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cai no Blog">
+<meta name="twitter:description" content="title:「翻译」hexo主题制作date:2020-08-09 15:12:50  这是一篇技术博文的翻译 在接下来的几章节的教程中，你将会学习怎么从零制作了一个Hexo的主题。我非常喜欢Hexo，而且每天都在用它，但是Hexo官方关于主题制作的文档实在是太简略了，我尝试在这篇文章里对此进行补充。">
+  
+    <link rel="alternate" href="/atom.xml" title="Cai no Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Cai no Blog" rel="home"> Cai no Blog </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "http://r.photo.store.qq.com/psb?/V11h6eOD2r9vsZ/Ok*emUgthOOQQCAP2cfhKz8hcaF.s9blUIZT1BtQOww!/r/dL8AAAAAAAAA".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-hexo主题制作" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2020/08/09/hexo主题制作/" class="article-date">
+	  <time datetime="2020-08-09T13:12:50.309Z" itemprop="datePublished">八月 9, 2020</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:「翻译」hexo主题制作<br>date:2020-08-09 15:12:50</p>
+<hr>
+<p>这是一篇技术博文的翻译</p>
+<p>在接下来的几章节的教程中，你将会学习怎么从零制作了一个Hexo的主题。我非常喜欢Hexo，而且每天都在用它，但是Hexo官方关于主题制作的文档实在是太简略了，我尝试在这篇文章里对此进行补充。<br><a id="more"></a><br>一共分成三个部分：</p>
+<ol>
+<li>设置项目和创建博客主索引页</li>
+<li>完成剩下的页面</li>
+<li>加上Disque评论，谷歌分析和权重</li>
+</ol>
+<p>前期准备：</p>
+<ul>
+<li>非常基础的Hexo博客知识</li>
+<li>Bootstrap基础</li>
+<li>JavaScript模版引擎（我们用EJS）</li>
+</ul>
+<h1 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h1><p>这个项目是关于制作一个Hexo的主题的，并通过此来理解Hexo引擎的细节。因为我不想浪费太多的时间在HTML和CSS上，我们主要是对下面的主题进行复现。这是一个Boostrap文档里的标准新手模版。我们将一步步使用其中CSS，复制粘贴其中的HTML，直到实现整个项目。<br>如果你跟不上，或者只是对代码感兴趣，这是它的github</p>
+<h1 id="项目设置"><a href="#项目设置" class="headerlink" title="项目设置"></a>项目设置</h1><h2 id="新建一个Hexo博客"><a href="#新建一个Hexo博客" class="headerlink" title="新建一个Hexo博客"></a>新建一个Hexo博客</h2><p>新建一个hexo-theme-creation文件夹，然后在里面安装Hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Create a new folder</span><br><span class="line">mkdir hexo-theme-creation </span><br><span class="line">cd hexo-theme-creation</span><br><span class="line"># Initialise Hexo</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建主题文件夹"><a href="#创建主题文件夹" class="headerlink" title="创建主题文件夹"></a>创建主题文件夹</h2><p>新建themes文件夹，然后在里面新建bootstrap-blog-hexo文件夹，这也是主题的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir themes</span><br><span class="line"># Enter the theme folder</span><br><span class="line">cd themes</span><br><span class="line"># bootstrap-blog-hexo is also going to be the name of our theme</span><br><span class="line">mkdir bootstrap-blog-hexo</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件夹结构"><a href="#文件夹结构" class="headerlink" title="文件夹结构"></a>文件夹结构</h2><p>在bootstrap-blog-hexo文件夹里新建layout，source文件夹和_config.yml文件<br>文件夹目前的结构如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo-theme-creation</span><br><span class="line">|-- themes</span><br><span class="line">    |-- bootstrap-blog-hexo</span><br><span class="line">        |-- layout // .ejs模版</span><br><span class="line">        |-- source // 源文件（CSS，JS）</span><br><span class="line">        |-- _config.yml</span><br></pre></td></tr></table></figure></p>
+<h2 id="复制bootstrap博客的文件"><a href="#复制bootstrap博客的文件" class="headerlink" title="复制bootstrap博客的文件"></a>复制bootstrap博客的文件</h2><p>将bootstrap博客模版source文件里的东西都复制到你的source文件里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|-- layout </span><br><span class="line">|-- source </span><br><span class="line">    |-- bootstrap // Copy the boostrap library files here </span><br><span class="line">    |-- css // Copy the blog&apos;s css file here</span><br><span class="line">    |-- favicon</span><br><span class="line">        |-- favicon.ico // Your choice of favicon</span><br><span class="line">    |-- js // Copy the blog&apos;s js file here</span><br><span class="line">|-- _config.yml</span><br></pre></td></tr></table></figure></p>
+<h1 id="Hexo基础"><a href="#Hexo基础" class="headerlink" title="Hexo基础"></a>Hexo基础</h1><p>在我们写我们的第一个模版文件前，先看一下Hexo博客生成的基础。</p>
+<h2 id="界面类型"><a href="#界面类型" class="headerlink" title="界面类型"></a>界面类型</h2><p>我们可以在我们的主题里定义6种类型的界面，每个在公共文件夹生成的HTML界面都可以对应到这6种类型的界面。</p>
+<p>index    无          这是博客的主页，主接入点，在我们的例子里将会用于展示文章摘录的列表<br>post     index    这是博文的细节页，展示完整的博文，带有评论功能<br>page     index    这是<br>archive  index    这是归档页，这会用来展示你博客里的全部博文，但是只是标题和链接<br>category archive  这是分类页，和归档页差不多，但是经过分类来筛选<br>tag      archive  这是标签页，和归档页差不堵，但是通过标签来筛选</p>
+<p>在这部分的教程中，我们将建一个index页。<br>在生成index页的时候，Hexo会查看文件名为<code>index.ejs</code>,<code>post.ejs</code>,<code>page.ejs</code>等等，这些模版被用于渲染生成静态的HTML页面。</p>
+<h2 id="通用布局"><a href="#通用布局" class="headerlink" title="通用布局"></a>通用布局</h2><p>Hexo支持使用common layout文件，这会被全部模版所使用。</p>
+<p>这些被命名为<code>layout.ejs</code>的文件，就像内容的外包装，被上面不同的的界面类型模版所渲染。<br>在我们的主题里，layout会包含<code>&lt;html&gt;</code>和<code>&lt;head&gt;</code>标签，header和menu，还有footer和sidebar，基本所有的元素在全部的界面都是通用的。</p>
+<p>不同的界面模版只会用于创造实际的内容，这主要被放在我们的main container里</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>在我们的模版内，我们有方法接入某些变量，这些可视化是Hexo引擎自带的，这是一些例子：</p>
+<ul>
+<li>Site<br>site包括很多信息，比如说，用site.posts，我们可以进入博客里的全部博文，如果我们想要在小窗口展示统计数据，这将会非常有用。</li>
+<li>Page<br>page是主变量，而且包含很多和最近页相关的信息，包括博文的标题，日期，内容等等。</li>
+<li>Config<br>config是一个JavaScript对象，代表博客的主<code>_config.yml</code>文件</li>
+<li>Theme<br>theme是一个JavaScript对象，代表主题的<code>_config.yml</code>文件</li>
+</ul>
+<h1 id="主题布局创造"><a href="#主题布局创造" class="headerlink" title="主题布局创造"></a>主题布局创造</h1><p>我们将会开始创造之前讨论过的<code>/layout/layout.ejs</code>文件</p>
+<h2 id="头部"><a href="#头部" class="headerlink" title="头部"></a>头部</h2><p>让我们开始创造一个<code>layout.ejs</code>文件和插入<code>&lt;html&gt;&lt;/html&gt;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;!-- Head tag --&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里我们将所有的<code>&lt;head&gt;</code>代码抽取出来，放入局部视图，局部视图能够促进代码的可重复利用性。<br>语法是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">partial(&apos;path&apos; [, arguments])</span><br></pre></td></tr></table></figure></p>
+<p>在新建完<code>layout/_partial/head.ejs</code>文件之后，我们要从bootstrap的源文件中复制head代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;icon&quot; href=&quot;favicon/favicon.ico&quot;&gt;</span><br><span class="line">    &lt;title&gt;Blog Template for Bootstrap&lt;/title&gt;</span><br><span class="line">    &lt;!-- Bootstrap core CSS --&gt;</span><br><span class="line">    &lt;%- css(&apos;bootstrap/css/bootstrap.min.css&apos;) %&gt;</span><br><span class="line">    &lt;!-- IE10 viewport hack for Surface/desktop Windows 8 bug --&gt;</span><br><span class="line">    &lt;%- css(&apos;css/ie10-viewport-bug-workaround.css&apos;) %&gt;</span><br><span class="line">    &lt;!-- Custom styles for this template --&gt;</span><br><span class="line">    &lt;%- css(&apos;css/blog.css&apos;) %&gt;</span><br><span class="line">    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span><br><span class="line">    &lt;!--[if lt IE 9]&gt;</span><br><span class="line">        &lt;script src=&quot;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;![endif]--&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<p>接来下就非常简单，我们需要做的就是使用一个CSS助手，来插入我们自己的设计样板。<br>在sourece文件夹里的文件将会被复制到生成场所的根目录，所以source/不应该被包含在路径里。<br>我们之后会做一些添加，但是现在就让它保留这样子。</p>
+<h2 id="页脚部分"><a href="#页脚部分" class="headerlink" title="页脚部分"></a>页脚部分</h2><p>页脚部分会包含在我们的<code>&lt;body&gt;</code>部分之后，在这个分部视图，将会包括全部的代码</p>
+<p>让我们修改我们的layout.ejs文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;!-- Head tag --&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- After footer scripts --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/after-footer&apos;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>创建新的<code>layout/_partial/after-footer.ejs</code>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;%- js(&apos;bootstrap/js/bootstrap.min.js&apos;) %&gt;</span><br><span class="line">&lt;!-- IE10 viewport hack for Surface/desktop Windows 8 bug --&gt;</span><br><span class="line">&lt;%- js(&apos;js/ie10-viewport-bug-workaround.js&apos;) %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意JS助手函数在我们本地js文件上的使用</p>
+<h2 id="顶部菜单"><a href="#顶部菜单" class="headerlink" title="顶部菜单"></a>顶部菜单</h2><p>就和之前的步骤一样，让我们在layout.ejs文件的<code>&lt;body&gt;</code>的后面创建顶部菜单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;!-- Head tag --&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;!-- Menu --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/menu&apos;) %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- After footer scripts --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/after-footer&apos;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>创建<code>layout/_partial/menu.ejs</code>文件，里面复制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;blog-masthead&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;nav class=&quot;blog-nav&quot;&gt;</span><br><span class="line">            &lt;% for (var i in theme.menu)&#123; %&gt;</span><br><span class="line">                &lt;a class=&quot;blog-nav-item&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= i %&gt;&lt;/a&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line">        &lt;/nav&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意全局变量theme的使用，theme在JS中等效于主题文件夹中的_config.yml<br>我们在主题的配置中使得菜单可配置化。<br>要实现这个，我们需要在<code>_config.yml</code>文件中添加配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br></pre></td></tr></table></figure></p>
+<p>在<code>menu.ejs</code>中，我们列举全部的菜单项，然后新建相对应的链接</p>
+<h2 id="头部-1"><a href="#头部-1" class="headerlink" title="头部"></a>头部</h2><p>header将会放在menu下面，包括博文题目和子标题：<br>新建<code>layout/_partial/header.ejs</code>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;blog-header&quot;&gt;</span><br><span class="line">    &lt;h1 class=&quot;blog-title&quot;&gt;&lt;%= config.title %&gt;&lt;/h1&gt;</span><br><span class="line">    &lt;p class=&quot;lead blog-description&quot;&gt;&lt;% if (config.subtitle)&#123; %&gt;&lt;%= config.subtitle %&gt;&lt;% &#125; %&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在这里，我们使用<code>config</code>变量，对应博客的主<code>_config.yml</code>文件，这个文件里面应该会有标题和子标题的配置信息。</p>
+<p>当在layout里插入header时，注意<code>&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</code>封装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;!-- Head tag --&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- Menu --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/menu&apos;) %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;!-- Blog Header: title and subtitle --&gt;</span><br><span class="line">        &lt;%- partial(&apos;_partial/header&apos;) %&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- After footer scripts --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/after-footer&apos;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="脚部"><a href="#脚部" class="headerlink" title="脚部"></a>脚部</h2><p>页脚现在也是静态的，这是分部视图：<br>新建<code>layout/_partial/footer.ejs</code>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;footer class=&quot;blog-footer&quot;&gt;</span><br><span class="line">    &lt;p&gt;Blog template built for &lt;a href=&quot;http://getbootstrap.com&quot;&gt;Bootstrap&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;Adapted to Hexo by &lt;a href=&quot;http://www.codeblocq.com/&quot;&gt;klugjo&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&lt;a href=&quot;#&quot;&gt;Back to top&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">&lt;/footer&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="主内容和边栏"><a href="#主内容和边栏" class="headerlink" title="主内容和边栏"></a>主内容和边栏</h2><p>我们继续将主内容和边栏加进layout.ejs文件里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;!-- Head tag --&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- Menu --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/menu&apos;) %&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;!-- Blog Header: title and subtitle --&gt;</span><br><span class="line">        &lt;%- partial(&apos;_partial/header&apos;) %&gt;</span><br><span class="line">        &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">            &lt;!-- Main Content --&gt;</span><br><span class="line">            &lt;div class=&quot;col-sm-8 blog-main&quot;&gt;</span><br><span class="line">                &lt;%- body %&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;!-- Sidebar --&gt;</span><br><span class="line">            &lt;div class=&quot;col-sm-3 col-sm-offset-1 blog-sidebar&quot;&gt;</span><br><span class="line">                &lt;%- partial(&apos;_partial/sidebar&apos;) %&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- Footer --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/footer&apos;) %&gt;</span><br><span class="line">    &lt;!-- After footer scripts --&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/after-footer&apos;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>body</code>变量对应被之前各种不同页面类型模版所渲染的到的正文内容。<br>对于边栏的局部视图，我们简单的复制bootstrap模版代码。<br>新建<code>layout/_partial/sidebar.ejs</code>然后复制下面代码进去：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;sidebar-module sidebar-module-inset&quot;&gt;</span><br><span class="line">    &lt;h4&gt;About&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;Etiam porta &lt;em&gt;sem malesuada magna&lt;/em&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;sidebar-module&quot;&gt;</span><br><span class="line">    &lt;h4&gt;Archives&lt;/h4&gt;</span><br><span class="line">    &lt;ol class=&quot;list-unstyled&quot;&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;March 2014&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;February 2014&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;January 2014&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;December 2013&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;November 2013&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;sidebar-module&quot;&gt;</span><br><span class="line">    &lt;h4&gt;Elsewhere&lt;/h4&gt;</span><br><span class="line">    &lt;ol class=&quot;list-unstyled&quot;&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="index文件"><a href="#index文件" class="headerlink" title="index文件"></a>index文件</h1><p>我们的layout已经设置好了，现在我们要创建我们的第一个界面类型模版了<code>index.ejs</code>。<br>新建<code>layout/index.ejs</code><br>这是无内容的第一个版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Content&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="博文列举"><a href="#博文列举" class="headerlink" title="博文列举"></a>博文列举</h2><p>在主界面，我们想要展示博文的摘要。<br>首先，让我们在我们的<code>index.ejs</code>里列举博文。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% page.posts.each(function(item)&#123; %&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/article-excerpt&apos;, &#123;item: item&#125;) %&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>使用<code>page.posts</code>得到该页的博文列表</li>
+<li>通过<code>&lt;%- partial(&#39;name&#39;, args) %&gt;</code>传递一个参数到partial里</li>
+</ul>
+<h2 id="文章布局"><a href="#文章布局" class="headerlink" title="文章布局"></a>文章布局</h2><p>让我们创建<code>layout/_partial/article-excerpt.ejs</code>文件，然后复制代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;blog-post&quot;&gt;</span><br><span class="line">    &lt;!-- Title --&gt;</span><br><span class="line">    &lt;h2 class=&quot;blog-post-title&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;&quot;&gt;</span><br><span class="line">            &lt;%- item.title %&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &lt;!-- Date and Author --&gt;</span><br><span class="line">    &lt;p class=&quot;blog-post-meta&quot;&gt;</span><br><span class="line">        &lt;%= item.date.format(config.date_format) %&gt;</span><br><span class="line">        &lt;% if(item.author) &#123; %&gt;</span><br><span class="line">            by &lt;%- item.author %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;!-- Content --&gt;</span><br><span class="line">    &lt;%- item.excerpt || item.content %&gt;</span><br><span class="line">    &lt;!-- Only display the Read More link if we are displaying an excerpt --&gt;</span><br><span class="line">    &lt;% if(item.excerpt) &#123; %&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;&quot;&gt;</span><br><span class="line">                &lt;%= theme.excerpt_link %&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>全文链接<br>全文链接是通过<code>config.root</code>和<code>item.path</code>（相对路径）来链接的。</li>
+<li>文章作者</li>
+<li>文章摘要<br>在写Hexo文章时，我们可以用<code>&lt;!-- more --&gt;</code>来决定摘要部分</li>
+<li>阅读更多</li>
+</ul>
+<h2 id="页数"><a href="#页数" class="headerlink" title="页数"></a>页数</h2><p>最后一样要做的事情时，主页的页数。<br>将页数的partial放到<code>index.ejs</code>里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;% page.posts.each(function(item)&#123; %&gt;</span><br><span class="line">    &lt;%- partial(&apos;_partial/article-excerpt&apos;, &#123;item: item&#125;) %&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br><span class="line">&lt;%- partial(&apos;_partial/pagination&apos;) %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再新建<code>layout/_partial/pagination.ejs</code>文件，将代码复制过去：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span><br><span class="line">    &lt;ul class=&quot;pager&quot;&gt;</span><br><span class="line">        &lt;% if (page.prev)&#123; %&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- page.prev_link %&gt;&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">        &lt;% if (page.next)&#123; %&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- page.next_link %&gt;&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>page.prev</code>前面页数，如果当前页面是第一页的话为0</li>
+<li><code>page.next</code>下一页页数，如果当前页面为最后一页的话为0</li>
+<li><code>page.next_link</code>和<code>page.prev_link</code>是下一页和前一页的链接</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/31/leetcode笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">leetcode笔记（一）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目描述"><span class="nav-number">1.</span> <span class="nav-text">项目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目设置"><span class="nav-number">2.</span> <span class="nav-text">项目设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建一个Hexo博客"><span class="nav-number">2.1.</span> <span class="nav-text">新建一个Hexo博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主题文件夹"><span class="nav-number">2.2.</span> <span class="nav-text">创建主题文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件夹结构"><span class="nav-number">2.3.</span> <span class="nav-text">文件夹结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制bootstrap博客的文件"><span class="nav-number">2.4.</span> <span class="nav-text">复制bootstrap博客的文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo基础"><span class="nav-number">3.</span> <span class="nav-text">Hexo基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#界面类型"><span class="nav-number">3.1.</span> <span class="nav-text">界面类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用布局"><span class="nav-number">3.2.</span> <span class="nav-text">通用布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.3.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题布局创造"><span class="nav-number">4.</span> <span class="nav-text">主题布局创造</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#头部"><span class="nav-number">4.1.</span> <span class="nav-text">头部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页脚部分"><span class="nav-number">4.2.</span> <span class="nav-text">页脚部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶部菜单"><span class="nav-number">4.3.</span> <span class="nav-text">顶部菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头部-1"><span class="nav-number">4.4.</span> <span class="nav-text">头部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚部"><span class="nav-number">4.5.</span> <span class="nav-text">脚部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主内容和边栏"><span class="nav-number">4.6.</span> <span class="nav-text">主内容和边栏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#index文件"><span class="nav-number">5.</span> <span class="nav-text">index文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博文列举"><span class="nav-number">5.1.</span> <span class="nav-text">博文列举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章布局"><span class="nav-number">5.2.</span> <span class="nav-text">文章布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页数"><span class="nav-number">5.3.</span> <span class="nav-text">页数</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2020 Cai no Blog All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
