@@ -13,26 +13,26 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>「语义分割」deeplabv3+voc2012数据集复现 | Cai no Blog</title>
+  <title>deeplabv3+voc2012数据集复现 | Cai no Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="学习" />
+  <meta name="keywords" content="学习语义分割" />
   
   
   
   
   <meta name="description" content="因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个DeepLab项目复现出来，所以这算是一个记录帖子。">
-<meta name="keywords" content="学习">
+<meta name="keywords" content="学习,语义分割">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「语义分割」DeepLabV3+Voc2012数据集复现">
+<meta property="og:title" content="DeepLabV3+Voc2012数据集复现">
 <meta property="og:url" content="http://yoursite.com/2020/01/23/deeplab/index.html">
 <meta property="og:site_name" content="Cai no Blog">
 <meta property="og:description" content="因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个DeepLab项目复现出来，所以这算是一个记录帖子。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://m.qpic.cn/psc?/V11h6eOD0jBtPQ/YWvjNfAyIVey1fwA2tD8GB8lTP8IehBgWtjhSBfqb0NJXtyxljPBrTSB3Px8Ab*a3nJOk8x9ADo6vBERlT6SBAapG3fe.74yht65YA4Diow!/b&bo=VQhABsAP0AsRCTE!&rf=viewer_4">
-<meta property="og:updated_time" content="2020-07-16T22:27:57.907Z">
+<meta property="og:updated_time" content="2020-08-16T13:36:51.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「语义分割」DeepLabV3+Voc2012数据集复现">
+<meta name="twitter:title" content="DeepLabV3+Voc2012数据集复现">
 <meta name="twitter:description" content="因为毕设的缘故，需要搞语义分割，因为完全是小白，踩了很多坑，花了一段星期才将github上的这个DeepLab项目复现出来，所以这算是一个记录帖子。">
 <meta name="twitter:image" content="http://m.qpic.cn/psc?/V11h6eOD0jBtPQ/YWvjNfAyIVey1fwA2tD8GB8lTP8IehBgWtjhSBfqb0NJXtyxljPBrTSB3Px8Ab*a3nJOk8x9ADo6vBERlT6SBAapG3fe.74yht65YA4Diow!/b&bo=VQhABsAP0AsRCTE!&rf=viewer_4">
   
@@ -87,7 +87,7 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "标签"; 
 
-  themeMenus["/food"] = "食物"; 
+  themeMenus["/food"] = "食记"; 
 
   themeMenus["/about"] = "关于"; 
 
@@ -124,7 +124,7 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/food">食物</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/food">食记</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
                     
@@ -178,7 +178,7 @@ var themeMenus = {};
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="http://m.qpic.cn/psc?/V11h6eOD0jBtPQ/YWvjNfAyIVey1fwA2tD8GB8lTP8IehBgWtjhSBfqb0NJXtyxljPBrTSB3Px8Ab*a3nJOk8x9ADo6vBERlT6SBAapG3fe.74yht65YA4Diow!/b&bo=VQhABsAP0AsRCTE!&rf=viewer_4" rel="gallery_ckdx3oktu000c3db5fke9wxdr">
+      <a class="article-gallery-img fancybox" href="http://m.qpic.cn/psc?/V11h6eOD0jBtPQ/YWvjNfAyIVey1fwA2tD8GB8lTP8IehBgWtjhSBfqb0NJXtyxljPBrTSB3Px8Ab*a3nJOk8x9ADo6vBERlT6SBAapG3fe.74yht65YA4Diow!/b&bo=VQhABsAP0AsRCTE!&rf=viewer_4" rel="gallery_ckdx4zloi0007h0b5b5262itg">
         <img src="http://m.qpic.cn/psc?/V11h6eOD0jBtPQ/YWvjNfAyIVey1fwA2tD8GB8lTP8IehBgWtjhSBfqb0NJXtyxljPBrTSB3Px8Ab*a3nJOk8x9ADo6vBERlT6SBAapG3fe.74yht65YA4Diow!/b&bo=VQhABsAP0AsRCTE!&rf=viewer_4" itemprop="image">
       </a>
     
@@ -190,7 +190,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      「语义分割」DeepLabV3+Voc2012数据集复现
+      DeepLabV3+Voc2012数据集复现
     </h1>
   
 
@@ -234,9 +234,12 @@ var themeMenus = {};
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语义分割/">语义分割</a></li></ul>
 
       
             
@@ -275,7 +278,7 @@ var themeMenus = {};
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          「游戏」终于上王者了！！！
+          终于上王者了！！！
         
       </div>
     </a>
@@ -283,7 +286,7 @@ var themeMenus = {};
   
     <a href="/2020/01/12/姐姐来访/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">【比利时】家姐来访</div>
+      <div class="article-nav-title">家姐来访</div>
     </a>
   
 </nav>
