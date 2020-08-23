@@ -229,6 +229,50 @@ var themeMenus = {};
     
 
   
+    <article id="post-AccelatedC-第三章练习"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/23/AccelatedC-第三章练习/">AccelatedC++第三章练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2020/08/23/AccelatedC-第三章练习/" class="article-date">
+	  <time datetime="2020-08-23T18:28:49.000Z" itemprop="datePublished">八月 23, 2020</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="3-0"><a href="#3-0" class="headerlink" title="3-0"></a>3-0</h1><p>编译，运行并测试本章中的程序</p>
+<details><summary>展开查看</summary><pre><code><br>#include <string><br>#include <iostream><br>#include <iomanip><br>#include <algorithm><br>#include <ios><br>#include <vector><br><br>using std::cin;<br>using std::cout;<br>using std::endl;<br>using std::string;<br>using std::setprecision;<br>using std::sort;<br>using std::streamsize;<br>using std::string;<br>using std::vector;<br><br>int main() {<br><br>    cout &lt;&lt; “Please enter your first name: “;<br>    string name;<br>    cin &gt;&gt; name;<br>    cout &lt;&lt; “Hello, “ &lt;&lt; name &lt;&lt; ‘!’ &lt;&lt; endl;<br><br>    cout &lt;&lt; “Please enter your midterm and final exam grades: “;<br>    double midterm, final;<br>    cin &gt;&gt; midterm &gt;&gt; final;<br><br>    cout &lt;&lt; “Enter all your homework grades, “<br>            “and end with a char: “;<br><br>    vector<double> homework;<br>    double x;<br><br>    while (cin &gt;&gt; x) {<br>        homework.push_back(x);<br>    }<br><br>    typedef vector<double>::size_type vec_sz;<br>    vec_sz size = homework.size();<br>    if (size == 0){<br>        cout &lt;&lt; endl &lt;&lt; “You must enter your grades, “<br>                    &lt;&lt; “Please try again.” &lt;&lt; endl;<br>        return 1;<br>    }<br><br>    sort(homework.begin(),homework.end());<br><br>    vec_sz mid = size / 2;<br>    double median;<br>    median = (size % 2 == 0) ? (homework[mid] + homework[mid-1]) / 2<br>            : homework[mid];<br><br>    streamsize prec = cout.precision();<br>    cout &lt;&lt; “Your final grade is “ &lt;&lt; setprecision(3)<br>        &lt;&lt; 0.2 <em> midterm + 0.4 </em> final + 0.4 * median<br>        &lt;&lt; setprecision(prec) &lt;&lt; endl;<br><br>    return 0;<br><br></double></double></vector></ios></algorithm></iomanip></iostream></string></code></pre></details>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-hexo主题制作"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -712,66 +756,6 @@ do while循环先执行循环体，再进行判断
     
 
   
-    <article id="post-一年去两次意大利我是要干嘛？"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/12/05/一年去两次意大利我是要干嘛？/">一年去两次意大利我这是要上天啊！</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2019/12/05/一年去两次意大利我是要干嘛？/" class="article-date">
-	  <time datetime="2019-12-05T02:17:31.000Z" itemprop="datePublished">十二月 5, 2019</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <div class="entry-thumbnail">
-            <a href="/2019/12/05/一年去两次意大利我是要干嘛？/"><img width="250" height="175" src="http://m.qpic.cn/psc?/V11h6eOD2r9vsZ/bqQfVz5yrrGYSXMvKr.cqU0u1W7brlTgmoUWR6W*RWXQVv9LNsbvyPseRbjAIxNHJMhJxKanlACJkWz0MVd06hxchJ1K4FAK0dxU2Cp8Rmc!/b&amp;bo=VAY4BAAAAAABB04!&amp;rf=viewer_4" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
-          </div>
-          <div class="entry-summary">
-          前言：这次的旅行是和小胡还有老陈一起去的，但是因为我去年6月份的时候已经去过一次意大利了，不到半年的时间又去一次，实在是没多少新鲜感，因此这篇文章是我在拖了大半年之后才写的，也不是多么详细的记录，只能是大概的回忆了。留个纪念。流水账预定。(写于20年8月)
-
-        
-          <p class="article-more-link">
-            <a href="/2019/12/05/一年去两次意大利我是要干嘛？/#more">阅读全文</a>
-          </p>
-        </div>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/所行/">所行</a>, <a class="article-category-link" href="/categories/所行/欧罗巴/">欧罗巴</a>, <a class="article-category-link" href="/categories/所行/欧罗巴/南欧/">南欧</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/徒步/">徒步</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/意大利/">意大利</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅行/">旅行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/欧洲/">欧洲</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
 
 
   <nav id="page-nav">
@@ -851,6 +835,18 @@ do while循环先执行循环体，再进行判断
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2020/08/23/AccelatedC-第三章练习/">AccelatedC++第三章练习</a></h6>
+              <span>八月 23, 2020</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2020/08/09/hexo主题制作/">hexo主题制作（一）</a></h6>
               <span>八月 9, 2020</span>
             </div>
@@ -896,21 +892,6 @@ do while循环先执行循环体，再进行判断
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/2020/07/08/「游戏」终于上王者了！！！/" title=""><img width="50" height="50" src="http://m.qpic.cn/psc?/V11h6eOD2r9vsZ/YWvjNfAyIVey1fwA2tD8GDE4Y1gE6nAENwBYD2sySOnQzM1UUF54dgBsF6qUMX4ZXv*PrPsDr2TkSaqwQp2U.4gwf8G*pkOCdVGj15c*nSw!/b&amp;bo=2QMsAtkDLAIRGS4!&amp;rf=viewer_4" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/2020/07/08/「游戏」终于上王者了！！！/">终于上王者了！！！</a></h6>
-              <span>七月 8, 2020</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -940,7 +921,7 @@ do while循环先执行循环体，再进行判断
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
