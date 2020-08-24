@@ -19,17 +19,17 @@
   
   
   
-  <meta name="description" content="3-0编译，运行并测试本章中的程序 展开查看123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;string&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;iomani">
+  <meta name="description" content="这是《Accelerated C++》课后练习自己解答的答案。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AccelatedC++第三章练习">
 <meta property="og:url" content="http://yoursite.com/2020/08/23/AccelatedC-第三章练习/index.html">
 <meta property="og:site_name" content="Cai no Blog">
-<meta property="og:description" content="3-0编译，运行并测试本章中的程序 展开查看123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;string&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;iomani">
+<meta property="og:description" content="这是《Accelerated C++》课后练习自己解答的答案。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-08-23T18:38:39.818Z">
+<meta property="og:updated_time" content="2020-08-24T22:03:04.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AccelatedC++第三章练习">
-<meta name="twitter:description" content="3-0编译，运行并测试本章中的程序 展开查看123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &amp;lt;string&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;iomani">
+<meta name="twitter:description" content="这是《Accelerated C++》课后练习自己解答的答案。">
   
     <link rel="alternate" href="/atom.xml" title="Cai no Blog" type="application/atom+xml">
   
@@ -199,8 +199,161 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="3-0"><a href="#3-0" class="headerlink" title="3-0"></a>3-0</h1><p>编译，运行并测试本章中的程序</p>
+        <p>这是《Accelerated C++》课后练习自己解答的答案。<br><a id="more"></a></p>
+<h1 id="3-0"><a href="#3-0" class="headerlink" title="3-0"></a>3-0</h1><p>编译，运行并测试本章中的程序</p>
 <details><summary>展开查看</summary><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;ios&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using std::cin;</span><br><span class="line">using std::cout;</span><br><span class="line">using std::endl;</span><br><span class="line">using std::string;</span><br><span class="line">using std::setprecision;</span><br><span class="line">using std::sort;</span><br><span class="line">using std::streamsize;</span><br><span class="line">using std::string;</span><br><span class="line">using std::vector;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Please enter your first name: &quot;;</span><br><span class="line">    string name;</span><br><span class="line">    cin &gt;&gt; name;</span><br><span class="line">    cout &lt;&lt; &quot;Hello, &quot; &lt;&lt; name &lt;&lt; &apos;!&apos; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Please enter your midterm and final exam grades: &quot;;</span><br><span class="line">    double midterm, final;</span><br><span class="line">    cin &gt;&gt; midterm &gt;&gt; final;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Enter all your homework grades, &quot;</span><br><span class="line">            &quot;and end with a char: &quot;;</span><br><span class="line"></span><br><span class="line">    vector&lt;double&gt; homework;</span><br><span class="line">    double x;</span><br><span class="line"></span><br><span class="line">    while (cin &gt;&gt; x) &#123;</span><br><span class="line">        homework.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    typedef vector&lt;double&gt;::size_type vec_sz;</span><br><span class="line">    vec_sz size = homework.size();</span><br><span class="line">    if (size == 0)&#123;</span><br><span class="line">        cout &lt;&lt; endl &lt;&lt; &quot;You must enter your grades, &quot;</span><br><span class="line">                    &lt;&lt; &quot;Please try again.&quot; &lt;&lt; endl;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(homework.begin(),homework.end());</span><br><span class="line"></span><br><span class="line">    vec_sz mid = size / 2;</span><br><span class="line">    double median;</span><br><span class="line">    median = (size % 2 == 0) ? (homework[mid] + homework[mid-1]) / 2</span><br><span class="line">            : homework[mid];</span><br><span class="line"></span><br><span class="line">    streamsize prec = cout.precision();</span><br><span class="line">    cout &lt;&lt; &quot;Your final grade is &quot; &lt;&lt; setprecision(3)</span><br><span class="line">        &lt;&lt; 0.2 * midterm + 0.4 * final + 0.4 * median</span><br><span class="line">        &lt;&lt; setprecision(prec) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br></details>
+
+<p>一开始一头雾水，不知道怎么结束对<code>vector</code>类型homework的输入，后来上网才发现，的确只要输入一个非<code>double</code>类型的变量，例如<code>char</code>类型，就可以使得流出现错误状态，从而结束循环。</p>
+<p>还有就是一直提示一个warning，说<code>&lt;string&gt;</code>库没有被用到，因为<code>&lt;iostring&gt;</code>库里也有<code>string</code>类型。</p>
+<h1 id="3-1"><a href="#3-1" class="headerlink" title="3-1"></a>3-1</h1><p>假设我们希望找出一个数值集合的中值；同时假定到目前为止，我们已经读进一些数值了，而且不清楚还要读进多少个值。<br>证明：我们不能丢掉已经读到的任何值。丢掉任意值都没办法找到中值（文字论述题）。<br>提示：一个可行的证明策略是，先假定我们可以丢掉一个值，然后找出我们的集合中未读的（也就是未知的）那部分数值，要求这些数值将会使中值恰好就是我们丢掉的那个值。</p>
+<h1 id="3-2"><a href="#3-2" class="headerlink" title="3-2"></a>3-2</h1><p>把一个整数集合分成个数相等的四部分，而且第一部分含有的整数值比其他各部分的都大，第二部分的值比第一部分的小，比其他两部分的大，剩下的两部分则是以此类推。按照上面的要求，编写一个程序来计算并且打印这四部分。</p>
+<p><details><summary>展开查看</summary></details></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Please enter the integers, &quot;</span><br><span class="line">        &lt;&lt; &quot;end with a char :&quot;;</span><br><span class="line"></span><br><span class="line">    int x;</span><br><span class="line">    vector&lt;int&gt; integer;</span><br><span class="line"></span><br><span class="line">    while (cin &gt;&gt; x)&#123;</span><br><span class="line">        integer.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(integer.begin(),integer.end());</span><br><span class="line"></span><br><span class="line">    typedef vector&lt;int&gt;::size_type vec_size;</span><br><span class="line">    vec_size size = integer.size();</span><br><span class="line"></span><br><span class="line">    if(size == 0)&#123;</span><br><span class="line">        cout &lt;&lt; &quot;the set of integer is empty!&quot; &lt;&lt; endl;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vec_size div_1 = size / 4;</span><br><span class="line"></span><br><span class="line">    for(vec_size i = 0; i &lt; 4 ; i++ )&#123;</span><br><span class="line">        cout &lt;&lt; &quot;part &quot; &lt;&lt; 4-i &lt;&lt; &quot; of Set: &quot;;</span><br><span class="line">        for(vec_size j = 0; j &lt; div_1; j++)&#123;</span><br><span class="line">            cout &lt;&lt; integer[i*div_1+j] &lt;&lt; &quot;\n&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line">&lt;/details&gt;</span><br><span class="line"></span><br><span class="line">不知道`sort`函数怎么进行递减的排列呢？</span><br><span class="line"></span><br><span class="line"># 3-3（未解）</span><br><span class="line"></span><br><span class="line">编写一个程序来计算在它的输入中每个不同的单词所出现的次数。</span><br><span class="line"></span><br><span class="line">&lt;details&gt;&lt;summary&gt;展开查看&lt;/summary&gt;</span><br></pre></td></tr></table></figure>
+<p>#include <iostream></iostream></p>
+<p>#include <algorithm></algorithm></p>
+<p>#include <vector></vector></p>
+<p>using namespace std;</p>
+<p>int main() {</p>
+<pre><code>vector&lt;string&gt; word;
+vector&lt;int&gt; count;
+string x;
+
+typedef vector&lt;int&gt;::size_type vec_size;
+vec_size word_size = word.size();
+
+cout &lt;&lt; &quot;please enter some words: &quot; &lt;&lt; endl;
+
+while (cin &gt;&gt; x){
+    for(vec_size i = 0; i &lt; word_size; i++) {
+        if (x == word[i]) {
+            count[i]++;
+        } else {
+            word.push_back(x);
+            count.push_back(1);
+        }
+    }
+}
+
+if(word_size == 0){
+    cout &lt;&lt; &quot;no word!&quot;;
+    return 1;
+}
+
+for(vec_size i = 0; i &lt; word_size; i++){
+    cout &lt;&lt; &quot;word [&quot; &lt;&lt; word[i] &lt;&lt; &quot;] appear &quot;
+        &lt;&lt; count[i] &lt;&lt; &quot; times!&quot;;
+}
+return 0;
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;/details&gt;</span><br><span class="line"></span><br><span class="line">啊啊啊啊啊！不知道怎么结束循环输入！！！</span><br><span class="line"></span><br><span class="line"># 3-4</span><br><span class="line"></span><br><span class="line">编写一个程序来报告它的输入中最长以及最短的字符串的长度。</span><br><span class="line"></span><br><span class="line">&lt;details&gt;&lt;summary&gt;展开查看&lt;/summary&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#include <iostream></iostream></p>
+<p>#include <algorithm></algorithm></p>
+<p>#include <vector></vector></p>
+<p>using namespace std;</p>
+<p>int main() {</p>
+<pre><code>vector&lt;string&gt; word;
+string x;
+typedef vector&lt;string&gt;::size_type vec_size;
+vec_size size = word.size();
+
+vec_size maxlen = 0;
+vec_size minlen = 0;
+
+cout &lt;&lt; &quot;please enter your words: &quot;&lt;&lt; endl;
+
+while(cin &gt;&gt; x){
+    word.push_back(x);
+    maxlen =  max(maxlen, x.size());
+    minlen = min(minlen, x.size());
+}
+
+if(size == 0){
+    cout &lt;&lt; &quot;empty!&quot;;
+    return 1;
+}
+
+cout &lt;&lt; &quot;max length is: &quot; &lt;&lt; maxlen;
+cout &lt;&lt; &quot;min lenght is: &quot; &lt;&lt; minlen;
+
+return 0;
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;/details&gt;</span><br><span class="line"></span><br><span class="line">同上</span><br><span class="line"></span><br><span class="line"># 3-5</span><br><span class="line"></span><br><span class="line">编写一个程序来同时追踪n个学生的成绩，要求程序能够保持两个向量的同步：第一个应保存学生的姓名；第二个保存总成绩，而这个总成绩能根据读到的输入来计算。读者应假定家庭作业成绩的个数是固定的。（我们将在4.1.3中看到如何处理与学生姓名混合的数量可变的成绩。）</span><br><span class="line"></span><br><span class="line">&lt;details&gt;&lt;summary&gt;展开查看&lt;/summary&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#include <iostream></iostream></p>
+<p>#include <algorithm></algorithm></p>
+<p>#include <vector></vector></p>
+<p>using namespace std;</p>
+<p>int main() {</p>
+<pre><code>vector&lt;string&gt; name;
+vector&lt;double&gt; total_grade;
+vector&lt;double&gt; homework;
+string name_x;
+int homeworknum;
+const int homeworkmax = 5;
+int count;
+const int countmax = 1;
+double midterm, final;
+double homework_x;
+typedef vector&lt;double&gt;::size_type vec_grade_size;
+bool done = false;
+
+while (!done){
+
+    cout &lt;&lt; &quot;please enter your name: &quot;;
+    cin &gt;&gt; name_x;
+
+    name.push_back(name_x);
+
+    cout &lt;&lt; &quot;please enter the midterm and final grade of &quot; &lt;&lt; name_x &lt;&lt; &quot; :&quot;;
+    cin &gt;&gt; midterm &gt;&gt; final;
+    count = 0;
+
+    while (cin &amp;&amp; count &lt; countmax){
+        cout &lt;&lt; &quot;and enter the 5 homework grades of &quot; &lt;&lt; name_x &lt;&lt; &quot; :&quot;;
+        homeworknum =0;
+
+        while (cin &gt;&gt; homework_x &amp;&amp; homeworknum &lt; homeworkmax){
+            homework.push_back(homework_x);
+            ++ homeworknum;
+        }
+        vec_grade_size homeworkSize = homework.size();
+
+        if(homeworkSize==0){
+            cout&lt;&lt;&quot;dont fotgot to enter your homework grade!&quot;&lt;&lt;endl;
+            return 1;
+        }
+
+        sort(homework.begin(),homework.end());
+        double median = homework[2];
+        homework.clear();
+        double grade = 0.2*midterm + 0.4*final + 0.4*median;
+        total_grade.push_back(grade);
+        ++count;
+    }
+
+    cout &lt;&lt; &quot;more?(Y/N)&quot;;
+    char s;
+    cin &gt;&gt; s;
+    if(s != &apos;Y&apos;)
+        done = true;
+}
+
+typedef vector&lt;string&gt;::size_type vec_name_size;
+vec_name_size nameSize = name.size();
+vec_grade_size gradeSize = total_grade.size();
+
+if(nameSize==0 &amp;&amp; gradeSize==0){
+    cout &lt;&lt; &quot;no student and no grade!&quot;&lt;&lt; endl;
+    return 1;
+}
+
+for (vec_name_size i = 0; i &lt; nameSize; i++){
+    cout &lt;&lt; name[i] &lt;&lt; &quot;&apos;s grade is : &quot; &lt;&lt; total_grade[i] &lt;&lt; endl;
+}
+return 0;
+</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;/details&gt;</span><br><span class="line"></span><br><span class="line">如果在循环输入流中，将不同类型的数值输入到vector中，则会直接结束循环。所以我还是不知道怎么结束循环输入流，我在这里用的是设定一个计数，超过这个值就结束，搞了一晚上，终于搞定了。</span><br><span class="line"></span><br><span class="line">输出结果</span><br></pre></td></tr></table></figure>
+<p>please enter your name: Cai<br>please enter the midterm and final grade of Cai :98 97<br>and enter the 5 homework grades of Cai :87 86 83 88 90 23<br>more?(Y/N)Y<br>please enter your name: Jiang<br>please enter the midterm and final grade of Jiang :97 99<br>and enter the 5 homework grades of Jiang :88 88 86 83 79 90<br>more?(Y/N)Y<br>please enter your name: Nan<br>please enter the midterm and final grade of Nan :88 90<br>and enter the 5 homework grades of Nan :87 78 92 98 66 89<br>more?(Y/N)N<br>Cai’s grade is : 93.2<br>Jiang’s grade is : 93.4<br>Nan’s grade is : 88.4</p>
+<p>Process finished with exit code 0<br><code>`</code><br>其中homework只能输入5个成绩，最后一个成绩没什么用的。为的是多输入一个来造成判断结束循环输入。</p>
+<p>感想：就是输入循环流，不能单单将cin作为条件，还需要其他的限制，来结束输入。</p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -265,7 +418,7 @@ var themeMenus = {};
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#3-0"><span class="nav-number">1.</span> <span class="nav-text">3-0</span></a></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#3-0"><span class="nav-number">1.</span> <span class="nav-text">3-0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-1"><span class="nav-number">2.</span> <span class="nav-text">3-1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-2"><span class="nav-number">3.</span> <span class="nav-text">3-2</span></a></li></ol>
     
     </div>
   </aside>
