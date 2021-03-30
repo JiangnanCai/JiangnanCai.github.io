@@ -21,14 +21,14 @@
   
   <meta name="description" content="操作符endl‘endl’，是操纵符（manipulator），写入’endl’的效果是结束当前行，并将缓冲区中的全部内容传递到输出，并将缓冲区清空。缓冲刷新操作可以保证到目前为止所产生的所有输入都写入输出流中了，而不是停留在内存中等待写入输出流。Note：在用打印语句调试程序的时候，要保证输出流以endl结尾，对缓冲一直刷新。不然如果程序崩溃，输出可能在停留在缓冲区中，没办法及时的打印错误信息">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++ primer 第一章">
+<meta property="og:title" content="C++ Primer 第一章">
 <meta property="og:url" content="http://yoursite.com/2021/03/29/c-笔记1/index.html">
 <meta property="og:site_name" content="Cai no Blog">
 <meta property="og:description" content="操作符endl‘endl’，是操纵符（manipulator），写入’endl’的效果是结束当前行，并将缓冲区中的全部内容传递到输出，并将缓冲区清空。缓冲刷新操作可以保证到目前为止所产生的所有输入都写入输出流中了，而不是停留在内存中等待写入输出流。Note：在用打印语句调试程序的时候，要保证输出流以endl结尾，对缓冲一直刷新。不然如果程序崩溃，输出可能在停留在缓冲区中，没办法及时的打印错误信息">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-29T15:47:40.708Z">
+<meta property="og:updated_time" content="2021-03-30T12:41:41.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++ primer 第一章">
+<meta name="twitter:title" content="C++ Primer 第一章">
 <meta name="twitter:description" content="操作符endl‘endl’，是操纵符（manipulator），写入’endl’的效果是结束当前行，并将缓冲区中的全部内容传递到输出，并将缓冲区清空。缓冲刷新操作可以保证到目前为止所产生的所有输入都写入输出流中了，而不是停留在内存中等待写入输出流。Note：在用打印语句调试程序的时候，要保证输出流以endl结尾，对缓冲一直刷新。不然如果程序崩溃，输出可能在停留在缓冲区中，没办法及时的打印错误信息">
   
     <link rel="alternate" href="/atom.xml" title="Cai no Blog" type="application/atom+xml">
@@ -179,7 +179,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      c++ primer 第一章
+      C++ Primer 第一章
     </h1>
   
 
@@ -200,12 +200,47 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>操作符endl<br>‘endl’，是操纵符（manipulator），写入’endl’的效果是结束当前行，并将缓冲区中的全部内容传递到输出，并将缓冲区清空。缓冲刷新操作可以保证到目前为止所产生的所有输入都写入输出流中了，而不是停留在内存中等待写入输出流。<br>Note：在用打印语句调试程序的时候，要保证输出流以endl结尾，对缓冲一直刷新。不然如果程序崩溃，输出可能在停留在缓冲区中，没办法及时的打印错误信息，导致调试的时候对程序崩溃的位置进行错误的推断。</p>
-</li>
-<li><p>注释嵌套错误<br>注释界定符不能够嵌套，以/<em>开始，以</em>/结束。一个注释不能够嵌套在另一个注释之内。</p>
-</li>
+<li>操作符endl<br>‘endl’，是操纵符（manipulator），写入’endl’的效果是结束当前行，并将缓冲区中的全部内容传递到输出，并将缓冲区清空。缓冲刷新操作可以保证到目前为止所产生的所有输入都写入输出流中了，而不是停留在内存中等待写入输出流。<br>Note：在用打印语句调试程序的时候，要保证输出流以endl结尾，对缓冲一直刷新。不然如果程序崩溃，输出可能在停留在缓冲区中，没办法及时的打印错误信息，导致调试的时候对程序崩溃的位置进行错误的推断。<a id="more"></a></li>
+<li>注释嵌套错误<br>注释界定符不能够嵌套，以/<em>开始，以</em>/结束。一个注释不能够嵌套在另一个注释之内。</li>
 </ul>
-<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">练习 1.7</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">答案</a></div><div class="collapse" id="collapseExample"><div class="t-0"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编译一个包含不正确的嵌套注释的程序，观察编译器返回的错误信息。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="collapseExample1"><div class="mt-3">2324</div></div><div><a class="btn btn-link" type="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">练习 1.8</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">答案</a></div><div class="collapse" id="collapseExample2"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">指出下列哪些输出语句是合法的（如果有的话）：</span><br><span class="line">std::cout &lt;&lt; &quot;/*&quot;;</span><br><span class="line">std::cout &lt;&lt; &quot;*/&quot;;</span><br><span class="line">std::cout &lt;&lt; /* &quot;*/&quot; */;</span><br><span class="line">std::cout &lt;&lt; /* &quot;*/&quot; /* &quot;/*&quot; */;</span><br><span class="line">预测编译这些语句会产生什么样的结果，实际编译这些语句来验证你的答案（编写一个小程序，每次将上述一条语句作为其主体），改正每个编译错误。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="collapseExample3"><div class="mt-3">2324</div></div>
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">练习 1.07</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">答案</a></div><div class="collapse" id="collapseExample"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编译一个包含不正确的嵌套注释的程序，观察编译器返回的错误信息。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="collapseExample1"><div class="mt-3">2324</div></div><div><a class="btn btn-link" type="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">练习 1.08</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">答案</a></div><div class="collapse" id="collapseExample2"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">指出下列哪些输出语句是合法的（如果有的话）：</span><br><span class="line">std::cout &lt;&lt; &quot;/*&quot;;</span><br><span class="line">std::cout &lt;&lt; &quot;*/&quot;;</span><br><span class="line">std::cout &lt;&lt; /* &quot;*/&quot; */;</span><br><span class="line">std::cout &lt;&lt; /* &quot;*/&quot; /* &quot;/*&quot; */;</span><br><span class="line">预测编译这些语句会产生什么样的结果，实际编译这些语句来验证你的答案（编写一个小程序，每次将上述一条语句作为其主体），改正每个编译错误。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="collapseExample3"><div class="mt-3">2324</div></div>
+
+<ul>
+<li>运算符<br>复合复制运算符 <code>+=</code><br>前缀递增运算符 <code>++</code><br>前缀递减运算符 <code>--</code></li>
+</ul>
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#2" aria-expanded="false" aria-controls="2">练习 1.09</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#3" aria-expanded="false" aria-controls="3">答案</a></div><div class="collapse" id="2"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，使用while循环将50到100的整数相加。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="3"><div class="mt-3">2324</div></div><div><a class="btn btn-link" type="button" data-toggle="collapse" href="#4" aria-expanded="false" aria-controls="4">练习 1.10</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#5" aria-expanded="false" aria-controls="5">答案</a></div><div class="collapse" id="4"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">除了++运算符将运算对象的值增加1之外，还有一个递减运算符（--）实现将值减少1.编写程序，使用递减运算符在循环中按递减顺序打印出10到0之间的整数。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="5"><div class="mt-3">2324</div></div><div><a class="btn btn-link" type="button" data-toggle="collapse" href="#6" aria-expanded="false" aria-controls="6">练习 1.11</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#7" aria-expanded="false" aria-controls="7">答案</a></div><div class="collapse" id="6"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，提示用户输入两个整数，打印出这两个整数所指定的范围内的所有整数。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="7"><div class="mt-3">2324</div></div>
+
+<ul>
+<li>读取数量不定的输入数据<br><code>while( cin &lt;&lt; value) {}</code><br>当我们使用istream对象作为条件的时候，其效果是检测流的状态，如果没有错误则流有效。<br>使istream状态无效的可能原因有2种：<br>1.遇到文件结束符（end-of-file），在我的苹果上要在debug模式输入<code>command+D</code>。<br>2.遇到无效输入，实际输入的值和变量的类型不符合。<br>istream状态无效时，条件就会变为假。</li>
+</ul>
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#12" aria-expanded="false" aria-controls="12">练习 1.12</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#12a" aria-expanded="false" aria-controls="12a">答案</a></div><div class="collapse" id="12"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">下面的for循环完成了什么功能？sum的终值时多少？</span><br><span class="line">int sum = 0;</span><br><span class="line">for (int i = -100; i &lt;= 100; ++i)</span><br><span class="line">	sum += i;</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="12a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#13" aria-expanded="false" aria-controls="13">练习 1.13</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#13a" aria-expanded="false" aria-controls="13a">答案</a></div><div class="collapse" id="13"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用for循环重做练习1.9-1.11</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="13a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#14" aria-expanded="false" aria-controls="14">练习 1.14</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#14a" aria-expanded="false" aria-controls="14a">答案</a></div><div class="collapse" id="14"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对比for循环和while循环，两种形式的优缺点各是什么？</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="14a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#15" aria-expanded="false" aria-controls="15">练习 1.15</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#15a" aria-expanded="false" aria-controls="15a">答案</a></div><div class="collapse" id="15"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，包含第14页“再探编译”中讨论的常见错误，熟悉编译器生成的错误信息。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="15a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#16" aria-expanded="false" aria-controls="16">练习 1.16</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#16a" aria-expanded="false" aria-controls="16a">答案</a></div><div class="collapse" id="16"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="16a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#17" aria-expanded="false" aria-controls="16">练习 1.17</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#17a" aria-expanded="false" aria-controls="17a">答案</a></div><div class="collapse" id="17"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="17a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#18" aria-expanded="false" aria-controls="16">练习 1.18</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#18a" aria-expanded="false" aria-controls="18a">答案</a></div><div class="collapse" id="18"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="18a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#19" aria-expanded="false" aria-controls="19">练习 1.19</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#19a" aria-expanded="false" aria-controls="19a">答案</a></div><div class="collapse" id="19"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="19a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#20" aria-expanded="false" aria-controls="20">练习 1.20</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#20a" aria-expanded="false" aria-controls="20a">答案</a></div><div class="collapse" id="20"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="20a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#21" aria-expanded="false" aria-controls="21">练习 1.21</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#21a" aria-expanded="false" aria-controls="21a">答案</a></div><div class="collapse" id="21"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="21a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#22" aria-expanded="false" aria-controls="22">练习 1.22</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#22a" aria-expanded="false" aria-controls="22a">答案</a></div><div class="collapse" id="22"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="22a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#23" aria-expanded="false" aria-controls="23">练习 1.23</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#23a" aria-expanded="false" aria-controls="23a">答案</a></div><div class="collapse" id="23"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="23a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#24" aria-expanded="false" aria-controls="24">练习 1.24</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#24a" aria-expanded="false" aria-controls="24a">答案</a></div><div class="collapse" id="24"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="24a"><div class="mt-3">2324</div></div>
+
+<div><a class="btn btn-link" type="button" data-toggle="collapse" href="#25" aria-expanded="false" aria-controls="25">练习 1.25</a><a class="btn btn-link" type="button" data-toggle="collapse" data-target="#25a" aria-expanded="false" aria-controls="25a">答案</a></div><div class="collapse" id="25"><div class="mt-3"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写程序，从cin读取一组数，输出其和。</span><br></pre></td></tr></table></figure><br><br></div></div><div class="collapse" id="25a"><div class="mt-3">2324</div></div>
+
 
       
     </div>
@@ -244,6 +279,15 @@ var themeMenus = {};
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/03/30/leetcode刷题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          leetcode刷题
+        
+      </div>
+    </a>
   
   
     <a href="/2021/02/07/回国日记/" id="article-nav-older" class="article-nav-link-wrap">
